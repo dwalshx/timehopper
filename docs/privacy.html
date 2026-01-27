@@ -12,17 +12,34 @@
             color: #333;
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
-        h1,
-        h2 {
-            color: #2c3e50;
+        .header {
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         h1 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
         }
 
         .section {
@@ -30,57 +47,72 @@
         }
 
         a {
-            color: #0078d4;
+            color: #fd547a;
             text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
         }
     </style>
 </head>
 
-<body>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: January 29, 2026</p>
+<div class="header">
+    <a href="index.html" class="logo">🐰 TimeHopper</a>
+</div>
 
-    <div class="section">
-        <h2>Introduction</h2>
-        <p>TimeHopper ("we", "our", or "us") is a Chrome Extension designed to help you manage time zones and schedule
-            meetings. We respect your privacy and are committed to protecting your personal data.</p>
-    </div>
+<h1>Privacy Policy</h1>
+<p>Last updated: January 29, 2026</p>
 
-    <div class="section">
-        <h2>Data We Collect</h2>
-        <p>TimeHopper accesses the minimum amount of data necessary to function:</p>
-        <ul>
-            <li><strong>Calendar Data:</strong> We access your Google Calendar events strictly to display them to you in
-                the extension popup and to provide meeting notifications. This data is fetched directly from Google's
-                APIs and is stored locally in your browser to improve performance. We do not transmit this data to any
-                external servers or third parties.</li>
-            <li><strong>User Preferences:</strong> using Chrome Storage, we save your settings (such as selected time
-                zones, working hours, and notification preferences).</li>
-            <li><strong>Analytics:</strong> We use aggregated, anonymous analytics (via Amplitude) to understand feature
-                usage and improve the product. This data does not contain personally identifiable information (PII) or
-                calendar details.</li>
-        </ul>
-    </div>
+<div class="section">
+    <h2>Introduction</h2>
+    <p>TimeHopper ("we", "our", or "us") is a Chrome Extension designed to help you manage time zones and schedule
+        meetings. We respect your privacy and are committed to protecting your personal data.</p>
+</div>
 
-    <div class="section">
-        <h2>How We Use Your Data</h2>
-        <ul>
-            <li>To display your upcoming schedule and time blocks.</li>
-            <li>To provide desktop notifications for upcoming meetings.</li>
-            <li>To calculate time zone overlaps for team coordination.</li>
-        </ul>
-    </div>
+<div class="section">
+    <h2>Data We Collect</h2>
+    <p>TimeHopper accesses the minimum amount of data necessary to function:</p>
+    <ul>
+        <li><strong>Calendar Data:</strong> We access your Google Calendar events strictly to display them to you in
+            the extension popup and to provide meeting notifications. This data is fetched directly from Google's
+            APIs and is stored locally in your browser to improve performance. We do not transmit this data to any
+            external servers or third parties.</li>
+        <li><strong>User Preferences:</strong> using Chrome Storage, we save your settings (such as selected time
+            zones, working hours, and notification preferences).</li>
+        <li><strong>Analytics:</strong> We use aggregated, anonymous analytics (via Amplitude) to understand feature
+            usage and improve the product. This data does not contain personally identifiable information (PII) or
+            calendar details.</li>
+    </ul>
+</div>
 
-    <div class="section">
-        <h2>Data Sharing</h2>
-        <p>We do not sell, trade, or otherwise transfer your personal information to outside parties.</p>
-    </div>
+<div class="section">
+    <h2>How We Use Your Data</h2>
+    <ul>
+        <li>To display your upcoming schedule and time blocks.</li>
+        <li>To provide desktop notifications for upcoming meetings.</li>
+        <li>To calculate time zone overlaps for team coordination.</li>
+    </ul>
+</div>
 
-    <div class="section">
-        <h2>Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at: <a
-                href="mailto:danwalshx@gmail.com">danwalshx@gmail.com</a></p>
-    </div>
+<div class="section">
+    <h2>Data Sharing</h2>
+    <p>We do not sell, trade, or otherwise transfer your personal information to outside parties.</p>
+</div>
+
+<div class="footer">
+    <p>&copy; 2026 TimeHopper. <a href="index.html">Back to Home</a></p>
+</div>
 </body>
 
 </html>
