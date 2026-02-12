@@ -2,3 +2,7 @@
 !.gitignore
 !docs/
 !docs/**
+!website/
+!website/**
+!.github/
+!.github/**

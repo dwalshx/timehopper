@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://timehopperapp.com/sitemap-index.xml

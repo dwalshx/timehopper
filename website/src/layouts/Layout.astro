@@ -1,0 +1,152 @@
+---
+import JsonLd from '../components/JsonLd.astro';
+import SupportCTA from '../components/SupportCTA.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	ogType?: 'website' | 'article';
+	breadcrumbs?: { name: string; item: string }[];
+	showCTA?: boolean;
+}
+
+const { 
+	title, 
+	description = "Effortless Time Zone Management for Distributed Teams. Sync your Google Calendar and coordinate across time zones instantly.",
+	image = "/images/icon128.png",
+	ogType = 'website',
+	breadcrumbs,
+	showCTA = true
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const organizationData = {
+	"name": "TimeHopper",
+	"url": "https://timehopperapp.com",
+	"logo": "https://timehopperapp.com/images/icon128.png",
+	"contactPoint": {
+		"@type": "ContactPoint",
+		"email": "danwalshx@gmail.com",
+		"contactType": "customer support"
+	}
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/images/icon128.png" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+		<!-- Structured Data -->
+		<JsonLd type="Organization" data={organizationData} />
+		{breadcrumbs && (
+			<JsonLd 
+				type="BreadcrumbList" 
+				data={{
+					itemListElement: breadcrumbs.map((crumb, index) => ({
+						"@type": "ListItem",
+						"position": index + 1,
+						"name": crumb.name,
+						"item": new URL(crumb.item, Astro.site)
+					}))
+				}} 
+			/>
+		)}
+		
+		<slot name="styles" />
+	</head>
+	<body>
+		<slot />
+
+		{showCTA && <SupportCTA />}
+
+		<footer>
+			<div class="container">
+				<p>&copy; 2026 TimeHopper. Built for remote work.</p>
+				<div class="footer-links">
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/terms/">Terms of Service</a>
+					<a href="mailto:danwalshx@gmail.com">Contact Support</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		color: #333;
+		line-height: 1.6;
+	}
+
+	.container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	a {
+		color: #fd547a;
+		text-decoration: none;
+		transition: text-decoration 0.2s;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	/* Global Footer Styles */
+	footer {
+		background: #333;
+		color: #aaa;
+		padding: 40px 0;
+		text-align: center;
+	}
+
+	.footer-links {
+		margin-top: 15px;
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	footer a {
+		color: white;
+		text-decoration: none;
+		font-size: 0.9em;
+	}
+
+	footer a:hover {
+		text-decoration: underline;
+	}
+</style>

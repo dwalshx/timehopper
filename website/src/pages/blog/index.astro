@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+	.filter((post) => post.data.pubDate <= new Date())
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="TimeHopper Blog - Tips & Updates" description="Learn how to master your schedule and coordinate across time zones with the TimeHopper blog.">
+	<main class="container">
+		<div class="blog-header">
+			<h1>TimeHopper Blog</h1>
+			<p>Product updates, time management tips, and remote work best practices.</p>
+		</div>
+
+		<div class="posts-grid">
+			{posts.length > 0 ? (
+				posts.map((post) => (
+					<article class="post-card">
+						{post.data.heroImage && (
+							<img src={post.data.heroImage} alt="" class="hero-img" />
+						)}
+						<header>
+							<h2><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h2>
+							<time datetime={post.data.pubDate.toISOString()}>
+								{post.data.pubDate.toLocaleDateString('en-us', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric',
+								})}
+							</time>
+						</header>
+						<p>{post.data.description}</p>
+						<a href={`/blog/${post.slug}/`} class="read-more">Read more &rarr;</a>
+					</article>
+				))
+			) : (
+				<p>Coming soon! We're preparing helpful articles for you.</p>
+			)}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.blog-header {
+		padding: 60px 0 40px;
+		text-align: center;
+	}
+
+	.blog-header h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #2c3e50;
+	}
+
+	.blog-header p {
+		font-size: 1.2rem;
+		color: #666;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.posts-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		padding-bottom: 60px;
+	}
+
+	.post-card {
+		background: #fff;
+		border: 1px solid #eee;
+		border-radius: 12px;
+		padding: 1.5rem;
+		transition: transform 0.2s, box-shadow 0.2s;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.post-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+	}
+
+	.post-card h2 {
+		margin-top: 0;
+		font-size: 1.5rem;
+		line-height: 1.3;
+	}
+
+	.post-card h2 a {
+		color: #2c3e50;
+		text-decoration: none;
+	}
+
+	.post-card time {
+		font-size: 0.9rem;
+		color: #888;
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.post-card p {
+		color: #555;
+		margin-bottom: 1.5rem;
+		flex-grow: 1;
+	}
+
+	.read-more {
+		font-weight: 600;
+		color: #fd547a;
+	}
+
+	.hero-img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 8px;
+		margin-bottom: 1rem;
+	}
+</style>

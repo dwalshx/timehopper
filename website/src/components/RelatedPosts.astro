@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	currentPost: CollectionEntry<'blog'>;
+	maxPosts?: number;
+}
+
+const { currentPost, maxPosts = 2 } = Astro.props;
+
+const allPosts = await getCollection('blog');
+
+// Only include published posts
+const publishedPosts = allPosts.filter(
+	(post) => post.data.pubDate <= new Date() && post.slug !== currentPost.slug
+);
+
+// Rank posts by tag overlap
+const relatedPosts = publishedPosts
+	.map((post) => {
+		const overlap = post.data.tags.filter((tag) => 
+			currentPost.data.tags.includes(tag)
+		).length;
+		return { post, overlap };
+	})
+	.sort((a, b) => {
+		if (b.overlap !== a.overlap) return b.overlap - a.overlap;
+		return b.post.data.pubDate.valueOf() - a.post.data.pubDate.valueOf();
+	})
+	.slice(0, maxPosts)
+	.map((item) => item.post);
+---
+
+{relatedPosts.length > 0 && (
+	<section class="related-posts">
+		<h2>Read Next</h2>
+		<div class="related-grid">
+			{relatedPosts.map((post) => (
+				<a href={`/blog/${post.slug}/`} class="related-card">
+					<div class="related-content">
+						<h3>{post.data.title}</h3>
+						<p>{post.data.description}</p>
+					</div>
+				</a>
+			))}
+		</div>
+	</section>
+)}
+
+<style>
+	.related-posts {
+		margin-top: 60px;
+		padding-top: 40px;
+		border-top: 2px solid #f1f1f1;
+	}
+
+	.related-posts h2 {
+		font-size: 1.8rem;
+		margin-bottom: 2rem;
+		color: #2c3e50;
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 20px;
+	}
+
+	.related-card {
+		background: #fff;
+		border: 1px solid #eee;
+		border-radius: 12px;
+		padding: 20px;
+		text-decoration: none;
+		transition: transform 0.2s, box-shadow 0.2s;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.related-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+		text-decoration: none;
+	}
+
+	.related-card h3 {
+		margin: 0 0 10px;
+		font-size: 1.3rem;
+		color: #fd547a;
+	}
+
+	.related-card p {
+		margin: 0;
+		font-size: 0.95rem;
+		color: #666;
+		line-height: 1.4;
+	}
+</style>
