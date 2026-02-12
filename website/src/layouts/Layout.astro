@@ -1,6 +1,7 @@
 ---
 import JsonLd from '../components/JsonLd.astro';
 import SupportCTA from '../components/SupportCTA.astro';
+import Navigation from '../components/Navigation.astro';
 
 interface Props {
 	title: string;
@@ -83,6 +84,7 @@ const organizationData = {
 		<slot name="styles" />
 	</head>
 	<body>
+		<Navigation />
 		<slot />
 
 		{showCTA && <SupportCTA />}

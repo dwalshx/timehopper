@@ -1,0 +1,95 @@
+---
+---
+<nav class="main-nav">
+	<div class="container nav-container">
+		<a href="/" class="nav-logo">
+			<img src="/images/icon48.png" alt="TimeHopper Logo" class="nav-logo-img">
+			<span class="nav-logo-text">TimeHopper</span>
+		</a>
+		<ul class="nav-links">
+			<li><a href="/">Home</a></li>
+			<li><a href="/blog/index.html">Blog</a></li>
+			<li><a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="nav-cta">Add to Chrome</a></li>
+		</ul>
+	</div>
+</nav>
+
+<style>
+	.main-nav {
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid #eee;
+		padding: 15px 0;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+
+	.nav-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.nav-logo {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		text-decoration: none;
+		color: #333;
+		font-weight: 800;
+		font-size: 1.25rem;
+	}
+
+	.nav-logo-img {
+		width: 32px;
+		height: 32px;
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-links a {
+		text-decoration: none;
+		color: #555;
+		font-weight: 600;
+		transition: color 0.2s;
+	}
+
+	.nav-links a:hover {
+		color: #fd547a;
+	}
+
+	.nav-cta {
+		background: #fd547a;
+		color: white !important;
+		padding: 8px 16px;
+		border-radius: 50px;
+		font-size: 0.9rem;
+		transition: transform 0.2s, box-shadow 0.2s !important;
+	}
+
+	.nav-cta:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 10px rgba(253, 84, 122, 0.2);
+	}
+
+	@media (max-width: 600px) {
+		.nav-logo-text {
+			display: none;
+		}
+		.nav-links {
+			gap: 15px;
+		}
+		.nav-cta {
+			padding: 6px 12px;
+			font-size: 0.8rem;
+		}
+	}
+</style>
