@@ -26,14 +26,23 @@ import Layout from '../layouts/Layout.astro';
             <ul>
                 <li><strong>Calendar Data:</strong> We access your Google Calendar events strictly to display them to you in
                     the extension popup and to provide meeting notifications. This data is fetched directly from Google's
-                    APIs and is stored locally in your browser to improve performance. We do not transmit this data to any
-                    external servers or third parties.</li>
+                    APIs and is stored locally in your browser. We do not transmit this data to any external servers.</li>
                 <li><strong>User Preferences:</strong> using Chrome Storage, we save your settings (such as selected time
                     zones, working hours, and notification preferences).</li>
-                <li><strong>Analytics:</strong> We use aggregated, anonymous analytics (via Amplitude) to understand feature
+                <li><strong>Analytics:</strong> We use aggregated, anonymous analytics (via <strong>Amplitude</strong>) to understand feature
                     usage and improve the product. This data does not contain personally identifiable information (PII) or
-                    calendar details.</li>
+                    calendar details. No calendar content is ever sent to analytics.</li>
             </ul>
+        </div>
+
+        <div class="section">
+            <h2>Limited Use Disclosure</h2>
+            <p>TimeHopper's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+        </div>
+
+        <div class="section">
+            <h2>No AI training</h2>
+            <p>We believe your data belongs to you. We <strong>do not</strong> use any information from your Google Calendar to train Large Language Models (LLMs) or any other artificial intelligence systems.</p>
         </div>
 
         <div class="section">
@@ -47,21 +56,7 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="section">
             <h2>Data Sharing</h2>
-            <p>We do not sell, trade, or otherwise transfer your personal information to outside parties.</p>
-        </div>
-
-        <div class="section">
-            <h2>Your Rights (CCPA & GDPR)</h2>
-            <p>Under the California Consumer Privacy Act (CCPA) and General Data Protection Regulation (GDPR), you have the
-                right to access, delete, and restrict the processing of your data.</p>
-            <p><strong>Since TimeHopper stores all data locally on your device:</strong></p>
-            <ul>
-                <li><strong>Right to Access:</strong> You already have full access to your data, as it resides in your own
-                    browser and Google Calendar account.</li>
-                <li><strong>Right to Delete:</strong> You can delete all valid data by simply uninstalling the extension. This
-                    immediately wipes all local storage and credentials.</li>
-                <li><strong>Do Not Sell:</strong> We have never sold and will never sell your personal data.</li>
-            </ul>
+            <p>We do not sell, trade, or otherwise transfer your personal information to outside parties. As noted above, we use Amplitude for anonymous product analytics, and Google APIs for fetching your calendar data directly.</p>
         </div>
 
         <div class="section">
