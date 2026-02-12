@@ -6,6 +6,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: 'https://timehopperapp.com',
     outDir: '../docs',
-    trailingSlash: 'always',
+    build: {
+        format: 'file',
+    },
     integrations: [sitemap()],
 });

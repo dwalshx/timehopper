@@ -30,9 +30,9 @@ const articleData = {
 };
 
 const breadcrumbs = [
-	{ name: 'Home', item: '/' },
-	{ name: 'Blog', item: '/blog/' },
-	{ name: post.data.title, item: `/blog/${post.slug}/` }
+	{ name: 'Home', item: '/index.html' },
+	{ name: 'Blog', item: '/blog/index.html' },
+	{ name: post.data.title, item: `/blog/${post.slug}.html` }
 ];
 ---
 
@@ -67,7 +67,7 @@ const breadcrumbs = [
 		<RelatedPosts currentPost={post} />
 
 		<footer>
-			<a href="/blog/">&larr; Back to blog</a>
+			<a href="/blog/index.html">&larr; Back to blog</a>
 		</footer>
 	</article>
 </Layout>

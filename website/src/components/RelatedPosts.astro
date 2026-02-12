@@ -37,7 +37,7 @@ const relatedPosts = publishedPosts
 		<h2>Read Next</h2>
 		<div class="related-grid">
 			{relatedPosts.map((post) => (
-				<a href={`/blog/${post.slug}/`} class="related-card">
+				<a href={`/blog/${post.slug}.html`} class="related-card">
 					<div class="related-content">
 						<h3>{post.data.title}</h3>
 						<p>{post.data.description}</p>
