@@ -50,22 +50,74 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="section">
-            <h2>How We Use Your Data</h2>
+            <h2>User Control and Data Deletion</h2>
+            <p>You have full control over your data. Since TimeHopper stores your calendar information strictly within your browser's local storage:</p>
             <ul>
-                <li>To display your upcoming schedule and time blocks.</li>
-                <li>To provide desktop notifications for upcoming meetings.</li>
-                <li>To calculate time zone overlaps for team coordination.</li>
+                <li><strong>Deleting Data:</strong> You can delete all locally stored data at any time by clearing your browser's extension storage or by uninstalling the extension.</li>
+                <li><strong>Access and Export:</strong> You can access your data at any time simply by opening the extension popup. No accounts or requests are needed as the data never leaves your device.</li>
+                <li><strong>Requesting Deletion:</strong> Because we do not store your calendar data on our servers, we have no copy of your data to provide or delete upon request. Your data remains entirely under your personal control.</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>Data Sharing</h2>
-            <p>We do not sell, trade, or otherwise transfer your personal information to outside parties. As noted above, we use Amplitude for anonymous product analytics, and Google APIs for fetching your calendar data directly.</p>
+            <h2>International Privacy Rights (GDPR & CCPA)</h2>
+            <p>We respect international privacy standards, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). Under these regulations, you have the following rights:</p>
+            <ul>
+                <li><strong>Right to Erasure:</strong> Fulfilled by your ability to uninstall the extension or clear local storage.</li>
+                <li><strong>Right to Access:</strong> Fulfilled by your ability to view your data within the extension UI.</li>
+                <li><strong>Right to Object:</strong> You can object to anonymous analytics processing by reaching out to us.</li>
+            </ul>
+            <p>Our legal basis for processing your data is your <strong>explicit consent</strong> provided when you connect your Google Calendar, and our <strong>legitimate interest</strong> in providing the core time-syncing functionality of the tool.</p>
+        </div>
+
+        <div class="section">
+            <h2>Data Retention Policy</h2>
+            <p>Your data is retained only as long as necessary to provide the service:</p>
+            <ul>
+                <li><strong>Calendar Data:</strong> Retained in your local browser storage for the duration of your extension installation. It is permanently wiped upon uninstallation.</li>
+                <li><strong>Anonymous Analytics:</strong> Aggregated usage data (non-PII) is retained by Amplitude according to their standard retention policies for product improvement.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Third-Party Service Providers</h2>
+            <p>We only share data with the following essential service providers:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Purpose</th>
+                        <th>Data Handled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google APIs</strong></td>
+                        <td>Core Functionality</td>
+                        <td>Calendar events & email (Read-only)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Amplitude</strong></td>
+                        <td>Product Improvement</td>
+                        <td>Anonymous usage patterns (Non-PII)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Children's Privacy</h2>
+            <p>TimeHopper is not intended for use by children under the age of 13. We do not knowingly collect or solicit personal information from children. If we learn that we have collected personal information from a child under 13, we will delete that information as quickly as possible.</p>
+        </div>
+
+        <div class="section">
+            <h2>Changes to This Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this policy.</p>
         </div>
 
         <div class="section">
             <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at <a
+            <p>If you have any questions or concerns about this Privacy Policy or your data, please contact us at <a
                     href="mailto:support@timehopper.app">support@timehopper.app</a>.</p>
         </div>
     </div>
@@ -76,6 +128,26 @@ import Layout from '../layouts/Layout.astro';
         max-width: 800px;
         margin: 0 auto;
         padding: 40px 20px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        color: #2c3e50;
     }
 
     .header {
