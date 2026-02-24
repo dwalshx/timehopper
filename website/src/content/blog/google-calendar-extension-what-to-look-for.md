@@ -4,6 +4,9 @@ description: "A practical checklist for choosing a Google Calendar Chrome extens
 pubDate: 2026-02-15
 tags: ["google calendar", "chrome extension", "productivity", "time zones", "meeting alerts"]
 heroImage: "/images/icon128.png"
+sources:
+  - chrome_extension_permission_warnings_guidelines
+  - chrome_web_store_quality_guidelines
 ---
 
 <div class="answer-box">
@@ -11,7 +14,7 @@ heroImage: "/images/icon128.png"
   <p>The best Google Calendar extensions do three things well: <strong>(1) show your schedule instantly without context-switching</strong>, <strong>(2) keep meeting alerts reliable</strong>, and <strong>(3) prevent time zone mistakes</strong>—while staying lightweight, trustworthy, and easy to uninstall if it’s not a fit.</p>
 </div>
 
-If you’re comparing options, use the checklist below. It’s designed to help you avoid the most common “I loved it… until I didn’t” extension failures: missed meetings, notification chaos, confusing time zone behavior, and sketchy UX.
+If you’re comparing options, use the checklist below. It’s designed to help you avoid the most common “I loved it… until I didn’t” extension failures: missed meetings, notification chaos, confusing time zone behavior, and sketchy [UX and permissions](https://developer.chrome.com/docs/extensions/develop/concepts/permission-warnings).
 
 ---
 
@@ -32,7 +35,7 @@ Avoid:
 
 ### 2) Time zone clarity (especially for remote teams)
 Look for:
-- A visible “**What time is it in…**” tool or world clock
+- A visible [“What time is it in…” tool](https://support.google.com/calendar/answer/37064) or world clock
 - **Multiple time zones** displayed clearly (e.g., “SF / NY / LON”)
 - Meeting times that are explicit about **which time zone you’re viewing**
 - Daylight Savings handling that doesn’t require mental math
@@ -55,9 +58,9 @@ Look for:
 
 Avoid:
 - Extensions that create duplicate alerts with no control
-- Tools that depend on fragile browser notification settings without guidance
+- Tools that depend on fragile browser [notification settings](https://support.google.com/chrome/answer/3220216) without guidance
 
-**Reality:** Notifications fail for lots of reasons (browser, OS settings, Focus modes, permissions). A good extension acknowledges this and offers a sane “redundancy plan.”
+**Reality:** Notifications fail for lots of reasons (browser, OS settings, [Focus modes](https://support.apple.com/guide/mac-help/set-up-a-focus-to-stay-on-task-mchl613dc43f/mac), permissions). A good extension acknowledges this and offers a sane “redundancy plan.”
 
 ---
 

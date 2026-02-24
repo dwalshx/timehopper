@@ -4,12 +4,15 @@ description: "Coordinate effortlessly across continents. Learn the best practice
 pubDate: 2026-02-11
 tags: ["remote work", "productivity", "time zones"]
 heroImage: "/images/icon128.png"
+sources:
+  - google_calendar_settings_overview
+  - google_calendar_time_zones_desktop
 ---
 
 <div class="answer-box">
 	<h3>TL;DR: Key Takeaways</h3>
 	<ul>
-		<li><strong>Centralize your clock:</strong> Use a tool that shows team-relative time, not just UTC.</li>
+		<li><strong>Centralize your clock:</strong> Use a [tool or setting](https://support.google.com/calendar/answer/6084644) that shows team-relative time, not just UTC.</li>
 		<li><strong>Visualize overlaps:</strong> Find the "golden hours" where everyone is online.</li>
 		<li><strong>Asynchronous first:</strong> Only call meetings when real-time coordination is mission-critical.</li>
 	</ul>

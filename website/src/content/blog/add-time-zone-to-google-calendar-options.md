@@ -5,11 +5,14 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: add-time-zone-to-google-calendar-options
 tags: ["google calendar", "time zones", "how to", "remote teams"]
+sources:
+  - google_calendar_settings_overview
+  - google_calendar_time_zones_desktop
 ---
 
 # Add Time Zone to Google Calendar: Options + Best Workarounds
 
-**Direct answer:** The simplest way to “add a time zone” in Google Calendar is to enable a **Secondary time zone** (so you see two zones at once). For specific meetings, set the **event time zone** so the invite is anchored correctly.
+**Direct answer:** The simplest way to “add a time zone” in Google Calendar is to enable a **Secondary time zone** (so you see two zones at once). For specific meetings, set the **event time zone** so the invite is anchored correctly according to [Google Workspace settings](https://support.google.com/calendar/answer/6084644).
 
 Below are the practical options—plus workarounds that make cross-time-zone scheduling painless.
 

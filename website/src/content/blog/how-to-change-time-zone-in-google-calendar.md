@@ -5,17 +5,20 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: how-to-change-time-zone-in-google-calendar
 tags: ["google calendar", "time zones", "how to", "productivity"]
+sources:
+  - google_calendar_time_zones_desktop
+  - google_calendar_settings_overview
 ---
 
 # How to Change Time Zone in Google Calendar (Step-by-Step)
 
-**Direct answer:** To change time zones in Google Calendar, you usually need to adjust **(1) your display time zone** and sometimes **(2) the event’s time zone**. Most “wrong time” problems happen when those two are mismatched.
+**Direct answer:** To change time zones in Google Calendar, you usually need to adjust **(1) your display time zone** and sometimes **(2) the event’s time zone**. Most “wrong time” problems happen when those two are mismatched according to [Google Calendar Help](https://support.google.com/calendar/answer/37064?co=GENIE.Platform%3DDesktop&hl=en).
 
 ---
 
 ## Change your Google Calendar display time zone (web)
 
-**Direct answer:** Your display time zone controls how times appear in your calendar view.
+**Direct answer:** Your [display time zone](https://support.google.com/calendar/answer/6084644?co=GENIE.Platform%3DDesktop&hl=en) controls how times appear in your calendar view.
 
 1. Open Google Calendar (web)
 2. Click the **gear icon** → **Settings**

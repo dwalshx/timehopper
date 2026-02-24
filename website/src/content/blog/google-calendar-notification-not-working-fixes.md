@@ -5,11 +5,16 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: google-calendar-notification-not-working-fixes
 tags: ["google calendar", "notifications", "troubleshooting", "meeting alerts"]
+sources:
+  - google_calendar_missing_notifications_troubleshoot
+  - chrome_notifications_desktop
+  - apple_macos_notifications_settings
+  - windows_notifications_and_dnd
 ---
 
 # Google Calendar Notification Not Working? 9 Fixes That Actually Work
 
-**Direct answer:** When Google Calendar notifications stop working, it’s usually caused by **browser notification settings**, **OS Focus/Do Not Disturb**, **permission resets**, or **multiple devices/accounts**. Start with the 3 quick checks below, then run the full checklist.
+**Direct answer:** When Google Calendar notifications stop working, it’s usually caused by **browser notification settings**, **OS Focus/Do Not Disturb**, **permission resets**, or **multiple devices/accounts**. Start with the [Chrome notification checks](https://support.google.com/chrome/answer/3220216) below, then run the full checklist.
 
 ---
 
@@ -18,7 +23,7 @@ tags: ["google calendar", "notifications", "troubleshooting", "meeting alerts"]
 ### 1) Chrome notifications allowed
 **Direct answer:** If Chrome can’t send notifications, Calendar can’t notify you.
 
-- Chrome Settings → Site settings → Notifications
+- [Chrome Settings](https://support.google.com/chrome/answer/3220216) → Site settings → Notifications
 - Make sure notifications are allowed (and not blocked)
 
 ### 2) OS Focus / Do Not Disturb

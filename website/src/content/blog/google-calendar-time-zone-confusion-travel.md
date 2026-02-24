@@ -5,11 +5,14 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: google-calendar-time-zone-confusion-travel
 tags: ["google calendar", "time zones", "travel", "remote work"]
+sources:
+  - google_calendar_time_zones_desktop
+  - google_calendar_time_zones_android
 ---
 
 # Google Calendar Time Zone Confusion: Why Meetings “Move” When You Travel
 
-**Direct answer:** Meetings usually don’t “move.” What changes is the **time zone you’re viewing the calendar in** (display time zone) or the **time zone the event is anchored to** (event time zone). Travel and DST make these differences visible—and confusing.
+**Direct answer:** Meetings usually don’t “move.” What changes is the **time zone you’re viewing the calendar in** (display time zone) or the **time zone the event is anchored to** (event time zone). Travel and DST make these differences visible—and confusing—as detailed in [Google’s travel guide](https://support.google.com/calendar/answer/37064?co=GENIE.Platform%3DDesktop&hl=en).
 
 ---
 

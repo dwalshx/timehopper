@@ -5,11 +5,14 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: google-calendar-time-zone-what-it-controls
 tags: ["google calendar", "time zones", "remote work", "travel"]
+sources:
+  - google_calendar_time_zones_desktop
+  - google_calendar_settings_overview
 ---
 
 # Time Zone in Google Calendar: What It Controls vs What It Doesn’t
 
-**Direct answer:** Google Calendar time zones affect **how times are displayed** (your *display time zone*) and sometimes **what an event means** (the *event time zone*). Most confusion happens when people assume there’s only one setting.
+**Direct answer:** Google Calendar time zones affect **how times are displayed** (your *display time zone*) and sometimes **what an event means** (the *event time zone*). Most confusion happens when people assume there’s only one setting according to [Google’s core time zone documentation](https://support.google.com/calendar/answer/37064).
 
 This article clarifies the two layers, what each one controls, and how to choose the right setup.
 

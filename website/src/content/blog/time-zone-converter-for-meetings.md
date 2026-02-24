@@ -5,11 +5,14 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: time-zone-converter-for-meetings
 tags: ["time zone converter", "timezone converter", "meetings", "remote work"]
+sources:
+  - google_calendar_time_zones_desktop
+  - google_calendar_settings_overview
 ---
 
 # Time Zone Converter for Meetings: Convert Times Without Mental Math
 
-**Direct answer:** The best way to convert meeting times is to use a converter that shows **both time zones at once**, includes **DST awareness**, and makes it easy to sanity-check before you send the invite. Mental math is where mistakes happen.
+**Direct answer:** The best way to convert meeting times is to use a converter that shows **both time zones at once**, includes **DST awareness**, and makes it easy to sanity-check before you send the invite according to [Google’s documentation](https://support.google.com/calendar/answer/37064). Mental math is where mistakes happen.
 
 ---
 

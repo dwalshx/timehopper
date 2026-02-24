@@ -5,11 +5,14 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: google-calendar-add-ons-vs-chrome-extensions
 tags: ["google calendar", "add-ons", "chrome extension", "productivity"]
+sources:
+  - chrome_web_store_quality_guidelines
+  - chrome_extension_permissions_reference
 ---
 
 # Google Calendar Add-ons vs Chrome Extensions: What’s the Difference?
 
-**Direct answer:** Google Calendar add-ons typically run inside Google’s ecosystem (often as Workspace add-ons), while Chrome extensions live in your browser and can give you **toolbar quick-view**, **desktop alerts**, and **time zone tools** more directly. Choose based on where you want the workflow to live.
+**Direct answer:** Google Calendar add-ons typically run inside Google’s ecosystem (often as Workspace add-ons), while Chrome extensions live in your browser and can give you **toolbar quick-view**, **desktop alerts**, and **time zone tools** more directly according to [Chrome quality guidelines](https://developer.chrome.com/docs/webstore/program-policies/quality-guidelines-faq). Choose based on where you want the workflow to live.
 
 ---
 

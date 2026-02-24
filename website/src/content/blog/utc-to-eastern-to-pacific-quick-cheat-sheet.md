@@ -5,18 +5,21 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: utc-to-eastern-to-pacific-quick-cheat-sheet
 tags: ["utc", "time zones", "eastern time", "pacific time", "dst"]
+sources:
+  - google_calendar_time_zones_desktop
+  - google_calendar_settings_overview
 ---
 
 # UTC to Eastern / Pacific: A Quick Conversion Cheat Sheet (Plus DST Notes)
 
-**Direct answer:** UTC conversion depends on whether Eastern/Pacific are currently observing Standard Time or Daylight Time. During DST transition weeks, always double-check with a converter.
+**Direct answer:** UTC conversion depends on whether Eastern/Pacific are currently observing Standard Time or Daylight Time. During DST transition weeks, always double-check with a converter or [Google Calendar’s time zone guide](https://support.google.com/calendar/answer/37064).
 
 Because offsets change seasonally, this page focuses on a **safe method** plus a few common reference points.
 
 ---
 
 ## The safe method (always correct)
-**Direct answer:** Check whether the target zone is currently on Standard or Daylight time, then apply the correct offset.
+**Direct answer:** Check whether the target zone is currently on Standard or Daylight time, then apply the [correct offset](https://support.google.com/calendar/answer/37064).
 
 - Eastern: UTC-5 (Standard), UTC-4 (Daylight)
 - Pacific: UTC-8 (Standard), UTC-7 (Daylight)

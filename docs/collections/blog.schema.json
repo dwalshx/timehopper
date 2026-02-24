@@ -52,6 +52,13 @@
           },
           "default": []
         },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
         "canonical": {
           "type": "string"
         },

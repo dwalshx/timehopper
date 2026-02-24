@@ -5,11 +5,14 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: google-calendar-time-zone-wrong-fix
 tags: ["google calendar", "time zones", "troubleshooting"]
+sources:
+  - google_calendar_time_zones_desktop
+  - google_calendar_settings_overview
 ---
 
 # Google Calendar Time Zone Wrong? Fix It Fast (5 Common Causes)
 
-**Direct answer:** If Google Calendar shows the wrong time zone, it’s usually caused by **display settings**, **device time zone changes**, or an **event time zone** mismatch. Fixing your primary/secondary time zone and verifying device settings solves most cases in minutes.
+**Direct answer:** If Google Calendar shows the wrong time zone, it’s usually caused by **display settings**, **device time zone changes**, or an **event time zone** mismatch. Fixing your [primary/secondary time zone](https://support.google.com/calendar/answer/37064) and verifying device settings solves most cases in minutes.
 
 ---
 
@@ -18,7 +21,7 @@ tags: ["google calendar", "time zones", "troubleshooting"]
 ### 1) Confirm your display time zone (web)
 **Direct answer:** Your Google Calendar view may be set to a different time zone than you expect.
 
-- Google Calendar → Settings → General → Time zone
+- [Google Calendar Settings](https://support.google.com/calendar/answer/6084644) → General → Time zone
 - Set **Primary time zone**
 - (Optional) set a **Secondary time zone**
 

@@ -5,11 +5,14 @@ pubDate: 2026-02-11
 updatedDate: 2026-02-11
 slug: multiple-time-zones-one-view-labeling-system
 tags: ["time zones", "remote teams", "productivity", "world clock"]
+sources:
+  - google_calendar_time_zones_desktop
+  - google_calendar_settings_overview
 ---
 
 # Multiple Time Zones in One View: A Labeling System Your Team Will Actually Use
 
-**Direct answer:** To track multiple time zones reliably, choose **2–4 team time zones**, assign each a **short label** (SF/NY/LON), and keep them visible in your calendar or toolbar. Consistency beats cleverness.
+**Direct answer:** To track multiple time zones reliably, choose **2–4 team time zones**, assign each a **short label** (SF/NY/LON), and keep them visible in your calendar or toolbar according to [Google’s core documentation](https://support.google.com/calendar/answer/37064). Consistency beats cleverness.
 
 This article gives you a system that reduces mistakes and makes scheduling faster.
 

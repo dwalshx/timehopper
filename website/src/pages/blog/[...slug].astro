@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
+import sources from '../../data/sources.json';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -63,6 +64,26 @@ const breadcrumbs = [
 		<div class="content">
 			<Content />
 		</div>
+
+		{post.data.sources && post.data.sources.length > 0 && (
+			<section class="sources-section">
+				<hr />
+				<h2>Sources</h2>
+				<ul>
+					{post.data.sources.map(sourceId => {
+						const source = sources[sourceId];
+						return source ? (
+							<li>
+								<a href={source.url} target="_blank" rel="noopener noreferrer">
+									{source.title}
+								</a>
+								{source.publisher && <span class="publisher"> ({source.publisher})</span>}
+							</li>
+						) : null;
+					})}
+				</ul>
+			</section>
+		)}
 
 		<RelatedPosts currentPost={post} />
 
