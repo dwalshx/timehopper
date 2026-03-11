@@ -1,8 +1,8 @@
 ---
 title: "Google Calendar Notifications Not Working in Chrome? Fix This Checklist"
 description: "Restore missing Google Calendar desktop alerts in Chrome by troubleshooting site permissions, OS Focus modes, and sync errors."
-pubDate: 2026-03-12
-updatedDate: 2026-03-12
+pubDate: 2026-03-10
+updatedDate: 2026-03-10
 slug: google-calendar-notifications-not-working-chrome
 tags: ["google calendar", "notifications", "chrome", "troubleshooting"]
 sources:

@@ -1,8 +1,8 @@
 ---
 title: "How to Change Time Zone in Google Calendar (The Complete Guide)"
 description: "Master Google Calendar time zone settings: how to change your primary zone, add secondary zones, and understand the difference between display vs event time."
-pubDate: 2026-03-14
-updatedDate: 2026-03-14
+pubDate: 2026-03-10
+updatedDate: 2026-03-10
 slug: how-to-change-time-zone-in-google-calendar
 tags: ["google calendar", "time zones", "how to", "productivity"]
 sources:

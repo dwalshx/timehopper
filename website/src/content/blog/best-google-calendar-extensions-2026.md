@@ -1,8 +1,8 @@
 ---
 title: "Best Google Calendar Extensions for 2026: The Efficiency Roundup"
 description: "Discover the best Google Calendar Chrome extensions for 2026. A curated list focusing on AI scheduling, quick access, and privacy-first time management."
-pubDate: 2026-03-16
-updatedDate: 2026-03-16
+pubDate: 2026-03-10
+updatedDate: 2026-03-10
 slug: best-google-calendar-extensions-2026
 tags: ["google calendar", "extensions", "chrome", "productivity", "reviews"]
 sources:
