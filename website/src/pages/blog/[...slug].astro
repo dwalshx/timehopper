@@ -57,7 +57,7 @@ const breadcrumbs = [
 					})}
 				</time>
 			</div>
-			<h1>{post.data.title}</h1>
+
 			{post.data.heroImage && <img src={post.data.heroImage} alt="" class="hero-img" />}
 		</header>
 		
@@ -111,6 +111,7 @@ const breadcrumbs = [
 	}
 
 	.blog-post h1 {
+		text-align: center;
 		font-size: 3rem;
 		line-height: 1.1;
 		margin: 0 0 2rem;
