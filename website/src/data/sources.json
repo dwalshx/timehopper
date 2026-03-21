@@ -98,5 +98,20 @@
         "title": "Chrome for Developers: Extensions quality guidelines FAQ",
         "url": "https://developer.chrome.com/docs/webstore/program-policies/quality-guidelines-faq",
         "publisher": "Google"
+    },
+    "clockwise_chrome_store": {
+        "title": "Clockwise: AI-Powered Scheduling Assistant",
+        "url": "https://chrome.google.com/webstore/detail/clockwise-ai-powered-sche/kmoacejmccmdnpjjpnmmfmmjclocglfm",
+        "publisher": "Clockwise"
+    },
+    "reclaim_ai_chrome_store": {
+        "title": "Reclaim.ai: Smart Scheduling for Google Calendar",
+        "url": "https://workspace.google.com/marketplace/app/reclaimai/950518663892",
+        "publisher": "Reclaim.ai"
+    },
+    "checker_plus_google_calendar": {
+        "title": "Checker Plus for Google Calendar",
+        "url": "https://chromewebstore.google.com/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha",
+        "publisher": "Jason Savard"
     }
 }
