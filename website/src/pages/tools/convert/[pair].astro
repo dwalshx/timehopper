@@ -1,0 +1,436 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import JsonLd from '../../../components/JsonLd.astro';
+import TimezoneConverter from '../../../components/TimezoneConverter.astro';
+import { pairs, type TimezonePair } from '../../../data/timezone-pairs';
+
+export function getStaticPaths() {
+  return pairs.map((pair) => ({
+    params: { pair: pair.slug },
+    props: { pair },
+  }));
+}
+
+interface Props {
+  pair: TimezonePair;
+}
+
+const { pair } = Astro.props;
+
+// Generate 24-hour conversion table
+function generateConversionTable(fromOffset: number, toOffset: number) {
+  const diff = toOffset - fromOffset;
+  const rows = [];
+  for (let h = 0; h < 24; h++) {
+    let converted = h + diff;
+    let dayNote = '';
+    if (converted >= 24) {
+      converted -= 24;
+      dayNote = ' (+1 day)';
+    } else if (converted < 0) {
+      converted += 24;
+      dayNote = ' (−1 day)';
+    }
+    rows.push({
+      fromHour: `${String(h).padStart(2, '0')}:00`,
+      toHour: `${String(Math.floor(converted)).padStart(2, '0')}:${converted % 1 === 0.5 ? '30' : '00'}${dayNote}`,
+    });
+  }
+  return rows;
+}
+
+const stdRows = generateConversionTable(pair.from.stdOffset, pair.to.stdOffset);
+const dstRows = (pair.from.hasDST || pair.to.hasDST)
+  ? generateConversionTable(pair.from.dstOffset, pair.to.dstOffset)
+  : null;
+
+const stdDiff = pair.to.stdOffset - pair.from.stdOffset;
+const dstDiff = pair.to.dstOffset - pair.from.dstOffset;
+const stdDiffStr = stdDiff >= 0 ? `+${stdDiff}` : `${stdDiff}`;
+const dstDiffStr = dstDiff >= 0 ? `+${dstDiff}` : `${dstDiff}`;
+
+// Related pairs (same from or to zone, max 6)
+const relatedPairs = pairs
+  .filter(p => p.slug !== pair.slug && (p.from.abbr === pair.from.abbr || p.to.abbr === pair.to.abbr || p.from.abbr === pair.to.abbr || p.to.abbr === pair.from.abbr))
+  .slice(0, 6);
+
+const breadcrumbs = [
+  { name: 'Home', item: '/index.html' },
+  { name: 'Time Zone Converter', item: '/tools/convert.html' },
+  { name: `${pair.from.abbr} to ${pair.to.abbr}`, item: `/tools/convert/${pair.slug}.html` },
+];
+
+const faqJsonLd = {
+  mainEntity: pair.faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+
+const halfHourOffsets = [pair.from.stdOffset, pair.to.stdOffset, pair.from.dstOffset, pair.to.dstOffset].some(o => o % 1 !== 0);
+---
+
+<Layout
+  title={`${pair.title} — TimeHopper`}
+  description={pair.description}
+  breadcrumbs={breadcrumbs}
+>
+  <JsonLd type="FAQPage" data={faqJsonLd} />
+
+  <main class="container converter-page">
+    <h1>{pair.title}</h1>
+
+    <p class="quick-answer">
+      <strong>Quick answer:</strong> {pair.from.abbr} is UTC{pair.from.stdOffset >= 0 ? '+' : ''}{pair.from.stdOffset}{pair.from.hasDST ? ` (${pair.from.dstAbbr}: UTC${pair.from.dstOffset >= 0 ? '+' : ''}${pair.from.dstOffset} during daylight saving)` : ''}.
+      {pair.to.abbr} is UTC{pair.to.stdOffset >= 0 ? '+' : ''}{pair.to.stdOffset}{pair.to.hasDST ? ` (${pair.to.dstAbbr}: UTC${pair.to.dstOffset >= 0 ? '+' : ''}${pair.to.dstOffset} during daylight saving)` : ''}.
+      The difference is <strong>{Math.abs(stdDiff)} hour{Math.abs(stdDiff) !== 1 ? 's' : ''}</strong>{stdDiff !== dstDiff ? ` (standard) or <strong>${Math.abs(dstDiff)} hour${Math.abs(dstDiff) !== 1 ? 's' : ''}</strong> (daylight saving)` : ''}.
+    </p>
+
+    <TimezoneConverter
+      fromAbbr={pair.from.abbr}
+      fromName={pair.from.region}
+      fromIana={pair.from.iana}
+      toAbbr={pair.to.abbr}
+      toName={pair.to.region}
+      toIana={pair.to.iana}
+    />
+
+    <section class="conversion-tables">
+      <h2>{pair.from.abbr} to {pair.to.abbr} Conversion Table{stdDiff !== dstDiff ? ' (Standard Time)' : ''}</h2>
+      <p>Offset: {pair.from.abbr} {stdDiffStr} hours = {pair.to.abbr}{pair.from.hasDST || pair.to.hasDST ? `. Applies during standard time (${pair.from.hasDST ? pair.from.abbr : pair.from.abbr}${pair.to.hasDST ? '/' + pair.to.abbr : ''}).` : '.'}</p>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>{pair.from.abbr}</th>
+              <th>{pair.to.abbr}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stdRows.map(row => (
+              <tr>
+                <td>{row.fromHour}</td>
+                <td>{row.toHour}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {dstRows && stdDiff !== dstDiff && (
+        <>
+          <h2>{pair.from.dstAbbr} to {pair.to.dstAbbr} Conversion Table (Daylight Saving Time)</h2>
+          <p>Offset: {pair.from.dstAbbr} {dstDiffStr} hours = {pair.to.dstAbbr}. Applies when {pair.from.hasDST && pair.to.hasDST ? 'both zones are' : pair.from.hasDST ? `${pair.from.region} is` : `${pair.to.region} is`} observing daylight saving time.</p>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>{pair.from.dstAbbr}</th>
+                  <th>{pair.to.dstAbbr}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dstRows.map(row => (
+                  <tr>
+                    <td>{row.fromHour}</td>
+                    <td>{row.toHour}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+    </section>
+
+    <section class="context-content">
+      <Fragment set:html={pair.contextContent.replace(/\n\n/g, '</p><p>').replace(/^/, '<p>').replace(/$/, '</p>')} />
+    </section>
+
+    {(pair.from.hasDST || pair.to.hasDST) && (
+      <section class="dst-section">
+        <h2>Daylight Saving Time: What Changes</h2>
+        {pair.from.hasDST && pair.to.hasDST && stdDiff === dstDiff ? (
+          <p>
+            Both {pair.from.abbr} and {pair.to.abbr} observe daylight saving time. Since they typically switch on the same schedule, the
+            <strong> {Math.abs(stdDiff)}-hour difference stays constant year-round</strong> — except during the brief
+            transition windows when one zone has switched and the other hasn't yet. During those 1-2 weeks, the
+            offset shifts by one hour.
+          </p>
+        ) : pair.from.hasDST && pair.to.hasDST ? (
+          <p>
+            Both zones observe daylight saving time, but they may switch on different dates. During standard time, the
+            difference is {Math.abs(stdDiff)} hour{Math.abs(stdDiff) !== 1 ? 's' : ''}. During daylight saving time, it's {Math.abs(dstDiff)} hour{Math.abs(dstDiff) !== 1 ? 's' : ''}.
+            In the transition weeks between DST changeovers, the offset can temporarily be {Math.abs(stdDiff) !== Math.abs(dstDiff) ? `${Math.min(Math.abs(stdDiff), Math.abs(dstDiff))} or ${Math.max(Math.abs(stdDiff), Math.abs(dstDiff))} hours` : 'different'}.
+            Always verify with a converter during March and October/November.
+          </p>
+        ) : (
+          <p>
+            {pair.from.hasDST ? pair.from.region : pair.to.region} observes daylight saving time, but
+            {!pair.from.hasDST ? ` ${pair.from.region}` : ` ${pair.to.region}`} does not. This means the offset between
+            {pair.from.abbr} and {pair.to.abbr} changes seasonally: <strong>{Math.abs(stdDiff)} hour{Math.abs(stdDiff) !== 1 ? 's' : ''} during standard time</strong>
+            and <strong>{Math.abs(dstDiff)} hour{Math.abs(dstDiff) !== 1 ? 's' : ''} during daylight saving</strong>. Double-check the current offset during
+            transition weeks in March and November.
+          </p>
+        )}
+      </section>
+    )}
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      {pair.faqs.map(faq => (
+        <div class="faq-item">
+          <h3>{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </div>
+      ))}
+    </section>
+
+    {relatedPairs.length > 0 && (
+      <section class="related-conversions">
+        <h2>Related Conversions</h2>
+        <div class="related-grid">
+          {relatedPairs.map(rp => (
+            <a href={`/tools/convert/${rp.slug}.html`} class="related-link">
+              {rp.from.abbr} → {rp.to.abbr}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="blog-links">
+      <h2>Learn More</h2>
+      <ul>
+        <li><a href="/blog/how-to-change-time-zone-in-google-calendar.html">How to change your time zone in Google Calendar</a></li>
+        <li><a href="/blog/add-secondary-time-zone-google-calendar.html">Add a secondary time zone to your calendar</a></li>
+        <li><a href="/blog/utc-to-eastern-to-pacific-quick-cheat-sheet.html">UTC to Eastern/Pacific conversion guide</a></li>
+        <li><a href="/blog/google-calendar-time-zone-what-it-controls.html">What Google Calendar's time zone setting actually controls</a></li>
+      </ul>
+    </section>
+
+    <footer class="page-footer">
+      <a href="/tools/convert.html">← All time zone converters</a>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .converter-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  .converter-page h1 {
+    font-size: 2.2rem;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .quick-answer {
+    text-align: center;
+    color: #475569;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .conversion-tables h2 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .conversion-tables p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+  }
+
+  .conversion-tables table {
+    width: 100%;
+    max-width: 400px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .conversion-tables thead {
+    background: #f8fafc;
+  }
+
+  .conversion-tables th {
+    padding: 10px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #e2e8f0;
+    font-size: 0.9rem;
+  }
+
+  .conversion-tables td {
+    padding: 8px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    font-size: 0.95rem;
+  }
+
+  .conversion-tables tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .conversion-tables tbody tr:hover {
+    background: #f8fafc;
+  }
+
+  .context-content {
+    margin: 3rem 0;
+    line-height: 1.7;
+    color: #334155;
+    font-size: 1.05rem;
+  }
+
+  .context-content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .dst-section {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 2rem 0;
+  }
+
+  .dst-section h2 {
+    font-size: 1.3rem;
+    color: #92400e;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .dst-section p {
+    color: #78350f;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .faq-section {
+    margin: 3rem 0;
+  }
+
+  .faq-section h2 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .related-conversions {
+    margin: 3rem 0;
+  }
+
+  .related-conversions h2 {
+    font-size: 1.3rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .related-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    color: #334155 !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .related-link:hover {
+    background: #e2e8f0;
+    text-decoration: none;
+  }
+
+  .blog-links {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .blog-links h2 {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+  }
+
+  .blog-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .blog-links li {
+    padding: 6px 0;
+  }
+
+  .blog-links a {
+    font-size: 0.95rem;
+  }
+
+  .page-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  @media (max-width: 600px) {
+    .converter-page h1 {
+      font-size: 1.6rem;
+    }
+
+    .conversion-tables table {
+      max-width: 100%;
+    }
+  }
+</style>

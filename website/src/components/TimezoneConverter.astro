@@ -1,0 +1,317 @@
+---
+interface Props {
+  fromAbbr: string;
+  fromName: string;
+  fromIana: string;
+  toAbbr: string;
+  toName: string;
+  toIana: string;
+}
+
+const { fromAbbr, fromName, fromIana, toAbbr, toName, toIana } = Astro.props;
+---
+
+<div class="converter-widget" data-from-iana={fromIana} data-to-iana={toIana} data-from-abbr={fromAbbr} data-to-abbr={toAbbr}>
+  <div class="converter-clocks">
+    <div class="clock-panel">
+      <div class="clock-label">{fromAbbr} — {fromName}</div>
+      <div class="clock-time" id="from-time">--:--</div>
+      <div class="clock-date" id="from-date">Loading...</div>
+      <div class="clock-dst" id="from-dst"></div>
+    </div>
+    <div class="clock-arrow">→</div>
+    <div class="clock-panel">
+      <div class="clock-label">{toAbbr} — {toName}</div>
+      <div class="clock-time" id="to-time">--:--</div>
+      <div class="clock-date" id="to-date">Loading...</div>
+      <div class="clock-dst" id="to-dst"></div>
+    </div>
+  </div>
+
+  <div class="converter-input">
+    <label for="convert-hour">Convert a specific time:</label>
+    <div class="input-row">
+      <select id="convert-hour">
+        {Array.from({ length: 24 }, (_, i) => i).map(h => (
+          <option value={h} selected={h === 9}>{String(h).padStart(2, '0')}:00</option>
+        ))}
+      </select>
+      <span class="input-zone">{fromAbbr}</span>
+      <span class="input-equals">=</span>
+      <span class="converted-result" id="converted-result">--:-- {toAbbr}</span>
+    </div>
+    <p class="convert-note" id="convert-note"></p>
+  </div>
+</div>
+
+<script>
+  function initConverter() {
+    const widget = document.querySelector('.converter-widget') as HTMLElement;
+    if (!widget) return;
+
+    const fromIana = widget.dataset.fromIana!;
+    const toIana = widget.dataset.toIana!;
+    const fromAbbr = widget.dataset.fromAbbr!;
+    const toAbbr = widget.dataset.toAbbr!;
+
+    function formatTime(date: Date, iana: string): string {
+      return date.toLocaleTimeString('en-US', {
+        timeZone: iana,
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      });
+    }
+
+    function formatDate(date: Date, iana: string): string {
+      return date.toLocaleDateString('en-US', {
+        timeZone: iana,
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+      });
+    }
+
+    function getDSTLabel(date: Date, iana: string, stdAbbr: string): string {
+      const jan = new Date(date.getFullYear(), 0, 1);
+      const jul = new Date(date.getFullYear(), 6, 1);
+      const janOffset = new Date(jan.toLocaleString('en-US', { timeZone: iana })).getTime() - jan.getTime();
+      const julOffset = new Date(jul.toLocaleString('en-US', { timeZone: iana })).getTime() - jul.getTime();
+      const nowOffset = new Date(date.toLocaleString('en-US', { timeZone: iana })).getTime() - date.getTime();
+
+      if (janOffset === julOffset) return ''; // No DST
+      const isDST = nowOffset !== Math.min(janOffset, julOffset);
+      return isDST ? 'Currently observing daylight saving time' : 'Currently on standard time';
+    }
+
+    function updateClocks() {
+      const now = new Date();
+
+      const fromTimeEl = document.getElementById('from-time');
+      const fromDateEl = document.getElementById('from-date');
+      const fromDstEl = document.getElementById('from-dst');
+      const toTimeEl = document.getElementById('to-time');
+      const toDateEl = document.getElementById('to-date');
+      const toDstEl = document.getElementById('to-dst');
+
+      if (fromTimeEl) fromTimeEl.textContent = formatTime(now, fromIana);
+      if (fromDateEl) fromDateEl.textContent = formatDate(now, fromIana);
+      if (fromDstEl) fromDstEl.textContent = getDSTLabel(now, fromIana, fromAbbr);
+      if (toTimeEl) toTimeEl.textContent = formatTime(now, toIana);
+      if (toDateEl) toDateEl.textContent = formatDate(now, toIana);
+      if (toDstEl) toDstEl.textContent = getDSTLabel(now, toIana, toAbbr);
+    }
+
+    function updateConversion() {
+      const hourSelect = document.getElementById('convert-hour') as HTMLSelectElement;
+      const resultEl = document.getElementById('converted-result');
+      const noteEl = document.getElementById('convert-note');
+      if (!hourSelect || !resultEl) return;
+
+      const hour = parseInt(hourSelect.value);
+
+      // Create a date in the "from" timezone at the selected hour
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-CA', { timeZone: fromIana }); // YYYY-MM-DD
+      const fromDate = new Date(`${dateStr}T${String(hour).padStart(2, '0')}:00:00`);
+
+      // Get the offset for the from timezone
+      const fromLocal = new Date(fromDate.toLocaleString('en-US', { timeZone: fromIana }));
+      const diff = fromDate.getTime() - fromLocal.getTime();
+      const utcDate = new Date(fromDate.getTime() + diff);
+
+      const convertedTime = utcDate.toLocaleTimeString('en-US', {
+        timeZone: toIana,
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      });
+
+      const convertedDate = utcDate.toLocaleDateString('en-US', {
+        timeZone: toIana,
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+      });
+
+      const fromDay = utcDate.toLocaleDateString('en-US', {
+        timeZone: fromIana,
+        day: 'numeric',
+      });
+
+      const toDay = utcDate.toLocaleDateString('en-US', {
+        timeZone: toIana,
+        day: 'numeric',
+      });
+
+      resultEl.textContent = `${convertedTime} ${toAbbr}`;
+
+      if (noteEl) {
+        if (fromDay !== toDay) {
+          noteEl.textContent = `Note: This crosses a date boundary — the converted time falls on ${convertedDate}.`;
+        } else {
+          noteEl.textContent = '';
+        }
+      }
+    }
+
+    // Initialize
+    updateClocks();
+    updateConversion();
+
+    // Update clocks every second
+    setInterval(updateClocks, 1000);
+
+    // Update conversion when hour changes
+    const hourSelect = document.getElementById('convert-hour');
+    if (hourSelect) {
+      hourSelect.addEventListener('change', updateConversion);
+    }
+  }
+
+  // Run on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initConverter);
+  } else {
+    initConverter();
+  }
+</script>
+
+<style>
+  .converter-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 32px;
+    margin: 2rem 0;
+  }
+
+  .converter-clocks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .clock-panel {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .clock-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .clock-time {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+
+  .clock-date {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 4px;
+  }
+
+  .clock-dst {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 4px;
+    min-height: 1.2em;
+  }
+
+  .clock-arrow {
+    font-size: 2rem;
+    color: #94a3b8;
+    font-weight: 300;
+    flex-shrink: 0;
+  }
+
+  .converter-input {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 24px;
+  }
+
+  .converter-input label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 12px;
+  }
+
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .input-row select {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: white;
+    color: #1e293b;
+    cursor: pointer;
+  }
+
+  .input-zone {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.95rem;
+  }
+
+  .input-equals {
+    color: #94a3b8;
+    font-size: 1.2rem;
+  }
+
+  .converted-result {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fd547a;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .convert-note {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 8px;
+    min-height: 1.2em;
+  }
+
+  @media (max-width: 600px) {
+    .converter-clocks {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .clock-arrow {
+      transform: rotate(90deg);
+    }
+
+    .clock-time {
+      font-size: 2rem;
+    }
+
+    .converter-widget {
+      padding: 20px;
+    }
+  }
+</style>

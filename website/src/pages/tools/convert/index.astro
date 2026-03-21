@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { pairs } from '../../../data/timezone-pairs';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/index.html' },
+  { name: 'Time Zone Converter', item: '/tools/convert.html' },
+];
+
+// Group pairs by "from" zone
+const grouped = pairs.reduce((acc, pair) => {
+  const key = pair.from.abbr;
+  if (!acc[key]) acc[key] = [];
+  acc[key].push(pair);
+  return acc;
+}, {} as Record<string, typeof pairs>);
+---
+
+<Layout
+  title="Time Zone Converter — Convert Times Between Any Zone — TimeHopper"
+  description="Convert times between time zones instantly. Quick converters for PST to EST, UTC to EST, GMT to PST, IST to EST, and 20+ popular zone pairs."
+  breadcrumbs={breadcrumbs}
+>
+  <main class="container converter-index">
+    <h1>Time Zone Converter</h1>
+    <p class="subtitle">Select a conversion pair to see live times, full conversion tables, and DST rules.</p>
+
+    <div class="pairs-grid">
+      {pairs.map(pair => (
+        <a href={`/tools/convert/${pair.slug}.html`} class="pair-card">
+          <div class="pair-zones">
+            <span class="zone-abbr">{pair.from.abbr}</span>
+            <span class="zone-arrow">→</span>
+            <span class="zone-abbr">{pair.to.abbr}</span>
+          </div>
+          <div class="pair-name">{pair.from.region} to {pair.to.region}</div>
+          <div class="pair-offset">
+            {Math.abs(pair.to.stdOffset - pair.from.stdOffset)} hour{Math.abs(pair.to.stdOffset - pair.from.stdOffset) !== 1 ? 's' : ''} difference
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <section class="how-it-works">
+      <h2>How to use this converter</h2>
+      <p>Each converter page shows:</p>
+      <ul>
+        <li><strong>Live clocks</strong> — current time in both zones, updated every second</li>
+        <li><strong>Interactive converter</strong> — select any hour and see the converted time instantly</li>
+        <li><strong>Full conversion table</strong> — all 24 hours mapped between zones</li>
+        <li><strong>DST rules</strong> — when offsets change and what to watch for</li>
+      </ul>
+      <p>
+        For a more permanent solution, <a href="/blog/add-secondary-time-zone-google-calendar.html">add a secondary time zone to Google Calendar</a>
+        so you always see both zones side by side. Or install
+        <a href="https://chromewebstore.google.com/detail/timehopper-calendar-clock/jckljcbopecepadagmnjbfjgojpnfkhl">TimeHopper</a>
+        to see multiple time zones in your browser toolbar without switching tabs.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .converter-index {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  .converter-index h1 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .pairs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 4rem;
+  }
+
+  .pair-card {
+    display: block;
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .pair-card:hover {
+    border-color: #fd547a;
+    box-shadow: 0 4px 12px rgba(253, 84, 122, 0.1);
+    text-decoration: none;
+  }
+
+  .pair-zones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .zone-abbr {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .zone-arrow {
+    color: #94a3b8;
+    font-size: 1rem;
+  }
+
+  .pair-name {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 4px;
+  }
+
+  .pair-offset {
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+
+  .how-it-works {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 2rem;
+  }
+
+  .how-it-works h2 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  .how-it-works p, .how-it-works li {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .how-it-works ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .how-it-works li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .converter-index h1 {
+      font-size: 1.8rem;
+    }
+
+    .pairs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
