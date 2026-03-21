@@ -32,13 +32,19 @@ const grouped = pairs.reduce((acc, pair) => {
     <div class="container">
       <div class="pairs-grid">
         {pairs.map(pair => (
-          <a href={`/tools/convert/${pair.slug}.html`} class="pair-card">
+          <a href={`/tools/convert/${pair.slug}.html`} class="pair-card" data-from-iana={pair.from.iana} data-to-iana={pair.to.iana}>
             <div class="pair-zones">
-              <span class="zone-from">{pair.from.abbr}</span>
+              <div class="zone-col">
+                <span class="zone-abbr">{pair.from.abbr}</span>
+                <span class="zone-time" data-role="from-time">--:--</span>
+              </div>
               <span class="zone-arrow">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
-              <span class="zone-to">{pair.to.abbr}</span>
+              <div class="zone-col">
+                <span class="zone-abbr">{pair.to.abbr}</span>
+                <span class="zone-time" data-role="to-time">--:--</span>
+              </div>
             </div>
             <div class="pair-name">{pair.from.region} to {pair.to.region}</div>
             <div class="pair-meta">
@@ -103,6 +109,46 @@ const grouped = pairs.reduce((acc, pair) => {
   </main>
 </Layout>
 
+<script>
+  function initCardClocks() {
+    const cards = document.querySelectorAll('.pair-card') as NodeListOf<HTMLElement>;
+    if (!cards.length) return;
+
+    function formatTime(date: Date, iana: string): string {
+      return date.toLocaleTimeString('en-US', {
+        timeZone: iana,
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+      });
+    }
+
+    function updateAll() {
+      const now = new Date();
+      cards.forEach(card => {
+        const fromIana = card.dataset.fromIana;
+        const toIana = card.dataset.toIana;
+        if (!fromIana || !toIana) return;
+
+        const fromEl = card.querySelector('[data-role="from-time"]');
+        const toEl = card.querySelector('[data-role="to-time"]');
+
+        if (fromEl) fromEl.textContent = formatTime(now, fromIana);
+        if (toEl) toEl.textContent = formatTime(now, toIana);
+      });
+    }
+
+    updateAll();
+    setInterval(updateAll, 30000); // Update every 30s (minute-level precision is fine for cards)
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCardClocks);
+  } else {
+    initCardClocks();
+  }
+</script>
+
 <style>
   .converter-index {
     padding-bottom: 60px;
@@ -137,7 +183,7 @@ const grouped = pairs.reduce((acc, pair) => {
   /* ── Pairs Grid ── */
   .pairs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 12px;
     margin: 36px 0 48px;
   }
@@ -162,21 +208,37 @@ const grouped = pairs.reduce((acc, pair) => {
   .pair-zones {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
-  .zone-from, .zone-to {
+  .zone-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .zone-abbr {
     font-size: 1.4rem;
     font-weight: 800;
     color: #1e293b;
     letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .zone-time {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fd547a;
+    font-variant-numeric: tabular-nums;
+    min-width: 65px;
   }
 
   .zone-arrow {
     color: #cbd5e1;
     display: flex;
     align-items: center;
+    margin-top: -14px;
   }
 
   .pair-card:hover .zone-arrow {
