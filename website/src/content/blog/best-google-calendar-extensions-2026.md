@@ -1,6 +1,6 @@
 ---
-title: "10 Best Google Calendar Extensions for Chrome (2026)"
-description: "A side-by-side comparison of the best Google Calendar Chrome extensions in 2026 — with real Chrome Web Store data, permissions audits, and honest recommendations by use case."
+title: "10 Best Google Calendar Chrome Extensions (2026)"
+description: "Side-by-side comparison with real Web Store data, permissions audits, and honest picks by use case. Updated for 2026."
 pubDate: 2026-03-18
 updatedDate: 2026-03-20
 slug: best-google-calendar-extensions-2026

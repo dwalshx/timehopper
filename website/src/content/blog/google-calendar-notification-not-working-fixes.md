@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Notification Not Working? Here's How to Fix It"
-description: "Google Calendar notifications not working? Identify whether desktop, email, or mobile alerts broke, then follow the right fix for your platform."
+title: "Google Calendar Notification Not Working? 6 Fixes by Platform"
+description: "Notifications silent on desktop, email, or mobile? Pinpoint which alert type broke and follow the platform-specific fix to restore them fast."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: google-calendar-notification-not-working-fixes

@@ -1,6 +1,6 @@
 ---
-title: "How to Show Week Numbers in Google Calendar (and Why They Matter for Planning)"
-description: "Enable week numbers in Google Calendar for sprint planning, quarterly reviews, and cross-team coordination. Covers ISO weeks, mobile limitations, and common mistakes."
+title: "Show Week Numbers in Google Calendar (1-Click Setup)"
+description: "Turn on week numbers in Google Calendar for sprint planning and quarterly reviews. Covers ISO week numbering, mobile limits, and common pitfalls."
 pubDate: 2026-02-25
 updatedDate: 2026-03-20
 slug: show-week-numbers-google-calendar

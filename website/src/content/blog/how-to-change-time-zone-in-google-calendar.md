@@ -1,6 +1,6 @@
 ---
-title: "How to Change Time Zone in Google Calendar (Desktop, Android, iOS)"
-description: "Step-by-step instructions for changing your Google Calendar time zone on every platform — plus the display vs. event zone distinction that prevents scheduling errors."
+title: "Change Your Google Calendar Time Zone (Every Platform)"
+description: "Change your Google Calendar time zone on desktop, Android, and iOS. Plus the display vs. event zone setting most people get wrong."
 pubDate: 2026-03-10
 updatedDate: 2026-03-20
 slug: how-to-change-time-zone-in-google-calendar

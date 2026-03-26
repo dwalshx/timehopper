@@ -1,6 +1,6 @@
 ---
-title: "UTC to Eastern and Pacific Time: Quick Conversion Guide (With DST Rules)"
-description: "Convert UTC to Eastern and Pacific time instantly. Includes conversion tables for standard and daylight saving time, plus rules to avoid DST mistakes."
+title: "UTC to Eastern & Pacific Time: Cheat Sheet + DST Rules"
+description: "Instant UTC-to-ET and UTC-to-PT conversion tables for standard and daylight saving time. Copy-paste reference with DST switchover dates."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: utc-to-eastern-to-pacific-quick-cheat-sheet

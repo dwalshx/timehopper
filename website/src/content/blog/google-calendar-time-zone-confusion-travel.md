@@ -1,6 +1,6 @@
 ---
-title: "How to Manage Google Calendar Time Zones While Traveling"
-description: "A practical guide to managing Google Calendar time zones before, during, and after travel. Covers the swap-or-stay decision, mobile settings, and a pre-flight checklist."
+title: "Google Calendar Time Zones for Travel: Pre-Flight Checklist"
+description: "Avoid scrambled meeting times on your next trip. Use this before/during/after checklist to keep Google Calendar time zones under control."
 pubDate: 2026-03-12
 updatedDate: 2026-03-20
 slug: google-calendar-time-zone-confusion-travel

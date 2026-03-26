@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Reminders Not Working? Here's What Changed and How to Fix It"
-description: "Google migrated Reminders to Tasks. If your reminders vanished or stopped notifying, here's how to fix it on web, Android, and iOS."
+title: "Google Calendar Reminders Gone? Google Moved Them (Fix)"
+description: "Google quietly migrated Reminders to Tasks. If yours vanished or stopped notifying, here's how to recover them on web, Android, and iOS."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: google-calendar-reminders-not-working-fix

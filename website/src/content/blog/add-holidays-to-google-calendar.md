@@ -1,6 +1,6 @@
 ---
-title: "How to Add Holidays to Google Calendar (and Get Them Back if They Disappeared)"
-description: "Add holiday calendars to Google Calendar, fix missing holidays, manage multiple countries, and keep your schedule accurate across regions."
+title: "Add Holidays to Google Calendar (+ Fix Missing Ones)"
+description: "Add holiday calendars, restore ones that vanished, and manage multiple countries in Google Calendar — step-by-step with screenshots."
 pubDate: 2026-02-15
 updatedDate: 2026-03-20
 slug: add-holidays-to-google-calendar

@@ -1,6 +1,6 @@
 ---
-title: "How to Share Your Google Calendar With Someone (Without Oversharing)"
-description: "Share your Google Calendar safely: step-by-step for desktop and mobile, permission levels explained, safe-by-default setup, and common sharing mistakes to avoid."
+title: "Share Google Calendar Safely: Permission Guide (2026)"
+description: "Share your Google Calendar without exposing private details. Step-by-step for desktop and mobile with the exact permission levels to choose."
 pubDate: 2026-03-03
 updatedDate: 2026-03-20
 slug: share-google-calendar-with-someone

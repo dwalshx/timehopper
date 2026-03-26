@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Times Changed After Travel? Here's Why and How to Fix It"
-description: "Your Google Calendar shows wrong times after traveling. Here's why events shifted and how to fix your display zone, event zones, and mobile sync."
+title: "Google Calendar Times Wrong After Travel? Here's the Fix"
+description: "Events shifted after you landed? Your phone changed zones but Calendar didn't fully adjust. Fix your display zone, event zones, and sync."
 pubDate: 2026-02-19
 updatedDate: 2026-03-20
 slug: google-calendar-time-zone-wrong-travel

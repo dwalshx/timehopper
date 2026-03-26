@@ -1,6 +1,6 @@
 ---
-title: "What Does the Google Calendar Time Zone Setting Actually Control?"
-description: "Learn exactly what Google Calendar's time zone setting changes — and what it leaves untouched. Covers UTC storage, display zones, event zones, common mistakes, and how other attendees see your meetings."
+title: "Google Calendar Time Zone Setting: What It Actually Changes"
+description: "The time zone setting changes less than you think. Learn what it controls, what it ignores, and how attendees see your events differently."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: google-calendar-time-zone-what-it-controls

@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Notifications Not Working in Chrome — Fix It in 60 Seconds"
-description: "Google Calendar notifications not working in Chrome? Match your symptom to a fix. Covers Calendar settings, Chrome permissions, and OS settings for Windows and Mac."
+title: "Google Calendar Notifications Not Working in Chrome? Quick Fix"
+description: "Match your Chrome notification symptom to the exact fix. Covers Calendar settings, Chrome permissions, and OS-level toggles for Windows and Mac."
 pubDate: 2026-03-18
 updatedDate: 2026-03-18
 slug: google-calendar-notifications-not-working-chrome

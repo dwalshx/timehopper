@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Extension: What to Look For (Evaluation Framework + Scoring Rubric)"
-description: "A practical framework for evaluating Google Calendar Chrome extensions. 7 criteria, a copy-paste scoring rubric, and workflow-specific recommendations."
+title: "7 Things to Check Before Installing a Google Calendar Extension"
+description: "Most Google Calendar extensions disappoint. Use this 7-point scoring rubric to find one that actually fits your workflow before you install."
 pubDate: 2026-02-15
 updatedDate: 2026-03-20
 slug: google-calendar-extension-what-to-look-for

@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Desktop Notifications Not Working (Chrome / Mac / Windows)"
-description: "Desktop notifications fail when any of three permission gates closes — Calendar settings, Chrome, or your OS. Here's the cross-platform fix."
+title: "Google Calendar Desktop Notifications Not Working? Fix"
+description: "Three permission layers can silently block alerts — Calendar, Chrome, and your OS. Check all three in under two minutes."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: google-calendar-desktop-notifications-not-working

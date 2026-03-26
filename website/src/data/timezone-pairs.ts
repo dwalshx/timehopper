@@ -148,9 +148,9 @@ export const pairs: TimezonePair[] = [
     slug: "pst-to-est",
     from: zones.PST,
     to: zones.EST,
-    title: "PST to EST Converter \u2014 Pacific to Eastern Time",
+    title: "PST to EST Converter | Live Clock & Time Table",
     description:
-      "Convert Pacific Time (PST/PDT) to Eastern Time (EST/EDT). See the current time difference and how DST affects the 3-hour offset.",
+      "Instantly convert PST to EST with live clocks, an interactive hour picker, and a full 24-hour conversion table. DST handled automatically.",
     contextContent: `Remote teams split between California and New York deal with this conversion daily. Engineering companies, media firms, and financial services with offices on both coasts rely on a clear understanding of the Pacific-to-Eastern gap.
 
 The standard difference is 3 hours. When it is 9 AM in Los Angeles, it is noon in New York. Morning standups scheduled at 10 AM Pacific land at 1 PM Eastern, right after lunch on the East Coast.
@@ -181,9 +181,9 @@ Both zones observe Daylight Saving Time on the same schedule, so the 3-hour gap 
     slug: "est-to-pst",
     from: zones.EST,
     to: zones.PST,
-    title: "EST to PST Converter \u2014 Eastern to Pacific Time",
+    title: "EST to PST Converter | Live Clock & Time Table",
     description:
-      "Convert Eastern Time (EST/EDT) to Pacific Time (PST/PDT). Understand the 3-hour difference for scheduling across US coasts.",
+      "Convert EST to PST instantly with live clocks showing both zones now. Includes hour picker and full 24-hour conversion table.",
     contextContent: `East Coast professionals working with West Coast partners check this conversion constantly. Sales teams in New York calling prospects in San Francisco, or product managers in Boston syncing with engineers in Seattle, need to avoid early-morning disruptions on the Pacific side.
 
 Eastern Time is 3 hours ahead of Pacific. A 9 AM call in New York is 6 AM in Los Angeles \u2014 far too early for most. End-of-day on the East Coast at 5 PM translates to 2 PM Pacific, leaving plenty of West Coast afternoon remaining.
@@ -215,9 +215,9 @@ Because both zones follow the same US Daylight Saving Time schedule, the 3-hour 
     slug: "utc-to-est",
     from: zones.UTC,
     to: zones.EST,
-    title: "UTC to EST Converter \u2014 Coordinated Universal Time to Eastern",
+    title: "UTC to EST Converter | Live Clock & DST Rules",
     description:
-      "Convert UTC to Eastern Time (EST/EDT). Learn how the offset changes from UTC\u22125 to UTC\u22124 during Daylight Saving Time.",
+      "Convert UTC to EST/EDT with live clocks and a 24-hour conversion table. See exactly when DST shifts the offset from -5 to -4 hours.",
     contextContent: `Developers, DevOps engineers, and database administrators frequently convert UTC timestamps to Eastern Time. Server logs, API responses, and cloud dashboards typically report in UTC, but the team reading them is often on the US East Coast.
 
 During standard time, EST is UTC\u22125. Midnight UTC is 7 PM the previous evening in New York. During Daylight Saving Time (mid-March through early November), Eastern shifts to EDT (UTC\u22124), so midnight UTC becomes 8 PM EDT.
@@ -248,9 +248,9 @@ UTC never changes. It has no daylight saving adjustment. This means the offset t
     slug: "utc-to-pst",
     from: zones.UTC,
     to: zones.PST,
-    title: "UTC to PST Converter \u2014 Coordinated Universal Time to Pacific",
+    title: "UTC to PST Converter | Live Clock & DST Rules",
     description:
-      "Convert UTC to Pacific Time (PST/PDT). The offset is UTC\u22128 in winter and UTC\u22127 in summer during Daylight Saving Time.",
+      "Convert UTC to PST/PDT instantly with live clocks for both zones. Full 24-hour table with DST offset changes built in.",
     contextContent: `West Coast tech companies headquartered in San Francisco, Seattle, and Portland rely on UTC-to-Pacific conversions for infrastructure monitoring, incident response, and coordinating with global teams. Cloud platforms like AWS and GCP report metrics in UTC.
 
 PST is 8 hours behind UTC. A deploy at 18:00 UTC lands at 10 AM Pacific \u2014 a reasonable hour for the team to monitor it. During summer, PDT (UTC\u22127) shifts that same 18:00 UTC deploy to 11 AM local time.
@@ -280,9 +280,9 @@ Because UTC is fixed, the offset to Pacific changes twice a year. When Pacific s
     slug: "gmt-to-est",
     from: zones.GMT,
     to: zones.EST,
-    title: "GMT to EST Converter \u2014 London to Eastern Time",
+    title: "GMT to EST Converter | London to New York Now",
     description:
-      "Convert GMT/BST (London) to Eastern Time (EST/EDT). The gap ranges from 4 to 5 hours depending on DST in each zone.",
+      "Convert GMT to EST with live clocks for London and New York. Interactive hour picker, 24-hour table, and DST transition alerts.",
     contextContent: `London and New York are two of the world\u2019s largest financial centers. Trading desks, investment banks, and law firms with transatlantic operations convert between these zones dozens of times a day.
 
 When both cities are in standard time (late November through mid-March), London (GMT, UTC+0) is 5 hours ahead of New York (EST, UTC\u22125). A 2 PM meeting in London falls at 9 AM in New York.
@@ -313,9 +313,9 @@ The complexity arises because the UK and the US switch to daylight saving on dif
     slug: "est-to-gmt",
     from: zones.EST,
     to: zones.GMT,
-    title: "EST to GMT Converter \u2014 Eastern to London Time",
+    title: "EST to GMT Converter | New York to London Now",
     description:
-      "Convert Eastern Time (EST/EDT) to GMT/BST (London). Offset is typically 5 hours, with brief 4-hour periods during DST transitions.",
+      "Convert EST to GMT/BST instantly. Live clocks for New York and London, interactive hour picker, and a full 24-hour conversion table.",
     contextContent: `US East Coast teams coordinating with London offices need to plan around the afternoon handoff. By the time New York finishes lunch, London is wrapping up for the day. This matters for media companies, consulting firms, and any business with transatlantic clients.
 
 Add 5 hours to Eastern Time to get London time in most of the year. A 10 AM meeting in New York is 3 PM in London. An end-of-day 5 PM in New York is already 10 PM in London, well outside working hours.
@@ -347,9 +347,9 @@ The tricky weeks come in March and October/November. Because the US and UK switc
     slug: "cst-to-est",
     from: zones.CST,
     to: zones.EST,
-    title: "CST to EST Converter \u2014 Central to Eastern Time",
+    title: "CST to EST Converter | Live Clock & Time Table",
     description:
-      "Convert Central Time (CST/CDT) to Eastern Time (EST/EDT). The difference is always 1 hour, year-round.",
+      "Convert CST to EST with live clocks showing both zones right now. Includes interactive hour picker and full 24-hour conversion table.",
     contextContent: `The Central-to-Eastern conversion is one of the most common in the US. Companies with offices in Chicago, Dallas, or Nashville coordinating with teams in New York, Washington D.C., or Atlanta use this daily.
 
 Central Time is 1 hour behind Eastern. A 9 AM Central meeting is 10 AM Eastern. Lunch at noon in Chicago is 1 PM in New York. The single-hour gap makes cross-timezone scheduling straightforward.
@@ -380,9 +380,9 @@ Both zones follow the same US DST calendar, so the 1-hour difference never chang
     slug: "est-to-cst",
     from: zones.EST,
     to: zones.CST,
-    title: "EST to CST Converter \u2014 Eastern to Central Time",
+    title: "EST to CST Converter | Live Clock & Time Table",
     description:
-      "Convert Eastern Time (EST/EDT) to Central Time (CST/CDT). Subtract 1 hour \u2014 the offset is constant year-round.",
+      "Convert EST to CST instantly with live clocks, an interactive hour picker, and a complete 24-hour conversion table. Always 1 hour apart.",
     contextContent: `Eastern-to-Central is the reverse of the most-used US timezone conversion. New York-based companies with operations in Chicago, Houston, or Minneapolis subtract one hour to coordinate schedules.
 
 Subtract 1 hour from Eastern to get Central. A 3 PM deadline in New York is 2 PM in Chicago. An 8 AM Eastern standup is 7 AM Central, which may be too early for some Central-based teammates.
@@ -413,9 +413,9 @@ The offset is permanently fixed at 1 hour. There is no point in the year where t
     slug: "ist-to-est",
     from: zones.IST,
     to: zones.EST,
-    title: "IST to EST Converter \u2014 India to Eastern Time",
+    title: "IST to EST Converter | India to New York Now",
     description:
-      "Convert India Standard Time (IST) to Eastern Time (EST/EDT). The gap is 10.5 hours in winter and 9.5 hours in summer.",
+      "Convert IST to EST with live clocks for India and New York. See the current 9.5 or 10.5-hour gap and browse the full 24-hour table.",
     contextContent: `India and the US East Coast form one of the busiest offshore collaboration corridors in the world. IT services, software development, and business process outsourcing teams in Bangalore, Hyderabad, and Pune work with counterparts in New York, New Jersey, and North Carolina.
 
 IST is 10 hours and 30 minutes ahead of EST. When it is 9 AM in New York, it is 7:30 PM in India \u2014 the end of the Indian workday. When the Indian workday starts at 9 AM IST, it is 10:30 PM the previous night in New York.
@@ -448,9 +448,9 @@ India does not observe Daylight Saving Time. The US does. When the US shifts to 
     slug: "ist-to-pst",
     from: zones.IST,
     to: zones.PST,
-    title: "IST to PST Converter \u2014 India to Pacific Time",
+    title: "IST to PST Converter | India to California Now",
     description:
-      "Convert India Standard Time (IST) to Pacific Time (PST/PDT). The offset is 13.5 hours in winter and 12.5 in summer.",
+      "Convert IST to PST instantly with live dual clocks. Interactive hour picker and 24-hour table show the 12.5 to 13.5-hour gap clearly.",
     contextContent: `Silicon Valley and Bangalore have one of the widest timezone gaps of any common business pairing. Product teams at headquarters in San Francisco or San Jose collaborate with engineering teams in India across a gap that is more than half a day.
 
 IST is 13 hours and 30 minutes ahead of PST. When it is 9 AM Monday in San Francisco, it is 10:30 PM Monday in India. When India starts work at 9 AM IST, it is 7:30 PM the previous evening in California.
@@ -482,9 +482,9 @@ The practical overlap is narrow: roughly 7:30\u20139:30 AM Pacific aligns with 9
     slug: "gmt-to-pst",
     from: zones.GMT,
     to: zones.PST,
-    title: "GMT to PST Converter \u2014 London to Pacific Time",
+    title: "GMT to PST Converter | London to California Now",
     description:
-      "Convert GMT/BST (London) to Pacific Time (PST/PDT). The offset is typically 8 hours but shifts to 7 during DST transitions.",
+      "Convert GMT to PST with live clocks for London and the US West Coast. Full 24-hour table and DST transition rules included.",
     contextContent: `London-to-Pacific coordination is common for global companies with UK headquarters and West Coast US operations. Fintech, gaming, and media companies frequently bridge this 8-hour gap.
 
 When both regions are in standard time, London is 8 hours ahead of the Pacific coast. A 5 PM end-of-day in London is only 9 AM in San Francisco \u2014 just as the West Coast workday begins. This leaves a very narrow real-time collaboration window.
@@ -515,9 +515,9 @@ The DST complication mirrors the GMT-to-EST pattern but amplified. The US and UK
     slug: "utc-to-cst",
     from: zones.UTC,
     to: zones.CST,
-    title: "UTC to CST Converter \u2014 Coordinated Universal Time to Central",
+    title: "UTC to CST Converter | Live Clock & DST Rules",
     description:
-      "Convert UTC to Central Time (CST/CDT). The offset is UTC\u22126 in winter and UTC\u22125 during Daylight Saving Time.",
+      "Convert UTC to CST/CDT with live clocks and a full 24-hour conversion table. DST offset shift from -6 to -5 hours handled automatically.",
     contextContent: `Central Time covers a large portion of the US population, including major cities like Chicago, Dallas, Houston, and Minneapolis. Developers and system administrators in these areas regularly translate UTC log timestamps and cron schedules to local time.
 
 CST is 6 hours behind UTC. A server event logged at 14:00 UTC happened at 8:00 AM Central. During daylight saving time, CDT is only 5 hours behind UTC, so that same 14:00 UTC event would read as 9:00 AM local.
@@ -548,9 +548,9 @@ UTC has no seasonal adjustment. The Central zone shifts in mid-March and early N
     slug: "pst-to-gmt",
     from: zones.PST,
     to: zones.GMT,
-    title: "PST to GMT Converter \u2014 Pacific to London Time",
+    title: "PST to GMT Converter | California to London Now",
     description:
-      "Convert Pacific Time (PST/PDT) to GMT/BST (London). The offset is usually 8 hours but briefly shifts to 7 during DST transitions.",
+      "Convert PST to GMT/BST instantly with live clocks for both zones. Includes hour picker, 24-hour table, and DST transition dates.",
     contextContent: `West Coast US teams coordinating with London offices face one of the wider gaps in common business pairings. This conversion matters for game studios, SaaS companies, and financial firms managing cross-Atlantic workflows.
 
 Add 8 hours to Pacific Time to get London time during standard months. A 9 AM call in San Francisco starts at 5 PM in London, which is the tail end of the UK workday. By 10 AM Pacific, London has clocked out.
@@ -582,9 +582,9 @@ The asymmetric DST switches between the US and UK create short transition window
     slug: "cet-to-est",
     from: zones.CET,
     to: zones.EST,
-    title: "CET to EST Converter \u2014 Central Europe to Eastern Time",
+    title: "CET to EST Converter | Europe to New York Now",
     description:
-      "Convert Central European Time (CET/CEST) to Eastern Time (EST/EDT). The offset is usually 6 hours, briefly shifting to 5.",
+      "Convert CET to EST with live clocks for Central Europe and New York. Full 24-hour table with DST transition rules for both zones.",
     contextContent: `Berlin, Paris, Amsterdam, and other Central European cities maintain strong business ties with the US East Coast. Automotive companies, pharmaceutical firms, and tech startups coordinate across this 6-hour gap daily.
 
 CET is 6 hours ahead of EST. A 3 PM meeting in Berlin is 9 AM in New York. The European afternoon overlaps with the American morning, creating a workable collaboration window of roughly 9 AM\u201312 PM Eastern / 3\u20136 PM Central European.
@@ -617,9 +617,9 @@ The EU and US switch to daylight saving on different dates. Europe changes on th
     slug: "est-to-cet",
     from: zones.EST,
     to: zones.CET,
-    title: "EST to CET Converter \u2014 Eastern to Central European Time",
+    title: "EST to CET Converter | New York to Europe Now",
     description:
-      "Convert Eastern Time (EST/EDT) to Central European Time (CET/CEST). Add 6 hours typically, or 5 during DST transition weeks.",
+      "Convert EST to CET/CEST instantly with live clocks, interactive hour picker, and a complete 24-hour conversion table with DST rules.",
     contextContent: `US East Coast businesses reaching out to European partners add 6 hours to their local time. New York law firms working with Frankfurt banks, or Boston biotech companies collaborating with labs in Zurich, rely on this conversion throughout the workday.
 
 Add 6 hours to Eastern to get Central European Time. A 9 AM kickoff in New York is already 3 PM in Berlin. By the time the US East Coast hits mid-afternoon, Europe has gone home.
@@ -651,9 +651,9 @@ Twice a year, the conversion shifts briefly. In mid-March, the US springs forwar
     slug: "jst-to-est",
     from: zones.JST,
     to: zones.EST,
-    title: "JST to EST Converter \u2014 Japan to Eastern Time",
+    title: "JST to EST Converter | Tokyo to New York Now",
     description:
-      "Convert Japan Standard Time (JST) to Eastern Time (EST/EDT). Japan is 14 hours ahead in winter and 13 in summer.",
+      "Convert JST to EST with live clocks for Tokyo and New York. See the 13 or 14-hour gap now and browse the full 24-hour table.",
     contextContent: `Japan and the US East Coast collaborate heavily in automotive, electronics, finance, and gaming. Toyota, Sony, and major trading firms operate across this nearly opposite-day timezone pairing.
 
 JST is 14 hours ahead of EST. When it is 9 AM Monday in Tokyo, it is 7 PM Sunday in New York. The Japanese business day (9 AM\u20136 PM JST) corresponds to 7 PM\u20134 AM Eastern, making real-time collaboration during normal hours nearly impossible.
@@ -685,9 +685,9 @@ Japan does not observe DST. When the US shifts to EDT in spring, the gap shrinks
     slug: "aest-to-est",
     from: zones.AEST,
     to: zones.EST,
-    title: "AEST to EST Converter \u2014 Australia Eastern to US Eastern Time",
+    title: "AEST to EST Converter | Sydney to New York Now",
     description:
-      "Convert Australian Eastern Time (AEST/AEDT) to US Eastern Time (EST/EDT). The gap ranges from 14 to 16 hours depending on DST.",
+      "Convert AEST to US EST with live clocks for Sydney and New York. 24-hour table covers the 14 to 16-hour gap across DST seasons.",
     contextContent: `Australia and the US East Coast are nearly a full day apart. Teams in Sydney and Melbourne working with counterparts in New York or Miami face one of the most challenging timezone pairings for real-time collaboration.
 
 During the northern winter / southern summer (roughly November through March), Sydney is on AEDT (UTC+11) while New York is on EST (UTC\u22125), producing a 16-hour gap. When it is 9 AM Tuesday in Sydney, it is 5 PM Monday in New York.
@@ -720,9 +720,9 @@ The situation improves slightly in the northern summer / southern winter (roughl
     slug: "utc-to-ist",
     from: zones.UTC,
     to: zones.IST,
-    title: "UTC to IST Converter \u2014 Coordinated Universal Time to India",
+    title: "UTC to IST Converter | Live Clock & Time Table",
     description:
-      "Convert UTC to India Standard Time (IST). IST is always UTC+5:30 with no Daylight Saving Time adjustments.",
+      "Convert UTC to IST instantly. Live clocks, interactive hour picker, and a full 24-hour table for the fixed UTC+5:30 offset. No DST changes.",
     contextContent: `India\u2019s UTC+5:30 offset is one of the few half-hour timezone shifts in common use. Developers across India regularly convert UTC timestamps from cloud services, CI/CD pipelines, and monitoring tools to local IST.
 
 IST is 5 hours and 30 minutes ahead of UTC, all year. There is no daylight saving adjustment. A deploy logged at 12:00 UTC happened at 5:30 PM IST. A scheduled maintenance window at 02:00 UTC falls at 7:30 AM IST.
@@ -753,9 +753,9 @@ The half-hour offset can trip up automated systems that only handle whole-hour z
     slug: "pst-to-cst",
     from: zones.PST,
     to: zones.CST,
-    title: "PST to CST Converter \u2014 Pacific to Central Time",
+    title: "PST to CST Converter | Live Clock & Time Table",
     description:
-      "Convert Pacific Time (PST/PDT) to Central Time (CST/CDT). Central is always 2 hours ahead of Pacific.",
+      "Convert PST to CST with live clocks showing both zones now. Interactive hour picker and full 24-hour conversion table. Always 2 hours apart.",
     contextContent: `Companies spanning the western and central US handle this conversion routinely. A Seattle engineering team syncing with a Dallas operations center, or a Los Angeles studio coordinating with a Nashville production team, deals with the 2-hour gap throughout the workday.
 
 Central Time is 2 hours ahead of Pacific. When it is 9 AM in Los Angeles, it is 11 AM in Chicago. A late-afternoon 4 PM meeting Pacific-side is already 6 PM Central, at the edge of the workday.
@@ -786,9 +786,9 @@ Both zones observe US DST on the same schedule. The 2-hour offset is constant ye
     slug: "est-to-ist",
     from: zones.EST,
     to: zones.IST,
-    title: "EST to IST Converter \u2014 Eastern to India Standard Time",
+    title: "EST to IST Converter | New York to India Now",
     description:
-      "Convert Eastern Time (EST/EDT) to India Standard Time (IST). The gap is 10.5 hours in winter and 9.5 hours in summer.",
+      "Convert EST to IST instantly with live clocks for New York and India. Full 24-hour table covers the 9.5 to 10.5-hour seasonal gap.",
     contextContent: `The Eastern-to-India corridor is the backbone of US\u2013India outsourcing. New York and New Jersey financial firms, North Carolina banks, and Georgia-based enterprises all manage teams in India\u2019s major tech hubs.
 
 Add 10 hours and 30 minutes to EST to get IST. A 9 AM Eastern kickoff lands at 7:30 PM IST. A 6 AM Eastern standup is 4:30 PM IST, catching the Indian team before their day ends.

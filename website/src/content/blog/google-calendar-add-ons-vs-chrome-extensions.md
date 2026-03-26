@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Add-ons vs Chrome Extensions: What's the Difference?"
-description: "Add-ons and extensions enhance Google Calendar differently. Here's what each type can do, their trade-offs, and which to choose for your workflow."
+title: "Google Calendar Add-ons vs Chrome Extensions"
+description: "Add-ons run inside Calendar; extensions run in Chrome. Here's what each can do, their trade-offs, and which type fits your workflow."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: google-calendar-add-ons-vs-chrome-extensions

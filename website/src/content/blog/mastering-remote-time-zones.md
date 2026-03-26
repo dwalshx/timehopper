@@ -1,6 +1,6 @@
 ---
-title: "How to Manage Time Zones for Your Remote Team"
-description: "Practical strategies for remote teams working across time zones. Covers overlap hours, async-first principles, meeting scheduling, and tool setup."
+title: "Remote Team Time Zones: A Manager's Scheduling Playbook"
+description: "Stop frustrating your global team with bad meeting times. Actionable overlap-hour strategies, async-first rules, and tool setups that actually work."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: mastering-remote-time-zones
