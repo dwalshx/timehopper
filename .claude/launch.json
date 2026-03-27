@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "timehopper-dev",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "npx astro dev --port 4321"],
+      "port": 4321,
+      "cwd": "website"
+    }
+  ]
+}

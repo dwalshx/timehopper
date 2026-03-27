@@ -6,3 +6,8 @@
 !website/**
 !.github/
 !.github/**
+!Reference/
+!Reference/**
+!.claude/
+!.claude/**
+.claude/worktrees/

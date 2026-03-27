@@ -1,0 +1,83 @@
+# src/data/sources.yml
+# Canonical, reusable citations for TimeHopper blog posts (SEO/AEO).
+# Prefer primary sources (Google/Chrome/Apple/Microsoft). Keep keys stable.
+
+google_calendar_time_zones_desktop:
+  title: "Google Calendar Help: Use Google Calendar in different time zones (Desktop)"
+  url: "https://support.google.com/calendar/answer/37064?co=GENIE.Platform%3DDesktop&hl=en"
+  publisher: "Google"
+
+google_calendar_time_zones_android:
+  title: "Google Calendar Help: Use Google Calendar in different time zones (Android)"
+  url: "https://support.google.com/calendar/answer/37064?co=GENIE.Platform%3DAndroid&hl=en"
+  publisher: "Google"
+
+google_calendar_missing_notifications_troubleshoot:
+  title: "Google Calendar Help: Troubleshoot missing Google Calendar notifications"
+  url: "https://support.google.com/calendar/answer/12200012?hl=en"
+  publisher: "Google"
+
+google_calendar_settings_overview:
+  title: "Google Calendar Help: Change Google Calendar settings (overview)"
+  url: "https://support.google.com/calendar/answer/6084644?co=GENIE.Platform%3DDesktop&hl=en"
+  publisher: "Google"
+
+chrome_notifications_desktop:
+  title: "Chrome Help: Use notifications to get alerts (Desktop)"
+  url: "https://support.google.com/chrome/answer/3220216?co=GENIE.Platform%3DDesktop&hl=en"
+  publisher: "Google"
+
+chrome_notifications_android:
+  title: "Chrome Help: Use notifications to get alerts (Android)"
+  url: "https://support.google.com/chrome/answer/3220216?co=GENIE.Platform%3DAndroid&hl=en"
+  publisher: "Google"
+
+apple_macos_focus_set_up:
+  title: "Apple Support: Set up a Focus on Mac"
+  url: "https://support.apple.com/guide/mac-help/set-up-a-focus-to-stay-on-task-mchl613dc43f/mac"
+  publisher: "Apple"
+
+apple_macos_focus_change_settings:
+  title: "Apple Support: Change Focus settings on Mac"
+  url: "https://support.apple.com/guide/mac-help/change-focus-settings-mchlff5da36d/mac"
+  publisher: "Apple"
+
+apple_macos_notifications_settings:
+  title: "Apple Support: Notifications settings on Mac"
+  url: "https://support.apple.com/guide/mac-help/notifications-settings-mh40583/mac"
+  publisher: "Apple"
+
+apple_ios_focus_allow_notifications:
+  title: "Apple Support: Allow or silence notifications for a Focus on iPhone"
+  url: "https://support.apple.com/guide/iphone/allow-or-silence-notifications-for-a-focus-iph21d43af5b/ios"
+  publisher: "Apple"
+
+windows_notifications_and_dnd:
+  title: "Microsoft Support: Notifications and Do Not Disturb in Windows"
+  url: "https://support.microsoft.com/en-us/windows/notifications-and-do-not-disturb-in-windows-feeca47f-0baf-5680-16f0-8801db1a8466"
+  publisher: "Microsoft"
+
+windows_focus_mode:
+  title: "Microsoft Support: Focus — stay on task without distractions in Windows"
+  url: "https://support.microsoft.com/en-au/windows/focus-stay-on-task-without-distractions-in-windows-cbcc9ddb-8164-43fa-8919-b9a2af072382"
+  publisher: "Microsoft"
+
+windows_focus_how_to:
+  title: "Microsoft Support: Make it easier to focus on tasks (Windows Focus)"
+  url: "https://support.microsoft.com/en-gb/windows/make-it-easier-to-focus-on-tasks-0d259fd9-e9d0-702c-c027-007f0e78eaf2"
+  publisher: "Microsoft"
+
+chrome_extension_permissions_reference:
+  title: "Chrome for Developers: chrome.permissions reference"
+  url: "https://developer.chrome.com/docs/extensions/mv2/reference/permissions"
+  publisher: "Google"
+
+chrome_extension_permission_warnings_guidelines:
+  title: "Chrome for Developers: Permission warning guidelines"
+  url: "https://developer.chrome.com/docs/extensions/develop/concepts/permission-warnings"
+  publisher: "Google"
+
+chrome_web_store_quality_guidelines:
+  title: "Chrome for Developers: Extensions quality guidelines FAQ"
+  url: "https://developer.chrome.com/docs/webstore/program-policies/quality-guidelines-faq"
+  publisher: "Google"
