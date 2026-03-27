@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/images/icon128.png"><meta name="generator" content="Astro v5.17.2"><!-- Canonical URL --><link rel="canonical" href="https://timehopperapp.com/blog/how-to-calculate-time-difference-between-time-zones.html"><!-- Primary Meta Tags --><title>How to Calculate Time Differences Across Time Zones - TimeHopper Blog</title><meta name="title" content="How to Calculate Time Differences Across Time Zones - TimeHopper Blog"><meta name="description" content="A precise, step-by-step guide to calculating time differences between any two time zones — including DST, half-hour offsets, and crossing the Date Line."><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://timehopperapp.com/blog/how-to-calculate-time-difference-between-time-zones.html"><meta property="og:title" content="How to Calculate Time Differences Across Time Zones - TimeHopper Blog"><meta property="og:description" content="A precise, step-by-step guide to calculating time differences between any two time zones — including DST, half-hour offsets, and crossing the Date Line."><meta property="og:image" content="https://timehopperapp.com/images/icon128.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://timehopperapp.com/blog/how-to-calculate-time-difference-between-time-zones.html"><meta property="twitter:title" content="How to Calculate Time Differences Across Time Zones - TimeHopper Blog"><meta property="twitter:description" content="A precise, step-by-step guide to calculating time differences between any two time zones — including DST, half-hour offsets, and crossing the Date Line."><meta property="twitter:image" content="https://timehopperapp.com/images/icon128.png"><!-- Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TimeHopper","url":"https://timehopperapp.com","logo":"https://timehopperapp.com/images/icon128.png","contactPoint":{"@type":"ContactPoint","email":"danwalshx@gmail.com","contactType":"customer support"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timehopperapp.com/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://timehopperapp.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to Calculate Time Differences Across Time Zones","item":"https://timehopperapp.com/blog/how-to-calculate-time-difference-between-time-zones.html"}]}</script><style>.support-cta[data-astro-cid-7dkdpa4i]{padding:60px 0;background:#f9f9f9}.cta-card[data-astro-cid-7dkdpa4i]{background:linear-gradient(135deg,#fd547a,#526ea1);border-radius:24px;padding:60px 40px;text-align:center;color:#fff;box-shadow:0 20px 40px #fd547a33;position:relative;overflow:hidden}.cta-card[data-astro-cid-7dkdpa4i]:before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#ffffff1a,#fff0 70%);pointer-events:none}.cta-content[data-astro-cid-7dkdpa4i]{position:relative;z-index:1;max-width:600px;margin:0 auto}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:2.5rem;margin:0 0 1rem;color:#fff;font-weight:800}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.25rem;opacity:.9;margin-bottom:2.5rem;line-height:1.5}.cta-btn[data-astro-cid-7dkdpa4i]{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#fd547a!important;padding:18px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;box-shadow:0 10px 20px #0000001a;transition:transform .2s,box-shadow .2s;text-decoration:none}.cta-btn[data-astro-cid-7dkdpa4i]:hover{transform:translateY(-3px);box-shadow:0 15px 30px #00000026;text-decoration:none}.btn-icon[data-astro-cid-7dkdpa4i]{width:24px;height:24px}@media(max-width:600px){.cta-card[data-astro-cid-7dkdpa4i]{padding:40px 20px}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:1.8rem}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.1rem}}.main-nav[data-astro-cid-pux6a34n]{background:#fffffff2;backdrop-filter:blur(10px);border-bottom:1px solid #eee;padding:15px 0;position:sticky;top:0;z-index:1000}.nav-container[data-astro-cid-pux6a34n]{display:flex;justify-content:space-between;align-items:center}.nav-logo[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:10px;text-decoration:none;color:#333;font-weight:800;font-size:1.25rem}.nav-logo-img[data-astro-cid-pux6a34n]{width:32px;height:32px}.nav-links[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:25px;list-style:none;margin:0;padding:0}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]{text-decoration:none;color:#555;font-weight:600;transition:color .2s}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]:hover{color:#fd547a}.nav-cta[data-astro-cid-pux6a34n]{background:#fd547a;color:#fff!important;padding:8px 16px;border-radius:50px;font-size:.9rem;transition:transform .2s,box-shadow .2s!important}.nav-cta[data-astro-cid-pux6a34n]:hover{transform:translateY(-2px);box-shadow:0 4px 10px #fd547a33}@media(max-width:600px){.nav-logo-text[data-astro-cid-pux6a34n]{display:none}.nav-links[data-astro-cid-pux6a34n]{gap:15px}.nav-cta[data-astro-cid-pux6a34n]{padding:6px 12px;font-size:.8rem}}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#333;line-height:1.6}.container{max-width:900px;margin:0 auto;padding:0 20px}a{color:#fd547a;text-decoration:none;transition:text-decoration .2s}a:hover{text-decoration:underline}footer{background:#333;color:#aaa;padding:40px 0;text-align:center}.footer-links{margin-top:15px;display:flex;justify-content:center;gap:20px}footer a{color:#fff;text-decoration:none;font-size:.9em}footer a:hover{text-decoration:underline}
+.related-posts[data-astro-cid-dpgbfi7r]{margin-top:60px;padding-top:40px;border-top:2px solid #f1f1f1}.related-posts[data-astro-cid-dpgbfi7r] h2[data-astro-cid-dpgbfi7r]{font-size:1.8rem;margin-bottom:2rem;color:#2c3e50}.related-grid[data-astro-cid-dpgbfi7r]{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.related-card[data-astro-cid-dpgbfi7r]{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.related-card[data-astro-cid-dpgbfi7r]:hover{transform:translateY(-3px);box-shadow:0 4px 12px #0000000d;text-decoration:none}.related-card[data-astro-cid-dpgbfi7r] h3[data-astro-cid-dpgbfi7r]{margin:0 0 10px;font-size:1.3rem;color:#fd547a}.related-card[data-astro-cid-dpgbfi7r] p[data-astro-cid-dpgbfi7r]{margin:0;font-size:.95rem;color:#666;line-height:1.4}.blog-post{max-width:800px;margin:0 auto;padding:60px 20px}.blog-post header{margin-bottom:40px;text-align:center}.blog-post .meta{color:#888;margin-bottom:1rem}.blog-post h1{text-align:center;font-size:3rem;line-height:1.1;margin:0 0 2rem;color:#2c3e50}.blog-post .hero-img{width:100%;border-radius:12px;margin-top:2rem}.blog-post .content{font-size:1.2rem;line-height:1.8;color:#333}.blog-post .content h2{margin-top:3rem;font-size:2rem;color:#2c3e50}.blog-post .content p{margin-bottom:1.5rem}.blog-post footer{margin-top:60px;padding-top:30px;border-top:1px solid #eee}.answer-box{background:#fff8e1;border-left:4px solid #fcc934;padding:20px 30px;border-radius:0 8px 8px 0;margin:2rem 0}.answer-box h3{margin-top:0;font-size:1.2rem;color:#856404}.blog-post .content table{width:100%;border-collapse:separate;border-spacing:0;margin:1.5rem 0 2rem;font-size:.95rem;line-height:1.5;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0}.blog-post .content thead{background:#f8fafc}.blog-post .content th{padding:12px 16px;text-align:left;font-weight:600;color:#2c3e50;border-bottom:2px solid #e2e8f0;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em}.blog-post .content td{padding:12px 16px;border-bottom:1px solid #f1f5f9;vertical-align:top;color:#475569}.blog-post .content tbody tr:last-child td{border-bottom:none}.blog-post .content tbody tr:hover{background:#f8fafc}.blog-post .content td strong{color:#2c3e50}.blog-post .content td code{font-size:.85em;background:#f1f5f9;padding:2px 6px;border-radius:4px;color:#334155}@media(max-width:768px){.blog-post .content table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.blog-post .content th,.blog-post .content td{min-width:140px;padding:10px 12px;font-size:.9rem}}.sources-section h2{font-size:1.4rem;color:#64748b}.sources-section ul{list-style:none;padding:0}.sources-section li{padding:6px 0}.sources-section .publisher{color:#94a3b8;font-size:.9rem}
+</style></head> <body> <nav class="main-nav" data-astro-cid-pux6a34n> <div class="container nav-container" data-astro-cid-pux6a34n> <a href="/" class="nav-logo" data-astro-cid-pux6a34n> <img src="/images/icon48.png" alt="TimeHopper Logo" class="nav-logo-img" data-astro-cid-pux6a34n> <span class="nav-logo-text" data-astro-cid-pux6a34n>TimeHopper</span> </a> <ul class="nav-links" data-astro-cid-pux6a34n> <li data-astro-cid-pux6a34n><a href="/" data-astro-cid-pux6a34n>Home</a></li> <li data-astro-cid-pux6a34n><a href="/blog.html" data-astro-cid-pux6a34n>Blog</a></li> <li data-astro-cid-pux6a34n><a href="/tools/convert.html" data-astro-cid-pux6a34n>Tools</a></li> <li data-astro-cid-pux6a34n><a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="nav-cta" data-astro-cid-pux6a34n>Add to Chrome</a></li> </ul> </div> </nav>   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Calculate Time Differences Across Time Zones","description":"A precise, step-by-step guide to calculating time differences between any two time zones — including DST, half-hour offsets, and crossing the Date Line.","image":[],"datePublished":"2026-03-26T00:00:00.000Z","author":[{"@type":"Person","name":"Dan Walsh","url":"https://timehopperapp.com"}]}</script> <article class="container blog-post"> <header> <div class="meta"> <time datetime="2026-03-26T00:00:00.000Z"> March 26, 2026 </time> </div>  </header> <div class="content"> <h1 id="how-to-calculate-time-differences-across-time-zones">How to Calculate Time Differences Across Time Zones</h1>
+<p><strong>Quick answer:</strong> To find the time difference between two locations, convert both times to UTC using their respective offsets, then subtract. A city at UTC+5:30 and a city at UTC−5 have a raw difference of 10 hours and 30 minutes. During daylight saving time, that gap shifts by one hour — but only for the zones that observe DST. The sections below walk through each part of that calculation, including the edge cases that cause real mistakes.</p>
+<p>Most conversion errors trace back to one of three things: ignoring DST, not knowing a zone uses a non-whole-hour offset, or forgetting that crossing the International Date Line changes the calendar date. Knowing the formula and its exceptions makes every future calculation faster.</p>
+<hr>
+<h2 id="the-basic-formula-utc-offsets">The Basic Formula: UTC Offsets</h2>
+<p><strong>The universal method is to express both times as UTC offsets and compute the arithmetic difference.</strong></p>
+<p>Every time zone is defined as a positive or negative offset from Coordinated Universal Time (UTC). UTC itself carries no offset — it is the reference point. Every other zone adds or subtracts hours (and sometimes minutes) from it.</p>
+<h3 id="step-by-step">Step-by-step</h3>
+<ol>
+<li>Find the UTC offset for Location A. Example: New York during standard time is UTC−5.</li>
+<li>Find the UTC offset for Location B. Example: Berlin during standard time is UTC+1.</li>
+<li>Subtract one offset from the other: +1 − (−5) = +6. Berlin is 6 hours ahead of New York.</li>
+<li>To convert a specific time, add the difference to the source time or subtract it. If it is 9:00 AM in New York, it is 3:00 PM in Berlin.</li>
+</ol>
+<h3 id="converting-via-utc">Converting via UTC</h3>
+<p>An alternative approach that removes sign confusion: convert the local time in Location A to UTC first, then convert UTC to local time in Location B.</p>
+<ul>
+<li>New York, 9:00 AM EST → add 5 hours → 14:00 UTC</li>
+<li>14:00 UTC → subtract 1 hour for Berlin → 15:00 (3:00 PM CET)</li>
+</ul>
+<p>This two-step method is especially useful when comparing three or more locations, because everything anchors to the same reference. A reference for all current UTC offsets is maintained by the <a href="https://www.iana.org/time-zones">IANA Time Zone Database</a>, the authoritative source used by operating systems and programming languages worldwide.</p>
+<p>For a ready-to-use reference covering UTC, Eastern, and Pacific conversions, see the <a href="/blog/utc-to-eastern-to-pacific-quick-cheat-sheet.html">UTC to Eastern and Pacific cheat sheet</a>.</p>
+<hr>
+<h2 id="how-dst-complicates-the-calculation">How DST Complicates the Calculation</h2>
+<p><strong>Daylight saving time changes a zone’s UTC offset by one hour — but the change happens on different dates in different countries, and not all countries observe DST at all.</strong></p>
+<p>This is the single biggest source of conversion errors. When DST transitions are out of sync between two locations, the time difference between them changes temporarily.</p>
+<h3 id="the-us-dst-window-in-2026">The US DST window in 2026</h3>
+<ul>
+<li>Clocks spring forward: Sunday, March 8, 2026 at 2:00 AM</li>
+<li>Clocks fall back: Sunday, November 1, 2026 at 2:00 AM</li>
+</ul>
+<h3 id="the-eu-dst-window-in-2026">The EU DST window in 2026</h3>
+<ul>
+<li>Clocks spring forward: Sunday, March 29, 2026 at 1:00 AM UTC</li>
+<li>Clocks fall back: Sunday, October 25, 2026 at 1:00 AM UTC</li>
+</ul>
+<p>Between March 8 and March 29, the US has already moved to summer time but Europe has not. During those three weeks, the US–Europe time difference is one hour narrower than usual. The same compression happens in autumn when the US falls back before Europe does.</p>
+<h3 id="countries-that-do-not-observe-dst">Countries that do not observe DST</h3>
+<p>Large portions of the world keep a fixed UTC offset year-round. These include China (UTC+8 always), Japan (UTC+9 always), India (UTC+5:30 always), most of Southeast Asia, and much of Africa. When you are calculating a time difference between a DST-observing city and a non-DST city, remember that the gap between them changes twice a year even though the non-DST city never moves.</p>
+<p>Google provides an overview of how DST affects its calendar product in the <a href="https://support.google.com/calendar/answer/37064">Google Calendar Help Center</a>, which also explains how the system handles event times when a user’s local clock changes.</p>
+<hr>
+<h2 id="half-hour-and-45-minute-offset-zones">Half-Hour and 45-Minute Offset Zones</h2>
+<p><strong>Not every time zone is on a whole-hour boundary. Several major locations use offsets of :30 or :45 minutes, which means your arithmetic must account for minutes, not just hours.</strong></p>
+<p>This surprises many people. The most common non-whole-hour offsets are:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Location</th><th>UTC Offset</th></tr></thead><tbody><tr><td>India (IST)</td><td>UTC+5:30</td></tr><tr><td>Sri Lanka</td><td>UTC+5:30</td></tr><tr><td>Afghanistan</td><td>UTC+4:30</td></tr><tr><td>Iran</td><td>UTC+3:30 (UTC+4:30 during DST)</td></tr><tr><td>Nepal</td><td>UTC+5:45</td></tr><tr><td>Chatham Islands (NZ)</td><td>UTC+12:45 (UTC+13:45 during DST)</td></tr><tr><td>Myanmar</td><td>UTC+6:30</td></tr><tr><td>Marquesas Islands</td><td>UTC−9:30</td></tr></tbody></table>
+<h3 id="calculation-example-with-minutes">Calculation example with minutes</h3>
+<p>New York (EST, UTC−5) to Mumbai (IST, UTC+5:30):</p>
+<p>Difference: +5:30 − (−5:00) = 10 hours 30 minutes.</p>
+<p>At 10:00 AM in New York, it is 8:30 PM in Mumbai.</p>
+<p>When calculating with these zones, convert the offsets to total minutes to avoid arithmetic errors. UTC−5 is −300 minutes. UTC+5:30 is +330 minutes. Difference: 330 − (−300) = 630 minutes = 10 hours 30 minutes.</p>
+<hr>
+<h2 id="crossing-the-international-date-line">Crossing the International Date Line</h2>
+<p><strong>When a time difference carries you past UTC+12 or past UTC−12, you have crossed the International Date Line, which means the calendar date changes by one day.</strong></p>
+<p>The International Date Line runs roughly along the 180th meridian in the Pacific Ocean. Time zones to the east of it are behind UTC; zones to the west of it are ahead of UTC. Crossing it in either direction changes the date.</p>
+<h3 id="practical-decision-rule">Practical decision rule</h3>
+<blockquote>
+<p>If the sum of two UTC offsets, moving east from one city to the other, exceeds 24 hours, the arrival date is the next calendar day. If the eastward travel would be shorter going the other direction (west), the date difference reverses.</p>
+</blockquote>
+<p>A simpler check: if one location is UTC+12 or higher and the other is UTC−10 or lower, there is likely a date change involved in the calculation.</p>
+<h3 id="example-los-angeles-to-auckland">Example: Los Angeles to Auckland</h3>
+<p>Los Angeles in summer (PDT) is UTC−7. Auckland in summer (NZDT) is UTC+13. The raw offset difference is 20 hours. At 5:00 PM Monday in Los Angeles, it is 1:00 PM Tuesday in Auckland. The time of day is 8 hours earlier in Auckland, but the date is one day ahead.</p>
+<p>The <a href="https://www.iana.org/time-zones">IANA Time Zone Database</a> catalogues both sides of the Date Line accurately, including the politically-motivated zone shifts (such as Samoa’s 2011 shift from UTC−11 to UTC+13) that can otherwise mislead automated calculators working from outdated data.</p>
+<hr>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<h3 id="mistake-1-applying-the-same-offset-year-round">Mistake 1: Applying the same offset year-round</h3>
+<p>Using EST (UTC−5) for New York in July is wrong. New York switches to EDT (UTC−4) from mid-March through early November. Errors from this mistake are off by exactly one hour and are easy to miss.</p>
+<p><strong>Fix:</strong> Always check whether the current date falls within a DST window before using a zone’s standard offset.</p>
+<h3 id="mistake-2-assuming-both-cities-change-dst-on-the-same-date">Mistake 2: Assuming both cities change DST on the same date</h3>
+<p>Two cities can both observe DST but transition on different days. The US transitions on the second Sunday in March; most of Europe transitions on the last Sunday in March. During the gap between those two Sundays, the US–Europe difference is one hour narrower than it is the rest of the year.</p>
+<p><strong>Fix:</strong> Look up each city’s DST dates independently rather than assuming they are synchronized.</p>
+<h3 id="mistake-3-forgetting-that-date-line-crossings-change-the-day">Mistake 3: Forgetting that Date Line crossings change the day</h3>
+<p>Scheduling a call between San Francisco and Sydney often produces a meeting that appears to be the same day on one calendar and the following day on the other. Sending an event invite without confirming the date in both locations causes missed calls.</p>
+<p><strong>Fix:</strong> When any pair of cities spans more than 12 hours of difference, verify the calendar date explicitly in both locations.</p>
+<h3 id="mistake-4-treating-time-zone-abbreviations-as-globally-unique">Mistake 4: Treating time zone abbreviations as globally unique</h3>
+<p>EST is Eastern Standard Time in the US but also stands for Australian Eastern Standard Time (UTC+10). CST is Central Standard Time (UTC−6) in the US and China Standard Time (UTC+8). Abbreviations are ambiguous.</p>
+<p><strong>Fix:</strong> Use UTC offsets or full IANA zone names (such as <code>America/New_York</code> or <code>Australia/Sydney</code>) whenever precision matters.</p>
+<h3 id="mistake-5-ignoring-historical-offset-changes">Mistake 5: Ignoring historical offset changes</h3>
+<p>Governments occasionally change time zone rules. In 2023, for example, several US state-level proposals to eliminate DST were under active consideration. Any calculation that reaches far into the future or far into the past should account for the possibility that the rules in effect today may not apply.</p>
+<hr>
+<h2 id="tools-that-help">Tools That Help</h2>
+<p><strong>No mental arithmetic is reliable when time zones, DST, and date crossings all interact. Tools that hold the IANA database eliminate the margin for error.</strong></p>
+<p>The right tool depends on the situation:</p>
+<ul>
+<li><strong>Scheduling a one-off meeting:</strong> Google Calendar’s built-in time zone fields show the event time in each attendee’s local time zone automatically. For setup, see <a href="/blog/add-secondary-time-zone-google-calendar.html">how to add a secondary time zone in Google Calendar</a>.</li>
+<li><strong>Comparing multiple zones for a team:</strong> A dedicated converter that displays several zones in a column view removes the guesswork. The <a href="/blog/time-zone-converter-for-meetings.html">time zone converter for meetings</a> guide covers the most reliable options and when to use each.</li>
+<li><strong>Quick one-off conversions:</strong> The TimeHopper converter handles direct pairs — for example, <a href="/tools/convert/pst-to-est.html">PST to EST</a> or <a href="/tools/convert/utc-to-est.html">UTC to EST</a> — and updates automatically for DST. The <a href="/tools/convert.html">main converter index</a> covers all supported pairs.</li>
+</ul>
+<p>TimeHopper is built as a temporal workflow layer: it sits alongside Google Calendar and provides the offset arithmetic, DST awareness, and zone comparison that Calendar does not expose directly. It is useful when you need to verify a time across several zones at once or when you want to catch DST edge cases before they cause a missed meeting.</p>
+<p>For teams managing recurring meetings across multiple continents, the playbook in <a href="/blog/mastering-remote-time-zones.html">mastering remote time zones</a> covers overlap-hour strategies and async-first rules that reduce how often the calculation even needs to happen.</p>
+<hr>
+<h2 id="quick-reference-major-time-zones-and-utc-offsets">Quick Reference: Major Time Zones and UTC Offsets</h2>
+<p>This table shows standard and daylight time offsets for frequently used zones. The DST column reflects Northern Hemisphere summer (approximately late March through late October for European zones, mid-March through early November for US zones).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Zone</th><th>City / Region</th><th>Standard Offset</th><th>Daylight Offset</th><th>Observes DST</th></tr></thead><tbody><tr><td>UTC</td><td>Universal reference</td><td>UTC+0</td><td>—</td><td>No</td></tr><tr><td>GMT</td><td>London (winter)</td><td>UTC+0</td><td>UTC+1 (BST)</td><td>Yes</td></tr><tr><td>ET</td><td>New York, Miami</td><td>UTC−5</td><td>UTC−4</td><td>Yes</td></tr><tr><td>CT</td><td>Chicago, Dallas</td><td>UTC−6</td><td>UTC−5</td><td>Yes</td></tr><tr><td>MT</td><td>Denver, Phoenix*</td><td>UTC−7</td><td>UTC−6</td><td>Yes*</td></tr><tr><td>PT</td><td>Los Angeles, Seattle</td><td>UTC−8</td><td>UTC−7</td><td>Yes</td></tr><tr><td>AKT</td><td>Anchorage</td><td>UTC−9</td><td>UTC−8</td><td>Yes</td></tr><tr><td>HT</td><td>Honolulu</td><td>UTC−10</td><td>—</td><td>No</td></tr><tr><td>BRT</td><td>São Paulo, Rio</td><td>UTC−3</td><td>—</td><td>No (since 2019)</td></tr><tr><td>WET/CET</td><td>Lisbon / Paris</td><td>UTC+0 / UTC+1</td><td>UTC+1 / UTC+2</td><td>Yes</td></tr><tr><td>EET</td><td>Athens, Helsinki</td><td>UTC+2</td><td>UTC+3</td><td>Yes</td></tr><tr><td>MSK</td><td>Moscow</td><td>UTC+3</td><td>—</td><td>No</td></tr><tr><td>GST</td><td>Dubai, Abu Dhabi</td><td>UTC+4</td><td>—</td><td>No</td></tr><tr><td>IST</td><td>India</td><td>UTC+5:30</td><td>—</td><td>No</td></tr><tr><td>ICT</td><td>Bangkok, Ho Chi Minh</td><td>UTC+7</td><td>—</td><td>No</td></tr><tr><td>CST</td><td>Beijing, Shanghai</td><td>UTC+8</td><td>—</td><td>No</td></tr><tr><td>JST</td><td>Tokyo</td><td>UTC+9</td><td>—</td><td>No</td></tr><tr><td>AEST</td><td>Sydney, Melbourne</td><td>UTC+10</td><td>UTC+11 (AEDT)</td><td>Yes (southern autumn/winter)</td></tr><tr><td>NZST</td><td>Auckland</td><td>UTC+12</td><td>UTC+13 (NZDT)</td><td>Yes (southern autumn/winter)</td></tr></tbody></table>
+<p>*Phoenix, Arizona does not observe daylight saving time. Most of the Navajo Nation within Arizona does observe it.</p>
+<hr>
+<h2 id="checklist-before-you-schedule-a-cross-zone-meeting">Checklist: Before You Schedule a Cross-Zone Meeting</h2>
+<ul>
+<li>Identify the UTC offset for every city involved.</li>
+<li>Confirm whether each city is currently in standard or daylight time.</li>
+<li>Check that the US and EU DST transitions are not creating a temporary gap if both regions are involved.</li>
+<li>Verify the calendar date in every location, especially if any pair spans more than 12 hours.</li>
+<li>Use an IANA-compliant tool to confirm the final times rather than relying on memory or manual arithmetic.</li>
+<li>Send the calendar invite with the event time zone set explicitly, so each attendee sees their local time.</li>
+</ul>
+<hr>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-the-fastest-way-to-calculate-the-time-difference-between-two-cities">What is the fastest way to calculate the time difference between two cities?</h3>
+<p>Find the UTC offset for each city, then subtract one from the other. The result is the hour (and sometimes minute) difference. For example, UTC+9 (Tokyo) minus UTC−5 (New York EST) equals 14 hours. Tokyo is 14 hours ahead. For instant results without arithmetic, a dedicated converter like the ones at <a href="/tools/convert.html">TimeHopper</a> handles DST automatically.</p>
+<h3 id="why-does-the-time-difference-between-new-york-and-london-change-twice-a-year">Why does the time difference between New York and London change twice a year?</h3>
+<p>The US and the UK both observe daylight saving time, but they switch on different dates. The US changes clocks in mid-March; the UK changes in late March. During those two weeks, and again in autumn when the dates diverge, the difference between the two cities is temporarily 4 hours instead of the usual 5.</p>
+<h3 id="how-do-i-calculate-a-time-difference-when-one-city-uses-a-half-hour-offset">How do I calculate a time difference when one city uses a half-hour offset?</h3>
+<p>Convert both offsets to total minutes, then subtract. India is UTC+5:30, which is +330 minutes. New York (EST) is UTC−5, which is −300 minutes. The difference is 330 − (−300) = 630 minutes = 10 hours 30 minutes. India is 10.5 hours ahead of Eastern Standard Time.</p>
+<h3 id="what-happens-to-the-calculation-when-i-cross-the-international-date-line">What happens to the calculation when I cross the International Date Line?</h3>
+<p>The calendar date changes by one day. If you are calculating the time in a city east of the Date Line (like Honolulu, UTC−10) from a city west of it (like Auckland, UTC+12 or +13), the eastern city will show a date that is one day earlier than the western city, even if the clock times are close together. Always verify both the time and the date when the gap between two zones exceeds 12 hours.</p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>IANA Time Zone Database: <a href="https://www.iana.org/time-zones">https://www.iana.org/time-zones</a> — the canonical source for UTC offsets and DST rules used by most operating systems and programming languages.</li>
+<li>Google Calendar Help Center — Daylight Saving Time: <a href="https://support.google.com/calendar/answer/37064">https://support.google.com/calendar/answer/37064</a> — official documentation on how Google Calendar handles DST transitions.</li>
+<li>US Department of Transportation — Daylight Saving Time: <a href="https://www.transportation.gov/regulations/daylight-saving-time">https://www.transportation.gov/regulations/daylight-saving-time</a> — federal reference for US DST policy and exemptions.</li>
+</ul> </div>  <section class="related-posts" data-astro-cid-dpgbfi7r><h2 data-astro-cid-dpgbfi7r>Read Next</h2><div class="related-grid" data-astro-cid-dpgbfi7r><a href="/blog/worldtimebuddy-alternatives.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>5 World Time Buddy Alternatives Worth Trying in 2026</h3><p data-astro-cid-dpgbfi7r>World Time Buddy is popular but not perfect. Here are five alternatives — including free web tools, a macOS menu bar app, and a Chrome extension — evaluated honestly across ease of use, DST handling, and calendar integration.</p></div></a><a href="/blog/multiple-time-zones-one-view-labeling-system.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>Track 3+ Time Zones in One Google Calendar View</h3><p data-astro-cid-dpgbfi7r>See multiple time zones side-by-side in Google Calendar using secondary clocks, the world clock sidebar, and a labeling system that kills confusion.</p></div></a></div></section> <footer> <a href="/blog.html">&larr; Back to blog</a> </footer> </article>  <section class="support-cta" data-astro-cid-7dkdpa4i> <div class="container" data-astro-cid-7dkdpa4i> <div class="cta-card" data-astro-cid-7dkdpa4i> <div class="cta-content" data-astro-cid-7dkdpa4i> <h2 data-astro-cid-7dkdpa4i>Your calendar + time zones, at a glance.</h2> <p data-astro-cid-7dkdpa4i>See your schedule instantly, convert time zones, and get meeting alerts—without switching tabs.</p> <div class="cta-actions" data-astro-cid-7dkdpa4i> <a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="cta-btn" data-astro-cid-7dkdpa4i> <img src="/images/icon48.png" alt="" class="btn-icon" data-astro-cid-7dkdpa4i>
+Add to Chrome - Free
+</a> </div> </div> </div> </div> </section>  <footer> <div class="container"> <p>&copy; 2026 TimeHopper. Built for remote work.</p> <div class="footer-links"> <a href="/blog.html">Blog</a> <a href="/tools/convert.html">Time Zone Converter</a> <a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms of Service</a> <a href="mailto:danwalshx@gmail.com">Contact Support</a> </div> </div> </footer> </body></html> 
