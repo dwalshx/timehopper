@@ -60,14 +60,16 @@ Each role in this pipeline runs as a **separate agent instance**:
    - Challenger Lens
    - Writer (defending)
    - Facilitator (Supervisor)
-9) **SEO/AEO + Linking + QA** — Final optimization pass
-10) **Final Reviewer** — Strict contract-driven pass/fail gate with technical verification
+9) **Voice Editor** — De-AI pass + humanize pass (texture, warmth, personality). See `Reference/voice_editor_spec.md`
+10) **SEO/AEO + Linking + QA** — Final optimization pass
+11) **Final Reviewer** — Strict contract-driven pass/fail gate with technical verification
 
 ### Reference Documents (passed to agents as needed)
 - `Reference/editorial_personas.md` — User personas (Operator, Planner, Juggler, Minimalist)
 - `Reference/editorial_primitives_library.md` — Content building blocks
 - `Reference/brand_voice_v1.md` — TimeHopper voice: calm authority, precision over persuasion, operational empathy
 - `Reference/positioning_document_v1.md` — TimeHopper positioning: temporal workflow layer, not a replacement for calendars
+- `Reference/voice_editor_spec.md` — Voice Editor: De-AI tells checklist, humanize licensed moves, forage process
 - `Reference/editorial_team_template.md` — Operating principles and workflow reference
 
 ---
@@ -89,6 +91,8 @@ content_probe_schema.json
 04_draft_v1.md
 05_critique_session.md — Multi-perspective facilitated critique transcript + decision log
 06_draft_v2.md
+06b_draft_v2_voiced.md — Voice Editor output (De-AI + humanize pass)
+06b_voice_edit_log.md — Voice Editor change log
 07_seo_aeo_pass.md
 08_linking_pass.md
 09_final_qc.md (Contract-driven + technical verification)
@@ -358,8 +362,19 @@ Must:
 - If rejecting any item, note why briefly (but items from Contract Compliance are non-negotiable)
 - Extract any backlog candidates (from draft and critique session) into `backlog_candidates.md`
 
+### Step 6b — Voice Editor → `06b_draft_v2_voiced.md` + `06b_voice_edit_log.md`
+**Agent receives:** `06_draft_v2.md`, `Reference/voice_editor_spec.md`, `Reference/brand_voice_v1.md`
+
+The Voice Editor is an executor, not a proposer. It makes changes directly. Two passes:
+
+**Pass 1 — De-AI:** Scan for machine tells using the checklist in `Reference/voice_editor_spec.md` Section 2. Fix em-dash density, "not X — Y" constructions, three-beat rhythms, hedge fog, predictable intensifiers, transition scaffolding, sentence/paragraph uniformity. This is mechanical — apply the thresholds and fix what exceeds them.
+
+**Pass 2 — Humanize:** Make 4-8 interventions using the licensed moves in `Reference/voice_editor_spec.md` Section 3. Where the draft is flat, add temperature — dry irritation, messy examples, unresolved thoughts, broken rhythms, sensory details, cut over-explanations, asides. The **Forage** step (Section 4) is available: when a lukewarm example is identified, conduct up to 3 targeted web searches for emotional texture (Reddit threads, HN comments, industry surveys) to inform synthesized replacements. Never copy; absorb and synthesize.
+
+**Guardrails:** Do not change argument, structure, facts, links, frontmatter, or headings. Stay within word count ±5%. Document all changes in `06b_voice_edit_log.md`.
+
 ### Step 7 — SEO/AEO + Linking + QA → `07_seo_aeo_pass.md` + `08_linking_pass.md` + `content_probe.json`
-**Agent receives:** `06_draft_v2.md`, `01c_content_contract.md`, `02_source_pack.md`
+**Agent receives:** `06b_draft_v2_voiced.md`, `01c_content_contract.md`, `02_source_pack.md`
 
 SEO/AEO pass must include:
 - Title variants (2–3)
@@ -393,7 +408,7 @@ Linking pass must include:
 ```
 
 ### Step 8 — Final Reviewer → `09_final_qc.md`
-**Agent receives:** `06_draft_v2.md` (or latest draft), `01c_content_contract.md`, `02_source_pack.md`, `Reference/brand_voice_v1.md`
+**Agent receives:** `06b_draft_v2_voiced.md` (or latest draft), `01c_content_contract.md`, `02_source_pack.md`, `Reference/brand_voice_v1.md`
 
 Hard pass/fail against Acceptance Criteria (Section 4 of this spec), including:
 
@@ -487,6 +502,20 @@ This step launches **multiple isolated agent instances** in a facilitated exchan
 - Contract compliance checked structurally (non-negotiable)
 - Execution quality evaluated against exemplar Quality Bar Statement
 - Voice evaluated against `Reference/brand_voice_v1.md`
+
+### Voice Editor (prompt)
+
+You are the Voice Editor. Your job is to make this article sound like it was written by a human — specifically, someone with the voice of a senior Atlantic editor, a Wired writer, and Paul Graham. Sharp, direct, occasionally wry, comfortable with specificity and unresolved thoughts.
+
+You are an executor, not a proposer. Make changes directly.
+
+**Pass 1 — De-AI:** Run the tells checklist from `Reference/voice_editor_spec.md` Section 2. Count and fix: em-dash density (max 6/1000 words), "not X — Y" constructions (max 3), three-beat rhythms (max 4), hedge fog, predictable intensifiers, transition scaffolding, sentence/paragraph uniformity. This pass is mechanical.
+
+**Pass 2 — Humanize:** Make 4-8 interventions using the licensed moves from `Reference/voice_editor_spec.md` Section 3: dry irritation, messy examples, unresolved thoughts, broken rhythms, sensory details, cut over-explanations, asides/winks. Use the **Forage** step (Section 4) for up to 3 web searches when a lukewarm example needs emotional texture. Search Reddit, HN, industry surveys for how real people describe the experience. Never copy — absorb the frequency and synthesize original examples.
+
+**Guardrails:** Do not change argument, structure, facts, links, frontmatter, or headings. Stay within word count ±5%. Run the 4 brand voice tests after all changes (warmth ≠ hype). Document everything in `06b_voice_edit_log.md`.
+
+Output: `06b_draft_v2_voiced.md` and `06b_voice_edit_log.md`.
 
 ### SEO/AEO + Linking + QA (prompt)
 

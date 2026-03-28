@@ -297,13 +297,35 @@ Launch Agent:
 
 ---
 
+### Phase 5b: Voice Edit (Step 6b)
+
+**Step 6b — Voice Editor**
+```
+Launch Agent:
+  Description: "Voice editor"
+  Prompt: Read 06_draft_v2.md, Reference/voice_editor_spec.md, and Reference/brand_voice_v1.md.
+
+  You are the Voice Editor. Follow the full spec in Reference/voice_editor_spec.md.
+
+  Pass 1 — De-AI: Run the tells checklist (Section 2). Count and fix em-dashes, "not X — Y" constructions, three-beat rhythms, hedge fog, intensifiers, transition scaffolding, uniformity. Mechanical pass.
+
+  Pass 2 — Humanize: Make 4-8 interventions using the licensed moves (Section 3). Where the draft is flat, add temperature. Use the Forage step (Section 4) for up to 3 web searches when a lukewarm example needs emotional texture — search Reddit, HN, forums for how real people describe the experience. Never copy; synthesize.
+
+  Guardrails: Do not change argument, structure, facts, links, frontmatter, or headings. Stay within word count ±5%. Run the 4 voice tests after all changes.
+
+  Write output to 06b_draft_v2_voiced.md and 06b_voice_edit_log.md.
+  Receives: 06_draft_v2.md, Reference/voice_editor_spec.md, Reference/brand_voice_v1.md
+```
+
+---
+
 ### Phase 6: Optimization (Steps 7-8)
 
 **Step 7+8 — SEO/AEO + Linking + QA**
 ```
 Launch Agent:
   Description: "SEO linking QA"
-  Prompt: Read 06_draft_v2.md, 01c_content_contract.md, and 02_source_pack.md.
+  Prompt: Read 06b_draft_v2_voiced.md, 01c_content_contract.md, and 02_source_pack.md.
 
   You are the SEO/AEO + Linking + QA role. [paste full prompt from spec].
 
@@ -318,7 +340,7 @@ Launch Agent:
 ```
 Launch Agent:
   Description: "Final QC review"
-  Prompt: Read 06_draft_v2.md (or latest draft with SEO/linking changes applied), 01c_content_contract.md, 02_source_pack.md, and Reference/brand_voice_v1.md.
+  Prompt: Read 06b_draft_v2_voiced.md (or latest draft with SEO/linking changes applied), 01c_content_contract.md, 02_source_pack.md, and Reference/brand_voice_v1.md.
 
   You are the Final Reviewer. Perform a hard pass/fail against the Acceptance Criteria in the spec:
 
@@ -364,6 +386,7 @@ Launch Agent:
 | 4. Critique | Writer response | Sequential (needs all critiques) |
 | 4. Critique | Facilitator | Sequential (needs Writer response) |
 | 5. Rewrite | 6 | Sequential (needs Decision Log) |
-| 6. Optimization | 7+8 | Sequential (needs v2 draft) |
+| 5b. Voice Edit | 6b | Sequential (needs v2 draft) |
+| 6. Optimization | 7+8 | Sequential (needs voiced draft) |
 | 7. Final QC | 9 | Sequential (needs optimization) |
 | 8. Publish | 10 | Sequential (needs QC pass) |

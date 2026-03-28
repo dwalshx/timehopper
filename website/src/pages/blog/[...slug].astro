@@ -146,6 +146,53 @@ const breadcrumbs = [
 		border-top: 1px solid #eee;
 	}
 
+	/* Blockquote Styles (standard markdown >) */
+	.blog-post .content blockquote {
+		border-left: 3px solid #cbd5e1;
+		margin: 2rem 0;
+		padding: 0.5rem 0 0.5rem 1.5rem;
+		color: #475569;
+		font-style: italic;
+	}
+
+	.blog-post .content blockquote p {
+		margin-bottom: 0.75rem;
+	}
+
+	.blog-post .content blockquote p:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Pull Quote Styles */
+	.blog-post .content .pull-quote {
+		border-left: none;
+		border-top: 2px solid #fd547a;
+		border-bottom: 2px solid #fd547a;
+		margin: 3rem 0;
+		padding: 2rem 1.5rem;
+		text-align: center;
+		font-style: normal;
+		color: #2c3e50;
+	}
+
+	.blog-post .content .pull-quote p {
+		font-size: 1.5rem;
+		line-height: 1.4;
+		font-weight: 500;
+		margin-bottom: 0;
+	}
+
+	@media (max-width: 768px) {
+		.blog-post .content .pull-quote {
+			margin: 2rem 0;
+			padding: 1.5rem 1rem;
+		}
+
+		.blog-post .content .pull-quote p {
+			font-size: 1.25rem;
+		}
+	}
+
 	/* Answer Box Styles */
 	.answer-box {
 		background: #fff8e1;
