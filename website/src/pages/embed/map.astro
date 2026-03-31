@@ -1,0 +1,64 @@
+---
+import WorldMap from '../../components/WorldMap.astro';
+
+const cwsUrl = 'https://chromewebstore.google.com/detail/timehopper-calendar-clock/jckljcbopecepadagmnjbfjgojpnfkhl';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Time Zone Map — TimeHopper</title>
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="Embeddable world time zone map with live clocks. Powered by TimeHopper." />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: transparent;
+        overflow: hidden;
+      }
+      .embed-wrapper {
+        padding: 8px;
+      }
+      .embed-credit {
+        text-align: center;
+        padding: 8px 0 4px;
+        font-size: 11px;
+      }
+      .embed-credit a {
+        color: #fd547a;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .embed-credit a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="embed-wrapper">
+      <WorldMap />
+      <div class="embed-credit">
+        Powered by <a href="https://timehopperapp.com/tools/map.html" target="_blank" rel="noopener">TimeHopper</a>
+      </div>
+    </div>
+
+    <script>
+      // postMessage auto-resize for iframe embedding
+      function sendHeight() {
+        var height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: 'timehopper-resize', height: height }, '*');
+      }
+      // Send height on load and periodically (content may shift as clocks init)
+      window.addEventListener('load', function() {
+        sendHeight();
+        setTimeout(sendHeight, 500);
+        setTimeout(sendHeight, 1500);
+      });
+      // Also send on resize
+      window.addEventListener('resize', sendHeight);
+    </script>
+  </body>
+</html>

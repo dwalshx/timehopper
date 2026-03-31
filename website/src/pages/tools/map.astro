@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WorldMap from '../../components/WorldMap.astro';
+
+const title = "World Time Zone Map — Interactive Live Clocks | TimeHopper";
+const description = "Interactive world time zone map with live clocks for every UTC offset. Hover for details, click to convert. Free, no sign-up required.";
+
+const mapSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TimeHopper World Time Zone Map",
+  "description": description,
+  "url": "https://timehopperapp.com/tools/map.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "TimeHopper",
+    "url": "https://timehopperapp.com"
+  }
+};
+
+const breadcrumbs = [
+  { name: "Home", item: "https://timehopperapp.com/" },
+  { name: "Tools", item: "https://timehopperapp.com/tools/convert.html" },
+  { name: "World Map", item: "https://timehopperapp.com/tools/map.html" }
+];
+---
+
+<Layout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <div class="map-page">
+    <div class="container">
+      <h1>World Time Zone Map</h1>
+      <p class="map-intro">Live clocks across every UTC offset. Hover any zone for details, click to convert.</p>
+      <WorldMap />
+      <div class="map-footer">
+        <p>Showing all 39 UTC offsets from UTC-12 to UTC+14, including half-hour and quarter-hour zones.</p>
+        <a href="/tools/convert.html" class="map-converters-link">View all time zone converters →</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(mapSchema)} />
+</Layout>
+
+<style>
+  .map-page {
+    padding: 40px 0 60px;
+  }
+
+  .map-page h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .map-intro {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
+
+  .map-footer {
+    text-align: center;
+    margin-top: 24px;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  .map-converters-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #fd547a;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .map-converters-link:hover {
+    text-decoration: underline;
+  }
+</style>
