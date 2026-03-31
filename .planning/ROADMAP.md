@@ -49,7 +49,12 @@ Plans:
   2. Every timezone region in the SVG has a `data-tz` attribute correctly linking to its IANA timezone identifier from timezone-zones.ts
   3. Live clock times update every second for all visible zones, driven by a single shared timer — no per-zone interval timers
   4. The SVG file is under 100KB (under 50KB gzipped) and inline — no external network request needed to render the map
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Create WorldMap.astro with inline SVG timezone bands, color gradient, labels, and data-tz attributes
+- [ ] 06-02-PLAN.md — Add live clock overlay and single shared timer to WorldMap.astro
+
 **UI hint**: yes
 
 #### Phase 7: Map Interactivity
@@ -100,7 +105,12 @@ Plans:
   2. Every timezone region in the SVG has a `data-tz` attribute correctly linking to its IANA timezone identifier from timezone-zones.ts
   3. Live clock times update every second for all visible zones, driven by a single shared timer — no per-zone interval timers
   4. The SVG file is under 100KB (under 50KB gzipped) and inline — no external network request needed to render the map
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Create WorldMap.astro with inline SVG timezone bands, color gradient, labels, and data-tz attributes
+- [ ] 06-02-PLAN.md — Add live clock overlay and single shared timer to WorldMap.astro
+
 **UI hint**: yes
 
 ### Phase 7: Map Interactivity
@@ -142,7 +152,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 5. Timezone Data Foundation | v1.1 | 1/1 | Complete | 2026-03-31 |
-| 6. SVG Asset & Map Component | v1.2 | 0/? | Not started | - |
+| 6. SVG Asset & Map Component | v1.2 | 0/2 | Planning complete | - |
 | 7. Map Interactivity | v1.2 | 0/? | Not started | - |
 | 8. Pages & Integration | v1.2 | 0/? | Not started | - |
 | 9. Mobile & Polish | v1.2 | 0/? | Not started | - |
