@@ -1,6 +1,6 @@
 ---
-title: "Add a Secondary Time Zone in Google Calendar (2026)"
-description: "Add a second time zone column to Google Calendar in under a minute. Covers labeling, mobile limits, and what to do when two zones aren't enough."
+title: "How to Add a Secondary Time Zone in Google Calendar"
+description: "Step-by-step guide to adding a secondary time zone column in Google Calendar. Covers desktop setup, labeling, mobile limitations, and when to use it."
 pubDate: 2026-03-10
 updatedDate: 2026-03-20
 slug: add-secondary-time-zone-google-calendar

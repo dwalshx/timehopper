@@ -1,7 +1,7 @@
 ---
-title: "Google Calendar Chrome Extension for Quick-View"
-description: "See your Google Calendar schedule in a popup without switching tabs. We compare speed, notifications, and permissions across top extensions."
-pubDate: 2026-02-11
+title: "Chrome Extension for Google Calendar: Quick-View Your Schedule Without Switching Tabs"
+description: "Compare the best Chrome extensions for quick-view access to Google Calendar. Covers popup speed, notifications, time zones, permissions, and common problems."
+pubDate: 2026-03-20
 updatedDate: 2026-03-20
 slug: google-calendar-extension-for-chrome-quick-view
 tags: ["google calendar", "chrome extension", "productivity", "quick view", "calendar"]

@@ -1,6 +1,6 @@
 ---
-title: "Track 3+ Time Zones in One Google Calendar View"
-description: "See multiple time zones side-by-side in Google Calendar using secondary clocks, the world clock sidebar, and a labeling system that kills confusion."
+title: "How to Track Multiple Time Zones in One Google Calendar View"
+description: "Organize 3+ time zones in Google Calendar using secondary zones, the world clock sidebar, and a labeling system that reduces confusion."
 pubDate: 2026-03-11
 updatedDate: 2026-03-20
 slug: multiple-time-zones-one-view-labeling-system

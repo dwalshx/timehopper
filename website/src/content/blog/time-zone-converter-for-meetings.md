@@ -1,6 +1,6 @@
 ---
-title: "Time Zone Converter for Meetings: Stop the Mental Math"
-description: "Convert meeting times across time zones instantly using free tools and Google Calendar features. No math, no mistakes, no awkward 3 AM invites."
+title: "Time Zone Converter for Meetings: Convert Times Without Mental Math"
+description: "Stop doing time zone math in your head. Use these conversion methods, tools, and Google Calendar features to schedule cross-zone meetings correctly every time."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: time-zone-converter-for-meetings

@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar Time Zone Wrong? Fix It in 5 Steps"
-description: "Diagnose DST shifts, OS mismatches, and sync errors causing wrong time zones. Platform-specific steps for Windows, macOS, Android, and iOS."
+title: "Google Calendar Time Zone Wrong? How to Fix It"
+description: "Fix wrong time zones in Google Calendar. Diagnose DST shifts, OS mismatches, and sync errors with platform-specific steps for Windows, macOS, Android, and iOS."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: google-calendar-time-zone-wrong-fix

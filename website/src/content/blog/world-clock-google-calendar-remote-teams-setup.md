@@ -1,6 +1,6 @@
 ---
-title: "Google Calendar World Clock Setup for Remote Teams"
-description: "Add a world clock to Google Calendar in 2 minutes. Covers the built-in clock, secondary time zones, and better third-party options for distributed teams."
+title: "World Clock + Google Calendar: The Fastest Setup for Remote Teams"
+description: "Set up a world clock alongside Google Calendar to coordinate across time zones. Covers Google's built-in world clock, secondary zones, and third-party options."
 pubDate: 2026-02-11
 updatedDate: 2026-03-20
 slug: world-clock-google-calendar-remote-teams-setup

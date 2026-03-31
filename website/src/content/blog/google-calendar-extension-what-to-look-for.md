@@ -1,7 +1,7 @@
 ---
-title: "7 Things to Check Before Installing a Google Calendar Extension"
-description: "Most Google Calendar extensions disappoint. Use this 7-point scoring rubric to find one that actually fits your workflow before you install."
-pubDate: 2026-02-15
+title: "Google Calendar Extension: What to Look For (Evaluation Framework + Scoring Rubric)"
+description: "A practical framework for evaluating Google Calendar Chrome extensions. 7 criteria, a copy-paste scoring rubric, and workflow-specific recommendations."
+pubDate: 2026-03-20
 updatedDate: 2026-03-20
 slug: google-calendar-extension-what-to-look-for
 tags: ["google calendar", "chrome extension", "productivity", "evaluation", "buyer guide"]
@@ -287,7 +287,7 @@ The Chrome Web Store will keep publishing new calendar extensions. Listicles wil
 
 ---
 
-## Sources
+### Sources
 
 - Chrome Extensions developer documentation: [Permission Warnings](https://developer.chrome.com/docs/extensions/develop/concepts/permission-warnings) — Google, 2025
 - Web Content Accessibility Guidelines (WCAG) 2.2: [Contrast Minimum (Level AA)](https://www.w3.org/TR/WCAG22/#contrast-minimum) — W3C, 2023

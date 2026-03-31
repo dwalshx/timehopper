@@ -1,7 +1,7 @@
 ---
-title: "Hide Weekends in Google Calendar: 5-Day View Setup"
-description: "Switch Google Calendar to a clean 5-day work week view in under a minute. Covers desktop, mobile limits, and custom schedules for non-standard weeks."
-pubDate: 2026-03-01
+title: "How to Hide Weekends in Google Calendar (Cleaner Week View)"
+description: "Hide weekends in Google Calendar for a cleaner work-week view. Covers desktop, mobile limitations, custom views, non-standard work weeks, and common mistakes."
+pubDate: 2026-03-20
 updatedDate: 2026-03-20
 slug: hide-weekends-google-calendar
 tags: ["google calendar", "week view", "how to", "productivity", "calendar view"]

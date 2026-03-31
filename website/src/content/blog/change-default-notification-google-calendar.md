@@ -1,7 +1,7 @@
 ---
-title: "Change Default Notifications in Google Calendar"
-description: "Set default notifications on web, Android, and iOS — plus a simple strategy that stops missed meetings without alert fatigue."
-pubDate: 2026-02-23
+title: "How to Change Default Notification Settings in Google Calendar"
+description: "Set default notifications in Google Calendar on web, Android, and iOS — plus a notification strategy that prevents missed meetings and alert fatigue."
+pubDate: 2026-03-20
 updatedDate: 2026-03-20
 slug: change-default-notification-google-calendar
 tags: ["google calendar", "notifications", "how to", "productivity"]

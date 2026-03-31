@@ -1,7 +1,7 @@
 ---
-title: "Color-Code Google Calendar: A System That Works"
-description: "Most color systems fail within a week. Here's a minimal approach to color-coding Google Calendar events that stays readable at a glance."
-pubDate: 2026-02-27
+title: "How to Color-Code Events in Google Calendar (and a System That Actually Works)"
+description: "Color-code Google Calendar events and calendars with a system that makes your week readable at a glance. Fewer colors, more clarity."
+pubDate: 2026-03-20
 updatedDate: 2026-03-20
 slug: color-code-google-calendar-events
 tags: ["google calendar", "color coding", "productivity", "how to", "organization"]
