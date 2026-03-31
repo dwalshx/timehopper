@@ -149,24 +149,55 @@ const CLOCK_ZONES = new Set([
   </div>
 </div>
 
+<!-- Mobile card list fallback (shown below 480px) -->
+<div class="mobile-zone-list">
+  {timezoneZones.map((zone: TimezoneZone, index: number) => {
+    const offsetLabel = formatOffsetLabel(zone.utcOffsetMinutes);
+    const color = bandColors[index];
+    return (
+      <a
+        class="zone-card"
+        href={zone.converterPair ? `/tools/convert/${zone.converterPair}.html` : undefined}
+        data-mobile-tz={zone.iana}
+        style={`border-left: 4px solid ${color};`}
+      >
+        <div class="zone-card-header">
+          <span class="zone-card-abbr">{zone.abbr}</span>
+          <span class="zone-card-offset">{offsetLabel}</span>
+        </div>
+        <div class="zone-card-region">{zone.region} — {zone.city}</div>
+        <div class="zone-card-time" data-mobile-clock={zone.iana}>--:--</div>
+      </a>
+    );
+  })}
+</div>
+
 <script>
   function initWorldMapClocks() {
     const clockEls = document.querySelectorAll('[data-clock]');
-    if (clockEls.length === 0) return;
+    const mobileClockEls = document.querySelectorAll('[data-mobile-clock]');
 
     function formatClockTime(date, iana) {
-      return date.toLocaleTimeString('en-US', {
-        timeZone: iana,
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true,
-      });
+      try {
+        return date.toLocaleTimeString('en-US', {
+          timeZone: iana,
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+        });
+      } catch (e) {
+        return '--:--';
+      }
     }
 
     function updateAllClocks() {
       const now = new Date();
       clockEls.forEach(function(el) {
         var iana = el.getAttribute('data-clock');
+        el.textContent = formatClockTime(now, iana);
+      });
+      mobileClockEls.forEach(function(el) {
+        var iana = el.getAttribute('data-mobile-clock');
         el.textContent = formatClockTime(now, iana);
       });
     }
@@ -470,5 +501,76 @@ const CLOCK_ZONES = new Set([
     font-size: 28px;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
+  }
+
+  /* Mobile card list — hidden on desktop */
+  .mobile-zone-list {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    .world-map-container {
+      display: none;
+    }
+
+    .mobile-zone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 70vh;
+      overflow-y: auto;
+      padding: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .zone-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: white;
+      transition: background 0.15s ease;
+    }
+
+    .zone-card:hover, .zone-card:active {
+      background: #334155;
+    }
+
+    .zone-card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .zone-card-abbr {
+      color: #fd547a;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .zone-card-offset {
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+    }
+
+    .zone-card-time {
+      font-size: 18px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      min-width: 90px;
+    }
+
+    .zone-card-region {
+      width: 100%;
+      color: rgba(255,255,255,0.6);
+      font-size: 12px;
+      margin-top: 2px;
+    }
   }
 </style>

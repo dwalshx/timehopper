@@ -39,7 +39,7 @@ export interface TimezoneZone {
 export const timezoneZones: TimezoneZone[] = [
   // UTC-12:00
   {
-    iana: "Pacific/Baker",
+    iana: "Etc/GMT+12",
     abbr: "BIT",
     utcOffsetMinutes: -720,
     region: "Baker Island",
