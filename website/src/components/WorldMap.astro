@@ -130,6 +130,23 @@ const CLOCK_ZONES = new Set([
       );
     })}
   </svg>
+
+  <!-- Hover tooltip -->
+  <div class="map-tooltip" id="map-tooltip" role="tooltip" aria-hidden="true">
+    <div class="tooltip-abbr" id="tooltip-abbr"></div>
+    <div class="tooltip-offset" id="tooltip-offset"></div>
+    <div class="tooltip-region" id="tooltip-region"></div>
+    <div class="tooltip-time" id="tooltip-time"></div>
+  </div>
+
+  <!-- Info panel for zones without converter pairs -->
+  <div class="map-info-panel" id="map-info-panel" aria-hidden="true">
+    <button class="info-panel-close" id="info-panel-close" aria-label="Close">&times;</button>
+    <div class="info-panel-abbr" id="info-panel-abbr"></div>
+    <div class="info-panel-offset" id="info-panel-offset"></div>
+    <div class="info-panel-region" id="info-panel-region"></div>
+    <div class="info-panel-time" id="info-panel-time"></div>
+  </div>
 </div>
 
 <script>
@@ -176,16 +193,137 @@ const CLOCK_ZONES = new Set([
     });
   }
 
+  function initWorldMapInteractivity() {
+    const svg = document.querySelector('.world-map-container svg');
+    if (!svg) return;
+
+    const tooltip = document.getElementById('map-tooltip');
+    const tooltipAbbr = document.getElementById('tooltip-abbr');
+    const tooltipOffset = document.getElementById('tooltip-offset');
+    const tooltipRegion = document.getElementById('tooltip-region');
+    const tooltipTime = document.getElementById('tooltip-time');
+
+    const infoPanel = document.getElementById('map-info-panel');
+    const infoPanelAbbr = document.getElementById('info-panel-abbr');
+    const infoPanelOffset = document.getElementById('info-panel-offset');
+    const infoPanelRegion = document.getElementById('info-panel-region');
+    const infoPanelTime = document.getElementById('info-panel-time');
+    var infoPanelIana = null;
+
+    document.getElementById('info-panel-close').addEventListener('click', function() {
+      infoPanel.setAttribute('aria-hidden', 'true');
+      infoPanelIana = null;
+    });
+
+    function findZoneGroup(target) {
+      var el = target;
+      while (el && el !== svg) {
+        if (el.tagName === 'g' && el.hasAttribute('data-tz')) return el;
+        el = el.parentElement;
+      }
+      return null;
+    }
+
+    function formatOffset(minutes) {
+      var sign = minutes >= 0 ? '+' : '-';
+      var abs = Math.abs(minutes);
+      var h = Math.floor(abs / 60);
+      var m = abs % 60;
+      return 'UTC' + sign + h + (m > 0 ? ':' + String(m).padStart(2, '0') : '');
+    }
+
+    function getLiveTime(iana) {
+      return new Date().toLocaleTimeString('en-US', {
+        timeZone: iana,
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+      });
+    }
+
+    // Single event delegation on SVG root — INT-03
+    svg.addEventListener('mousemove', function(e) {
+      var group = findZoneGroup(e.target);
+      if (!group) {
+        tooltip.setAttribute('aria-hidden', 'true');
+        return;
+      }
+      var iana = group.getAttribute('data-tz');
+      var abbr = group.getAttribute('data-abbr');
+      var offset = parseInt(group.getAttribute('data-offset'), 10);
+      var region = group.getAttribute('data-region');
+
+      tooltipAbbr.textContent = abbr;
+      tooltipOffset.textContent = formatOffset(offset);
+      tooltipRegion.textContent = region;
+      tooltipTime.textContent = getLiveTime(iana);
+      tooltip.setAttribute('aria-hidden', 'false');
+
+      // Position tooltip near cursor
+      var containerRect = svg.closest('.world-map-container').getBoundingClientRect();
+      var x = e.clientX - containerRect.left + 12;
+      var y = e.clientY - containerRect.top - 10;
+
+      // Keep tooltip within container
+      if (x + 160 > containerRect.width) x = x - 180;
+      if (y < 10) y = 10;
+
+      tooltip.style.left = x + 'px';
+      tooltip.style.top = y + 'px';
+    });
+
+    svg.addEventListener('mouseleave', function() {
+      tooltip.setAttribute('aria-hidden', 'true');
+    });
+
+    // Click handler — INT-02
+    svg.addEventListener('click', function(e) {
+      var group = findZoneGroup(e.target);
+      if (!group) return;
+
+      var pair = group.getAttribute('data-pair');
+      if (pair) {
+        // Navigate to converter page
+        window.location.href = '/tools/convert/' + pair + '.html';
+      } else {
+        // Show info panel for zones without converter pairs — no dead ends
+        var iana = group.getAttribute('data-tz');
+        var abbr = group.getAttribute('data-abbr');
+        var offset = parseInt(group.getAttribute('data-offset'), 10);
+        var region = group.getAttribute('data-region');
+
+        infoPanelAbbr.textContent = abbr;
+        infoPanelOffset.textContent = formatOffset(offset);
+        infoPanelRegion.textContent = region;
+        infoPanelTime.textContent = getLiveTime(iana);
+        infoPanelIana = iana;
+        infoPanel.setAttribute('aria-hidden', 'false');
+      }
+    });
+
+    // Keep info panel time updated using the shared clock timer
+    setInterval(function() {
+      if (infoPanelIana && infoPanel.getAttribute('aria-hidden') === 'false') {
+        infoPanelTime.textContent = getLiveTime(infoPanelIana);
+      }
+    }, 1000);
+  }
+
   // DOMContentLoaded dual-init pattern (matches TimezoneConverter)
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initWorldMapClocks);
+    document.addEventListener('DOMContentLoaded', function() {
+      initWorldMapClocks();
+      initWorldMapInteractivity();
+    });
   } else {
     initWorldMapClocks();
+    initWorldMapInteractivity();
   }
 </script>
 
 <style>
   .world-map-container {
+    position: relative;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -204,5 +342,133 @@ const CLOCK_ZONES = new Set([
   .clock-time {
     font-variant-numeric: tabular-nums;
     transition: opacity 0.15s ease;
+  }
+
+  /* Hover cursor for clickable bands */
+  .world-map-container svg g[data-tz] {
+    cursor: pointer;
+  }
+
+  .world-map-container svg g[data-tz]:hover rect {
+    filter: brightness(1.3);
+    transition: filter 0.15s ease;
+  }
+
+  /* Tooltip */
+  .map-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 10px 14px;
+    min-width: 140px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    z-index: 10;
+    transition: opacity 0.12s ease;
+  }
+
+  .map-tooltip[aria-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .map-tooltip[aria-hidden="false"] {
+    opacity: 1;
+  }
+
+  .tooltip-abbr {
+    color: #fd547a;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .tooltip-offset {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .tooltip-region {
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .tooltip-time {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Info panel (for zones without converter pair) */
+  .map-info-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 20px 28px;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    z-index: 20;
+    transition: opacity 0.15s ease;
+  }
+
+  .map-info-panel[aria-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .map-info-panel[aria-hidden="false"] {
+    opacity: 1;
+  }
+
+  .info-panel-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+  }
+
+  .info-panel-close:hover {
+    color: white;
+  }
+
+  .info-panel-abbr {
+    color: #fd547a;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .info-panel-offset {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .info-panel-region {
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .info-panel-time {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
   }
 </style>
