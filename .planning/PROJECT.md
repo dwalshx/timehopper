@@ -8,15 +8,17 @@ TimeHopper is a Chrome extension for time zone management in Google Calendar, wi
 
 Help people understand and navigate time zone differences through clear, interactive tools and authoritative content — driving awareness and installs of the TimeHopper Chrome extension.
 
-## Current Milestone: v1.1 — Timezone Visualizations
+## Current Milestone: v1.2 — Interactive World Time Zone Map
 
-**Goal:** Build interactive timezone visualization tools, starting with a world time zone map showing relationships across the entire globe.
+**Goal:** Build a visual, interactive SVG world time zone map with live clocks and embeddable widget.
 
 **Target features:**
-- Interactive SVG world time zone map with live clocks for all UTC offsets
-- Clickable zones linking to existing converter pairs
-- Embeddable map widget
-- Foundation for future visualization tools
+- Interactive SVG world map with color-coded timezone bands and live clocks
+- Hover tooltips showing zone info and current time
+- Click zone to navigate to converter pair page
+- Map page at /tools/map.html
+- Embeddable map widget at /embed/map.html
+- Mobile card fallback below 480px
 
 ## Requirements
 
@@ -64,7 +66,9 @@ Help people understand and navigate time zone differences through clear, interac
 | Vanilla JS only | Zero dependencies, fast load, no build complexity | ✓ Good |
 | Iframe embed strategy | Style isolation, no conflicts with host page | ✓ Good |
 | 5-layer AI discoverability | Cover all AI access patterns (LLM, agent, CMS, search) | ✓ Good |
-| SVG-based map (proposed) | Lightweight, interactive, no external deps | — Pending |
+| SVG-based map | Lightweight, interactive, no external deps | — Pending |
+| Offsets as integer minutes | Avoids JS float imprecision for half-hour zones | ✓ Good |
+| timezone-zones.ts zero imports | Hardcoded slugs avoid circular deps with pairs | ✓ Good |
 
 ## Evolution
 
@@ -84,4 +88,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after Phase 5 completion*
+*Last updated: 2026-03-31 after milestone v1.2 started*
