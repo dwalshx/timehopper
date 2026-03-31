@@ -25,6 +25,20 @@ const bandColors: string[] = timezoneZones.map((_, index) => computeBandColor(in
 
 // Text centering: x at band center
 const textCenters = timezoneZones.map((_, index) => index * BAND_WIDTH + BAND_WIDTH / 2);
+
+// 10 representative zones that get visible live clocks
+const CLOCK_ZONES = new Set([
+  'Pacific/Honolulu',      // HST, UTC-10
+  'America/Los_Angeles',   // PST, UTC-8
+  'America/Chicago',       // CST, UTC-6
+  'America/New_York',      // EST, UTC-5
+  'Europe/London',         // GMT, UTC+0
+  'Europe/Berlin',         // CET, UTC+1
+  'Asia/Dubai',            // GST, UTC+4
+  'Asia/Kolkata',          // IST, UTC+5:30
+  'Asia/Tokyo',            // JST, UTC+9
+  'Pacific/Auckland',      // NZST, UTC+12
+]);
 ---
 
 <div class="world-map-container">
@@ -94,11 +108,81 @@ const textCenters = timezoneZones.map((_, index) => index * BAND_WIDTH + BAND_WI
           >
             {offsetLabel}
           </text>
+          {/* Live clock (only for selected representative zones) */}
+          {CLOCK_ZONES.has(zone.iana) && (
+            <text
+              class="clock-time"
+              x={cx}
+              y={260}
+              data-clock={zone.iana}
+              text-anchor="middle"
+              dominant-baseline="middle"
+              fill="white"
+              font-size="11"
+              font-weight="700"
+              font-family="system-ui, -apple-system, sans-serif"
+              font-variant-numeric="tabular-nums"
+            >
+              --:--
+            </text>
+          )}
         </g>
       );
     })}
   </svg>
 </div>
+
+<script>
+  function initWorldMapClocks() {
+    const clockEls = document.querySelectorAll('[data-clock]');
+    if (clockEls.length === 0) return;
+
+    function formatClockTime(date, iana) {
+      return date.toLocaleTimeString('en-US', {
+        timeZone: iana,
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true,
+      });
+    }
+
+    function updateAllClocks() {
+      const now = new Date();
+      clockEls.forEach(function(el) {
+        var iana = el.getAttribute('data-clock');
+        el.textContent = formatClockTime(now, iana);
+      });
+    }
+
+    // Initial update immediately
+    updateAllClocks();
+
+    // Single shared timer — per MAP-03, no per-zone intervals
+    var timerId = setInterval(updateAllClocks, 1000);
+
+    // Page Visibility API: pause when tab hidden, resume when visible
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        if (timerId !== null) {
+          clearInterval(timerId);
+          timerId = null;
+        }
+      } else {
+        updateAllClocks(); // Immediate refresh on return
+        if (timerId === null) {
+          timerId = setInterval(updateAllClocks, 1000);
+        }
+      }
+    });
+  }
+
+  // DOMContentLoaded dual-init pattern (matches TimezoneConverter)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWorldMapClocks);
+  } else {
+    initWorldMapClocks();
+  }
+</script>
 
 <style>
   .world-map-container {
@@ -115,5 +199,10 @@ const textCenters = timezoneZones.map((_, index) => index * BAND_WIDTH + BAND_WI
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .clock-time {
+    font-variant-numeric: tabular-nums;
+    transition: opacity 0.15s ease;
   }
 </style>
