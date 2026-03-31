@@ -50,17 +50,17 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TZD-01 | TBD | Pending |
-| TZD-02 | TBD | Pending |
-| TZD-03 | TBD | Pending |
-| TZD-04 | TBD | Pending |
-| TZD-05 | TBD | Pending |
+| TZD-01 | Phase 5 | Pending |
+| TZD-02 | Phase 5 | Pending |
+| TZD-03 | Phase 5 | Pending |
+| TZD-04 | Phase 5 | Pending |
+| TZD-05 | Phase 5 | Pending |
 
 **Coverage:**
 - v1.1 requirements: 5 total
-- Mapped to phases: 0
-- Unmapped: 5 ⚠️
+- Mapped to phases: 5
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-31*
-*Last updated: 2026-03-31 after initial definition*
+*Last updated: 2026-03-31 after roadmap creation*
