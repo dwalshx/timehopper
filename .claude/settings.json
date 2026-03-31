@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Agent",
+      "Edit",
+      "Write",
+      "Read",
+      "WebFetch",
+      "Bash(cd *)",
+      "Bash(cp *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(mkdir *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(git log*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git rebase *)",
+      "Bash(npm run build*)",
+      "Bash(npx astro *)",
+      "Bash(curl *localhost*)",
+      "Bash(iconv *)"
+    ]
+  }
+}

@@ -1,88 +1,187 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/images/icon128.png"><meta name="generator" content="Astro v5.17.2"><!-- Canonical URL --><link rel="canonical" href="https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"><!-- Primary Meta Tags --><title>Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs - TimeHopper Blog</title><meta name="title" content="Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs - TimeHopper Blog"><meta name="description" content="A practical guide to using a Chrome extension to view your Google Calendar instantly—plus what to look for so it stays fast, reliable, and trustworthy."><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"><meta property="og:title" content="Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs - TimeHopper Blog"><meta property="og:description" content="A practical guide to using a Chrome extension to view your Google Calendar instantly—plus what to look for so it stays fast, reliable, and trustworthy."><meta property="og:image" content="https://timehopperapp.com/images/icon128.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"><meta property="twitter:title" content="Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs - TimeHopper Blog"><meta property="twitter:description" content="A practical guide to using a Chrome extension to view your Google Calendar instantly—plus what to look for so it stays fast, reliable, and trustworthy."><meta property="twitter:image" content="https://timehopperapp.com/images/icon128.png"><!-- Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TimeHopper","url":"https://timehopperapp.com","logo":"https://timehopperapp.com/images/icon128.png","contactPoint":{"@type":"ContactPoint","email":"danwalshx@gmail.com","contactType":"customer support"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timehopperapp.com/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://timehopperapp.com/blog.html"},{"@type":"ListItem","position":3,"name":"Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs","item":"https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"}]}</script><style>.support-cta[data-astro-cid-7dkdpa4i]{padding:60px 0;background:#f9f9f9}.cta-card[data-astro-cid-7dkdpa4i]{background:linear-gradient(135deg,#fd547a,#526ea1);border-radius:24px;padding:60px 40px;text-align:center;color:#fff;box-shadow:0 20px 40px #fd547a33;position:relative;overflow:hidden}.cta-card[data-astro-cid-7dkdpa4i]:before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#ffffff1a,#fff0 70%);pointer-events:none}.cta-content[data-astro-cid-7dkdpa4i]{position:relative;z-index:1;max-width:600px;margin:0 auto}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:2.5rem;margin:0 0 1rem;color:#fff;font-weight:800}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.25rem;opacity:.9;margin-bottom:2.5rem;line-height:1.5}.cta-btn[data-astro-cid-7dkdpa4i]{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#fd547a!important;padding:18px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;box-shadow:0 10px 20px #0000001a;transition:transform .2s,box-shadow .2s;text-decoration:none}.cta-btn[data-astro-cid-7dkdpa4i]:hover{transform:translateY(-3px);box-shadow:0 15px 30px #00000026;text-decoration:none}.btn-icon[data-astro-cid-7dkdpa4i]{width:24px;height:24px}@media(max-width:600px){.cta-card[data-astro-cid-7dkdpa4i]{padding:40px 20px}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:1.8rem}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.1rem}}.main-nav[data-astro-cid-pux6a34n]{background:#fffffff2;backdrop-filter:blur(10px);border-bottom:1px solid #eee;padding:15px 0;position:sticky;top:0;z-index:1000}.nav-container[data-astro-cid-pux6a34n]{display:flex;justify-content:space-between;align-items:center}.nav-logo[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:10px;text-decoration:none;color:#333;font-weight:800;font-size:1.25rem}.nav-logo-img[data-astro-cid-pux6a34n]{width:32px;height:32px}.nav-links[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:25px;list-style:none;margin:0;padding:0}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]{text-decoration:none;color:#555;font-weight:600;transition:color .2s}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]:hover{color:#fd547a}.nav-cta[data-astro-cid-pux6a34n]{background:#fd547a;color:#fff!important;padding:8px 16px;border-radius:50px;font-size:.9rem;transition:transform .2s,box-shadow .2s!important}.nav-cta[data-astro-cid-pux6a34n]:hover{transform:translateY(-2px);box-shadow:0 4px 10px #fd547a33}@media(max-width:600px){.nav-logo-text[data-astro-cid-pux6a34n]{display:none}.nav-links[data-astro-cid-pux6a34n]{gap:15px}.nav-cta[data-astro-cid-pux6a34n]{padding:6px 12px;font-size:.8rem}}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#333;line-height:1.6}.container{max-width:900px;margin:0 auto;padding:0 20px}a{color:#fd547a;text-decoration:none;transition:text-decoration .2s}a:hover{text-decoration:underline}footer{background:#333;color:#aaa;padding:40px 0;text-align:center}.footer-links{margin-top:15px;display:flex;justify-content:center;gap:20px}footer a{color:#fff;text-decoration:none;font-size:.9em}footer a:hover{text-decoration:underline}
-.related-posts[data-astro-cid-dpgbfi7r]{margin-top:60px;padding-top:40px;border-top:2px solid #f1f1f1}.related-posts[data-astro-cid-dpgbfi7r] h2[data-astro-cid-dpgbfi7r]{font-size:1.8rem;margin-bottom:2rem;color:#2c3e50}.related-grid[data-astro-cid-dpgbfi7r]{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.related-card[data-astro-cid-dpgbfi7r]{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.related-card[data-astro-cid-dpgbfi7r]:hover{transform:translateY(-3px);box-shadow:0 4px 12px #0000000d;text-decoration:none}.related-card[data-astro-cid-dpgbfi7r] h3[data-astro-cid-dpgbfi7r]{margin:0 0 10px;font-size:1.3rem;color:#fd547a}.related-card[data-astro-cid-dpgbfi7r] p[data-astro-cid-dpgbfi7r]{margin:0;font-size:.95rem;color:#666;line-height:1.4}.blog-post{max-width:800px;margin:0 auto;padding:60px 20px}.blog-post header{margin-bottom:40px;text-align:center}.blog-post .meta{color:#888;margin-bottom:1rem}.blog-post h1{font-size:3rem;line-height:1.1;margin:0 0 2rem;color:#2c3e50}.blog-post .hero-img{width:100%;border-radius:12px;margin-top:2rem}.blog-post .content{font-size:1.2rem;line-height:1.8;color:#333}.blog-post .content h2{margin-top:3rem;font-size:2rem;color:#2c3e50}.blog-post .content p{margin-bottom:1.5rem}.blog-post footer{margin-top:60px;padding-top:30px;border-top:1px solid #eee}.answer-box{background:#fff8e1;border-left:4px solid #fcc934;padding:20px 30px;border-radius:0 8px 8px 0;margin:2rem 0}.answer-box h3{margin-top:0;font-size:1.2rem;color:#856404}
-</style></head> <body> <nav class="main-nav" data-astro-cid-pux6a34n> <div class="container nav-container" data-astro-cid-pux6a34n> <a href="/" class="nav-logo" data-astro-cid-pux6a34n> <img src="/images/icon48.png" alt="TimeHopper Logo" class="nav-logo-img" data-astro-cid-pux6a34n> <span class="nav-logo-text" data-astro-cid-pux6a34n>TimeHopper</span> </a> <ul class="nav-links" data-astro-cid-pux6a34n> <li data-astro-cid-pux6a34n><a href="/" data-astro-cid-pux6a34n>Home</a></li> <li data-astro-cid-pux6a34n><a href="/blog.html" data-astro-cid-pux6a34n>Blog</a></li> <li data-astro-cid-pux6a34n><a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="nav-cta" data-astro-cid-pux6a34n>Add to Chrome</a></li> </ul> </div> </nav>   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs","description":"A practical guide to using a Chrome extension to view your Google Calendar instantly—plus what to look for so it stays fast, reliable, and trustworthy.","image":[],"datePublished":"2026-02-11T00:00:00.000Z","author":[{"@type":"Person","name":"Dan Walsh","url":"https://timehopperapp.com"}]}</script> <article class="container blog-post"> <header> <div class="meta"> <time datetime="2026-02-11T00:00:00.000Z"> February 11, 2026 </time> </div> <h1>Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs</h1>  </header> <div class="content"> <h1 id="chrome-extension-for-google-calendar-see-your-schedule-without-switching-tabs">Chrome Extension for Google Calendar: See Your Schedule Without Switching Tabs</h1>
-<p><strong>Direct answer:</strong> A Chrome extension for Google Calendar is worth using if it lets you <strong>peek at your schedule in 1–3 seconds</strong> (without opening a new tab), and if it keeps <strong><a href="https://support.google.com/chrome/answer/3220216">notifications</a> and <a href="https://support.google.com/calendar/answer/37064">time zones</a></strong> clear. If it’s slow, noisy, or “surprising,” you’ll stop using it.</p>
-<p>This guide explains the fastest workflow, what features actually matter, and a simple checklist for choosing the right extension.</p>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/images/icon128.png"><meta name="generator" content="Astro v5.17.2"><!-- Canonical URL --><link rel="canonical" href="https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"><!-- Primary Meta Tags --><title>Google Calendar Chrome Extension for Quick-View - TimeHopper Blog</title><meta name="title" content="Google Calendar Chrome Extension for Quick-View - TimeHopper Blog"><meta name="description" content="See your Google Calendar schedule in a popup without switching tabs. We compare speed, notifications, and permissions across top extensions."><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"><meta property="og:title" content="Google Calendar Chrome Extension for Quick-View - TimeHopper Blog"><meta property="og:description" content="See your Google Calendar schedule in a popup without switching tabs. We compare speed, notifications, and permissions across top extensions."><meta property="og:image" content="https://timehopperapp.com/images/icon128.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"><meta property="twitter:title" content="Google Calendar Chrome Extension for Quick-View - TimeHopper Blog"><meta property="twitter:description" content="See your Google Calendar schedule in a popup without switching tabs. We compare speed, notifications, and permissions across top extensions."><meta property="twitter:image" content="https://timehopperapp.com/images/icon128.png"><!-- Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TimeHopper","url":"https://timehopperapp.com","logo":"https://timehopperapp.com/images/icon128.png","contactPoint":{"@type":"ContactPoint","email":"danwalshx@gmail.com","contactType":"customer support"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timehopperapp.com/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://timehopperapp.com/blog.html"},{"@type":"ListItem","position":3,"name":"Google Calendar Chrome Extension for Quick-View","item":"https://timehopperapp.com/blog/google-calendar-extension-for-chrome-quick-view.html"}]}</script><style>.support-cta[data-astro-cid-7dkdpa4i]{padding:60px 0;background:#f9f9f9}.cta-card[data-astro-cid-7dkdpa4i]{background:linear-gradient(135deg,#fd547a,#526ea1);border-radius:24px;padding:60px 40px;text-align:center;color:#fff;box-shadow:0 20px 40px #fd547a33;position:relative;overflow:hidden}.cta-card[data-astro-cid-7dkdpa4i]:before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#ffffff1a,#fff0 70%);pointer-events:none}.cta-content[data-astro-cid-7dkdpa4i]{position:relative;z-index:1;max-width:600px;margin:0 auto}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:2.5rem;margin:0 0 1rem;color:#fff;font-weight:800}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.25rem;opacity:.9;margin-bottom:2.5rem;line-height:1.5}.cta-btn[data-astro-cid-7dkdpa4i]{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#fd547a!important;padding:18px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;box-shadow:0 10px 20px #0000001a;transition:transform .2s,box-shadow .2s;text-decoration:none}.cta-btn[data-astro-cid-7dkdpa4i]:hover{transform:translateY(-3px);box-shadow:0 15px 30px #00000026;text-decoration:none}.btn-icon[data-astro-cid-7dkdpa4i]{width:24px;height:24px}@media(max-width:600px){.cta-card[data-astro-cid-7dkdpa4i]{padding:40px 20px}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:1.8rem}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.1rem}}.main-nav[data-astro-cid-pux6a34n]{background:#fffffff2;backdrop-filter:blur(10px);border-bottom:1px solid #eee;padding:15px 0;position:sticky;top:0;z-index:1000}.nav-container[data-astro-cid-pux6a34n]{display:flex;justify-content:space-between;align-items:center}.nav-logo[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:10px;text-decoration:none;color:#333;font-weight:800;font-size:1.25rem}.nav-logo-img[data-astro-cid-pux6a34n]{width:32px;height:32px}.nav-links[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:25px;list-style:none;margin:0;padding:0}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]{text-decoration:none;color:#555;font-weight:600;transition:color .2s}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]:hover{color:#fd547a}.nav-cta[data-astro-cid-pux6a34n]{background:#fd547a;color:#fff!important;padding:8px 16px;border-radius:50px;font-size:.9rem;transition:transform .2s,box-shadow .2s!important}.nav-cta[data-astro-cid-pux6a34n]:hover{transform:translateY(-2px);box-shadow:0 4px 10px #fd547a33}@media(max-width:600px){.nav-logo-text[data-astro-cid-pux6a34n]{display:none}.nav-links[data-astro-cid-pux6a34n]{gap:15px}.nav-cta[data-astro-cid-pux6a34n]{padding:6px 12px;font-size:.8rem}}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#333;line-height:1.6}.container{max-width:900px;margin:0 auto;padding:0 20px}a{color:#fd547a;text-decoration:none;transition:text-decoration .2s}a:hover{text-decoration:underline}footer{background:#333;color:#aaa;padding:40px 0;text-align:center}.footer-links{margin-top:15px;display:flex;justify-content:center;gap:20px}footer a{color:#fff;text-decoration:none;font-size:.9em}footer a:hover{text-decoration:underline}
+.related-posts[data-astro-cid-dpgbfi7r]{margin-top:60px;padding-top:40px;border-top:2px solid #f1f1f1}.related-posts[data-astro-cid-dpgbfi7r] h2[data-astro-cid-dpgbfi7r]{font-size:1.8rem;margin-bottom:2rem;color:#2c3e50}.related-grid[data-astro-cid-dpgbfi7r]{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.related-card[data-astro-cid-dpgbfi7r]{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.related-card[data-astro-cid-dpgbfi7r]:hover{transform:translateY(-3px);box-shadow:0 4px 12px #0000000d;text-decoration:none}.related-card[data-astro-cid-dpgbfi7r] h3[data-astro-cid-dpgbfi7r]{margin:0 0 10px;font-size:1.3rem;color:#fd547a}.related-card[data-astro-cid-dpgbfi7r] p[data-astro-cid-dpgbfi7r]{margin:0;font-size:.95rem;color:#666;line-height:1.4}.blog-post{max-width:800px;margin:0 auto;padding:60px 20px}.blog-post header{margin-bottom:40px;text-align:center}.blog-post .meta{color:#888;margin-bottom:1rem}.blog-post h1{text-align:center;font-size:3rem;line-height:1.1;margin:0 0 2rem;color:#2c3e50}.blog-post .hero-img{width:100%;border-radius:12px;margin-top:2rem}.blog-post .content{font-size:1.2rem;line-height:1.8;color:#333}.blog-post .content h2{margin-top:3rem;font-size:2rem;color:#2c3e50}.blog-post .content p{margin-bottom:1.5rem}.blog-post footer{margin-top:60px;padding-top:30px;border-top:1px solid #eee}.blog-post .content blockquote{border-left:3px solid #cbd5e1;margin:2rem 0;padding:.5rem 0 .5rem 1.5rem;color:#475569;font-style:italic}.blog-post .content blockquote p{margin-bottom:.75rem}.blog-post .content blockquote p:last-child{margin-bottom:0}.blog-post .content .pull-quote{border-left:none;border-top:2px solid #fd547a;border-bottom:2px solid #fd547a;margin:3rem 0;padding:2rem 1.5rem;text-align:center;font-style:normal;color:#2c3e50}.blog-post .content .pull-quote p{font-size:1.5rem;line-height:1.4;font-weight:500;margin-bottom:0}@media(max-width:768px){.blog-post .content .pull-quote{margin:2rem 0;padding:1.5rem 1rem}.blog-post .content .pull-quote p{font-size:1.25rem}}.answer-box{background:#fff8e1;border-left:4px solid #fcc934;padding:20px 30px;border-radius:0 8px 8px 0;margin:2rem 0}.answer-box h3{margin-top:0;font-size:1.2rem;color:#856404}.blog-post .content table{width:100%;border-collapse:separate;border-spacing:0;margin:1.5rem 0 2rem;font-size:.95rem;line-height:1.5;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0}.blog-post .content thead{background:#f8fafc}.blog-post .content th{padding:12px 16px;text-align:left;font-weight:600;color:#2c3e50;border-bottom:2px solid #e2e8f0;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em}.blog-post .content td{padding:12px 16px;border-bottom:1px solid #f1f5f9;vertical-align:top;color:#475569}.blog-post .content tbody tr:last-child td{border-bottom:none}.blog-post .content tbody tr:hover{background:#f8fafc}.blog-post .content td strong{color:#2c3e50}.blog-post .content td code{font-size:.85em;background:#f1f5f9;padding:2px 6px;border-radius:4px;color:#334155}@media(max-width:768px){.blog-post .content table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.blog-post .content th,.blog-post .content td{min-width:140px;padding:10px 12px;font-size:.9rem}}.sources-section h2{font-size:1.4rem;color:#64748b}.sources-section ul{list-style:none;padding:0}.sources-section li{padding:6px 0}.sources-section .publisher{color:#94a3b8;font-size:.9rem}
+</style></head> <body> <nav class="main-nav" data-astro-cid-pux6a34n> <div class="container nav-container" data-astro-cid-pux6a34n> <a href="/" class="nav-logo" data-astro-cid-pux6a34n> <img src="/images/icon48.png" alt="TimeHopper Logo" class="nav-logo-img" data-astro-cid-pux6a34n> <span class="nav-logo-text" data-astro-cid-pux6a34n>TimeHopper</span> </a> <ul class="nav-links" data-astro-cid-pux6a34n> <li data-astro-cid-pux6a34n><a href="/" data-astro-cid-pux6a34n>Home</a></li> <li data-astro-cid-pux6a34n><a href="/blog.html" data-astro-cid-pux6a34n>Blog</a></li> <li data-astro-cid-pux6a34n><a href="/tools/convert.html" data-astro-cid-pux6a34n>Tools</a></li> <li data-astro-cid-pux6a34n><a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="nav-cta" data-astro-cid-pux6a34n>Add to Chrome</a></li> </ul> </div> </nav>   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Calendar Chrome Extension for Quick-View","description":"See your Google Calendar schedule in a popup without switching tabs. We compare speed, notifications, and permissions across top extensions.","image":[],"datePublished":"2026-02-11T00:00:00.000Z","author":[{"@type":"Person","name":"Dan Walsh","url":"https://timehopperapp.com"}]}</script> <article class="container blog-post"> <header> <div class="meta"> <time datetime="2026-02-11T00:00:00.000Z"> February 11, 2026 </time> </div>  </header> <div class="content"> <h1 id="chrome-extension-for-google-calendar-quick-view-your-schedule-without-switching-tabs">Chrome Extension for Google Calendar: Quick-View Your Schedule Without Switching Tabs</h1>
+<p><strong>Direct answer:</strong> The fastest way to check your Google Calendar without leaving your current tab is a Chrome extension with a toolbar popup. You click an icon, see your agenda, and dismiss it. The whole interaction takes two seconds. The extensions worth considering for this use case are <strong>Checker Plus for Google Calendar</strong> (the most feature-dense option), <strong>Google Calendar by Google</strong> (minimal and official), and several others that focus on time zones, countdowns, or notification control. Each handles the quick-view workflow differently, and the right choice depends on whether you prioritize notification control, permission scope, or time zone support.</p>
+<p>This guide covers the exact quick-view workflow, the criteria that separate useful extensions from distracting ones, a comparison table, and the problems you will actually run into.</p>
 <hr>
-<h2 id="the-fastest-workflow-30-seconds-to-set-up">The fastest workflow (30 seconds to set up)</h2>
-<h3 id="step-1-pin-the-extension">Step 1: Pin the extension</h3>
-<p><strong>Direct answer:</strong> Pin the extension so it’s always visible in the toolbar.</p>
+<h2 id="the-quick-view-workflow-pin-click-read-dismiss">The quick-view workflow: pin, click, read, dismiss</h2>
+<p><strong>Direct answer:</strong> The quick-view workflow is four steps. Once set up, it takes under three seconds to see your next meeting.</p>
+<h3 id="step-1-install-and-pin-the-extension">Step 1: Install and pin the extension</h3>
 <ol>
-<li>Click the puzzle icon (Extensions)</li>
-<li>Find the calendar extension</li>
-<li>Click the pin</li>
+<li>Open the <a href="https://chromewebstore.google.com/">Chrome Web Store</a>.</li>
+<li>Search for the calendar extension you want.</li>
+<li>Click <strong>Add to Chrome</strong>, then <strong>Add extension</strong> in the confirmation dialog.</li>
+<li>Click the <strong>puzzle piece icon</strong> in Chrome’s toolbar (top right). This opens the Extensions menu.</li>
+<li>Find your calendar extension in the list.</li>
+<li>Click the <strong>pin icon</strong> next to it. The extension’s icon now appears permanently in your toolbar.</li>
 </ol>
-<h3 id="step-2-use-peek-as-your-default-behavior">Step 2: Use “peek” as your default behavior</h3>
-<p><strong>Direct answer:</strong> Use the extension for quick checks; open full Calendar only when you need details.</p>
+<p>Pinning matters. If the extension is buried behind the puzzle piece menu, you have added a click and a visual search to every schedule check. That friction compounds. Pin it.</p>
+<h3 id="step-2-click-the-icon">Step 2: Click the icon</h3>
+<p>Click the extension’s toolbar icon. A popup opens directly below it. No new tab. No page navigation. Your current work stays visible behind the popup.</p>
+<p>What you see in the popup depends on the extension:</p>
 <ul>
-<li>Peek: “What’s next?” “When is my 2pm?” “Any conflicts?”</li>
-<li>Open Google Calendar tab: editing invites, adding guests, changing locations</li>
+<li><strong>Checker Plus</strong> shows a multi-day agenda with color-coded events, inline event creation, and notification controls.</li>
+<li><strong>Google Calendar (by Google)</strong> shows a minimal agenda view with event titles and times.</li>
+<li><strong>A time-zone-focused extension</strong> shows your upcoming schedule with zone indicators and meeting countdowns.</li>
+<li><strong>Calendar Clock</strong> shows a countdown to your next event with a compact agenda.</li>
 </ul>
-<h3 id="step-3-set-a-single-alert-rule-you-trust">Step 3: Set a single alert rule you trust</h3>
-<p><strong>Direct answer:</strong> Choose one reliable reminder window (like 5–10 minutes) and keep it consistent.</p>
-<ul>
-<li>Start with <strong>10 minutes</strong></li>
-<li>Add a second alert only if you routinely miss transitions</li>
-</ul>
-<hr>
-<h2 id="what-to-look-for-in-a-google-calendar-chrome-extension">What to look for in a Google Calendar Chrome extension</h2>
-<h3 id="1-speed-agenda-in-under-3-seconds">1) Speed: agenda in under 3 seconds</h3>
-<p><strong>Direct answer:</strong> If you can’t see your day instantly, the extension won’t stick.</p>
-<p>Look for:</p>
-<ul>
-<li>Agenda list or “next meeting” view</li>
-<li>Clear start time + time remaining</li>
-<li>Minimal loading / no “spinner life”</li>
-</ul>
-<h3 id="2-a-view-that-matches-how-you-work">2) A view that matches how you work</h3>
-<p><strong>Direct answer:</strong> Pick the view you’ll use 10× per day.</p>
-<p>Options:</p>
-<ul>
-<li><strong>Agenda list</strong> (best for most people)</li>
-<li><strong>Day view</strong> (if you’re packed with meetings)</li>
-<li><strong>Week view</strong> (if you schedule a lot)</li>
-</ul>
-<h3 id="3-notification-sanity-no-spam">3) Notification sanity (no spam)</h3>
-<p><strong>Direct answer:</strong> Too many alerts trains you to ignore alerts.</p>
-<p>Look for:</p>
-<ul>
-<li>One clean alert per meeting</li>
-<li>Snooze/dismiss that behaves predictably</li>
-<li>A settings page that’s easy to find</li>
-</ul>
-<h3 id="4-time-zone-clarity-if-you-work-remotely">4) Time zone clarity (if you work remotely)</h3>
-<p><strong>Direct answer:</strong> The extension should make time zones <em>obvious</em>, not hidden.</p>
-<p>Look for:</p>
-<ul>
-<li>“What time is it in X?”</li>
-<li>Multiple time zones visible (SF/NY/LON)</li>
-<li>Clear labeling of the time zone you’re viewing</li>
-</ul>
-<h3 id="5-trust--permissions">5) Trust + permissions</h3>
-<p><strong>Direct answer:</strong> Minimal permissions and no surprise behavior are non-negotiable.</p>
-<p>Avoid:</p>
-<ul>
-<li>Opening random tabs</li>
-<li>Injecting ads into your browsing</li>
-<li>Permissions that don’t match the promise</li>
-</ul>
-<hr>
-<h2 id="common-problems-and-what-to-do">Common problems (and what to do)</h2>
-<h3 id="problem-notifications-dont-appear">Problem: Notifications don’t appear</h3>
-<p><strong>Direct answer:</strong> Notification failures are usually browser/OS settings, not the calendar itself.</p>
-<p>Checklist:</p>
+<h3 id="step-3-read-your-schedule">Step 3: Read your schedule</h3>
+<p>Scan for what you need. Most people open the popup for one of three reasons:</p>
 <ol>
-<li>Chrome settings → Site settings → Notifications → allowed</li>
-<li>OS Focus / Do Not Disturb off (or allow Chrome)</li>
-<li>Extension has notification permission enabled</li>
+<li><strong>“When is my next meeting?”</strong> — Look at the first item in the agenda.</li>
+<li><strong>“Do I have a gap at 2pm?”</strong> — Scroll to that time slot.</li>
+<li><strong>“What’s the link for this call?”</strong> — Click the event to expand details, copy the meeting URL.</li>
 </ol>
+<p>Good extensions answer all three without requiring you to open Google Calendar itself.</p>
+<h3 id="step-4-dismiss-the-popup">Step 4: Dismiss the popup</h3>
+<p>Click anywhere outside the popup. It closes. You are back to whatever you were doing. No tab switching. No context loss.</p>
+<p>This is the entire workflow. If your current extension requires more steps than this, it is costing you attention you do not need to spend.</p>
 <hr>
-<h2 id="a-lightweight-option-for-quick-view--time-zones--alerts">A lightweight option for quick view + time zones + alerts</h2>
-<p>If your goal is quick schedule access, time zone conversion, and meeting alerts in one place, <strong>TimeHopper</strong> is built for:</p>
+<h2 id="how-to-evaluate-a-google-calendar-chrome-extension">How to evaluate a Google Calendar Chrome extension</h2>
+<p><strong>Direct answer:</strong> Five criteria determine whether a calendar extension helps your workflow or clutters it: popup speed, notification reliability, time zone support, permission scope, and UI clarity.</p>
+<h3 id="popup-speed-and-load-time">Popup speed and load time</h3>
+<p><strong>What to look for:</strong> The popup should render your agenda within one second of clicking the icon. Extensions that use cached data from a background service worker achieve this consistently. Extensions that make a fresh API call on every click will show a loading spinner first.</p>
+<p><strong>Red flags:</strong> A blank popup that takes more than two seconds to populate. A popup that flashes a login screen before showing events. An extension that opens a full tab instead of a popup — that is not quick-view, that is a shortcut to Google Calendar with extra steps.</p>
+<h3 id="notification-reliability">Notification reliability</h3>
+<p><strong>What to look for:</strong> Customizable alert timing (e.g., 5 minutes before, 1 minute before). Support for Chrome’s native notification system. The ability to set different notification rules for different calendars.</p>
+<p><strong>Red flags:</strong> Notifications that silently stop working after Chrome updates. No granularity — only “on” or “off.” Extensions that rely on the Google Calendar tab being open for notifications to fire (this defeats the purpose of an extension). For a deeper look at notification problems, see <a href="/blog/google-calendar-notifications-not-working-chrome">Google Calendar notifications not working in Chrome</a>.</p>
+<h3 id="time-zone-support">Time zone support</h3>
+<p><strong>What to look for:</strong> Display of event times in your local time zone regardless of where the event was created. A secondary time zone indicator for people who work across regions. Automatic adjustment when you travel or change your system clock.</p>
+<p><strong>Red flags:</strong> Events showing in the wrong time zone with no way to correct it. No visible time zone label, so you cannot tell which zone you are looking at. Extensions that ignore Google Calendar’s own time zone settings and use only the system clock.</p>
+<h3 id="permission-scope">Permission scope</h3>
+<p><strong>What to look for:</strong> The minimum permissions necessary for the extension’s functionality. A calendar popup needs access to your Google Calendar data. It does not need access to your browsing history, all website data, or your tabs.</p>
+<p><strong>Red flags:</strong> Permissions that include “Read and change all your data on all websites.” Extensions that request access to Gmail, Drive, or Contacts when they only display calendar events. Permission prompts that reappear after every Chrome update, which often indicates the extension is using deprecated Manifest V2 APIs. For more on how Chrome extensions and Google add-ons differ in their permission models, see <a href="/blog/google-calendar-add-ons-vs-chrome-extensions">Google Calendar add-ons vs Chrome extensions</a>.</p>
+<h3 id="ui-clarity">UI clarity</h3>
+<p><strong>What to look for:</strong> A popup that shows your agenda without requiring interpretation. Event titles, times, and color codes visible at a glance. A layout that works at the popup’s fixed width (typically 400-500 pixels) without horizontal scrolling.</p>
+<p><strong>Red flags:</strong> Cramming a full calendar grid into a popup. Tiny text that requires squinting. Event details hidden behind multiple clicks. Excessive branding or ads in the popup.</p>
+<hr>
+<h2 id="comparison-table-four-chrome-extensions-for-google-calendar-quick-view">Comparison table: four Chrome extensions for Google Calendar quick-view</h2>
+<p><strong>Direct answer:</strong> Here is how four extensions compare across the criteria that matter for quick-view use.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Checker Plus for Google Calendar</th><th>Google Calendar (by Google)</th><th>TimeHopper</th><th>Calendar Clock</th></tr></thead><tbody><tr><td><strong>Popup support</strong></td><td>Yes — full agenda with inline actions</td><td>Yes — minimal agenda view</td><td>Yes — agenda with time zone context</td><td>Yes — countdown + compact agenda</td></tr><tr><td><strong>Notification customization</strong></td><td>Extensive: per-calendar alerts, custom sounds, snooze, popup notifications</td><td>Basic: follows Google Calendar’s own notification settings</td><td>Configurable meeting alerts with pre-meeting countdowns</td><td>Basic: countdown-based alerts</td></tr><tr><td><strong>Time zone handling</strong></td><td>Shows events in local time; secondary zone via Google Calendar settings</td><td>Follows Google Calendar time zone settings</td><td>Built-in time zone conversion with secondary zone display</td><td>Follows system clock</td></tr><tr><td><strong>Permissions required</strong></td><td>Google Calendar data, notifications, identity</td><td>Google Calendar data, notifications</td><td>Google Calendar data, notifications</td><td>Google Calendar data, notifications, alarms</td></tr><tr><td><strong>Manifest version</strong></td><td>Manifest V3</td><td>Manifest V3</td><td>Manifest V3</td><td>Manifest V3</td></tr><tr><td><strong>Price</strong></td><td>Free (paid tier removes ads, adds features)</td><td>Free</td><td>Free</td><td>Free</td></tr><tr><td><strong>Chrome Web Store rating</strong></td><td>~4.5 stars (10,000+ ratings)</td><td>~3.5 stars (1,000+ ratings)</td><td>Newer listing, limited ratings</td><td>~4.0 stars (500+ ratings)</td></tr></tbody></table>
+<p><strong>Notes on the table:</strong></p>
 <ul>
-<li>seeing your schedule without switching tabs</li>
-<li>checking “what time is it in X?”</li>
-<li>meeting alerts as a safety net</li>
-</ul> </div> <section class="sources-section"> <hr> <h2>Sources</h2> <ul> <li> <a href="https://support.google.com/chrome/answer/3220216?co=GENIE.Platform%3DDesktop&hl=en" target="_blank" rel="noopener noreferrer"> Chrome Help: Use notifications to get alerts (Desktop) </a> <span class="publisher"> (Google)</span> </li><li> <a href="https://support.google.com/calendar/answer/6084644?co=GENIE.Platform%3DDesktop&hl=en" target="_blank" rel="noopener noreferrer"> Google Calendar Help: Change Google Calendar settings (overview) </a> <span class="publisher"> (Google)</span> </li> </ul> </section> <section class="related-posts" data-astro-cid-dpgbfi7r><h2 data-astro-cid-dpgbfi7r>Read Next</h2><div class="related-grid" data-astro-cid-dpgbfi7r><a href="/blog/google-calendar-extension-what-to-look-for.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>Google Calendar Extension: What to Look For (Quick View + Time Zones + Alerts)</h3><p data-astro-cid-dpgbfi7r>A practical checklist for choosing a Google Calendar Chrome extension: fast schedule access, reliable meeting alerts, time zone clarity, low permissions, and no surprise behavior.</p></div></a><a href="/blog/google-calendar-add-ons-vs-chrome-extensions.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>Google Calendar Add-ons vs Chrome Extensions: What’s the Difference?</h3><p data-astro-cid-dpgbfi7r>Google Calendar add-ons and Chrome extensions solve different problems. Here’s the practical difference, what each can do, and which to choose for quick view, alerts, and time zones.</p></div></a></div></section> <footer> <a href="/blog.html">&larr; Back to blog</a> </footer> </article>  <section class="support-cta" data-astro-cid-7dkdpa4i> <div class="container" data-astro-cid-7dkdpa4i> <div class="cta-card" data-astro-cid-7dkdpa4i> <div class="cta-content" data-astro-cid-7dkdpa4i> <h2 data-astro-cid-7dkdpa4i>Your calendar + time zones, at a glance.</h2> <p data-astro-cid-7dkdpa4i>See your schedule instantly, convert time zones, and get meeting alerts—without switching tabs.</p> <div class="cta-actions" data-astro-cid-7dkdpa4i> <a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="cta-btn" data-astro-cid-7dkdpa4i> <img src="/images/icon48.png" alt="" class="btn-icon" data-astro-cid-7dkdpa4i>
+<li><strong>Checker Plus</strong> has the most features packed into its popup. This is a strength if you want to manage your calendar without ever opening it. It is a weakness if you want a clean, minimal interface.</li>
+<li><strong>Google Calendar (by Google)</strong> is the simplest option. It does little beyond showing your agenda. If you want a popup that loads fast and stays out of your way, this is it.</li>
+<li><strong>TimeHopper</strong> focuses on the time-zone-aware quick-view use case. If you schedule across regions, the built-in zone conversion removes a mental math step.</li>
+<li><strong>Calendar Clock</strong> emphasizes the countdown — how long until your next event. Useful if your primary question is “how much time do I have?”</li>
+</ul>
+<hr>
+<h2 id="decision-framework-which-extension-fits-your-workflow">Decision framework: which extension fits your workflow</h2>
+<p><strong>Direct answer:</strong> Match your primary need to an extension. There is no single best choice.</p>
+<h3 id="if-you-need-robust-notifications">If you need robust notifications</h3>
+<p><strong>Choose Checker Plus.</strong> It offers the most granular notification controls of any Google Calendar Chrome extension. You can set different alert sounds per calendar, snooze notifications, and get popup alerts even when Chrome is minimized. No other extension in this comparison gives you that level of control over when and how you are interrupted.</p>
+<h3 id="if-minimal-permissions-matter">If minimal permissions matter</h3>
+<p><strong>Choose Google Calendar (by Google).</strong> It is built by Google, requires only standard calendar permissions, and does not request access to anything beyond what is necessary to display your events. If your organization has strict extension policies or you prefer to minimize your attack surface, this is the safest pick.</p>
+<h3 id="if-you-manage-multiple-time-zones">If you manage multiple time zones</h3>
+<p><strong>Choose TimeHopper.</strong> It displays a secondary time zone directly in the popup, so you can see both your local time and a colleague’s time zone without opening Google Calendar’s full settings. For anyone scheduling across three or more regions daily, that saves real friction. You can try it at <a href="/">TimeHopper’s site</a>.</p>
+<h3 id="if-you-want-minimal-ui-and-fast-load">If you want minimal UI and fast load</h3>
+<p><strong>Choose Calendar Clock</strong> or <strong>Google Calendar (by Google).</strong> Both prioritize speed and simplicity over features. Calendar Clock adds the countdown element. Google’s own extension is the most minimal.</p>
+<h3 id="if-you-are-unsure">If you are unsure</h3>
+<p>Start with Google Calendar (by Google). It is free, official, and does the core job. If you find yourself wanting more — better notifications, time zone display, inline event creation — switch to a more capable extension. You lose nothing by starting simple.</p>
+<hr>
+<h2 id="common-problems-and-gotchas">Common problems and gotchas</h2>
+<p><strong>Direct answer:</strong> Four problems account for most frustration with Google Calendar Chrome extensions. All are fixable.</p>
+<h3 id="1-chrome-notification-settings-override-extension-alerts">1. Chrome notification settings override extension alerts</h3>
+<p>Your extension can be configured perfectly and still produce zero notifications if Chrome itself is blocking them.</p>
+<p><strong>What happens:</strong> Chrome has a global notification setting (<code>chrome://settings/content/notifications</code>) and per-site permissions. Extensions are treated as separate “sites.” If Chrome’s global setting is “Don’t allow sites to send notifications,” your extension’s alerts will never reach your desktop — regardless of the extension’s own configuration.</p>
+<p><strong>Fix:</strong> Go to <code>chrome://settings/content/notifications</code>. Ensure the global toggle allows notifications. Then check that your specific extension is not in the “Not allowed” list. For a full walkthrough of every notification layer, see <a href="/blog/google-calendar-notifications-not-working-chrome">Google Calendar notifications not working in Chrome</a>.</p>
+<h3 id="2-extensions-that-open-a-full-tab-instead-of-a-popup">2. Extensions that open a full tab instead of a popup</h3>
+<p>Some extensions marketed as “quick view” tools actually open <code>calendar.google.com</code> in a new tab when you click the toolbar icon. This is not a popup. It is a bookmark with an installation step.</p>
+<p><strong>What happens:</strong> You click the icon expecting a popup. Instead, a new tab opens (or an existing Calendar tab gets focused). You are now context-switching, which is exactly what you were trying to avoid.</p>
+<p><strong>How to avoid it:</strong> Before installing, check the extension’s Chrome Web Store screenshots. Look for a popup window shown below the toolbar icon. If every screenshot shows the full Google Calendar interface, the extension likely opens a tab. Read the description for words like “popup,” “quick view,” or “toolbar agenda.”</p>
+<h3 id="3-permission-re-prompts-after-chrome-updates">3. Permission re-prompts after Chrome updates</h3>
+<p>Chrome periodically updates its extension APIs. When an extension has not migrated to the latest Manifest version, or when Chrome tightens permission requirements, you may see a “This extension has been disabled” banner or a re-authorization prompt.</p>
+<p><strong>What happens:</strong> After a Chrome update, the extension silently stops working. No error in the popup — it simply shows stale data or a blank screen. In some cases, Chrome disables the extension entirely and shows a warning on the Extensions page.</p>
+<p><strong>Fix:</strong> Open <code>chrome://extensions</code>. Check if the extension is disabled. If so, click the toggle to re-enable it and accept any new permission prompts. If the extension repeatedly breaks after updates, check when it was last updated in the Chrome Web Store. Extensions not updated in the past 6-12 months are likely still on Manifest V2 and will face increasing compatibility issues.</p>
+<h3 id="4-sync-delays-between-google-calendar-and-the-extension">4. Sync delays between Google Calendar and the extension</h3>
+<p>Extensions pull data from Google Calendar via the Calendar API. That pull is not instantaneous, and it is not always triggered by changes you make in Google Calendar’s web interface.</p>
+<p><strong>What happens:</strong> You add an event in Google Calendar. You click the extension popup. The event is not there. You wait a minute, click again, and it appears. The delay is usually 30 seconds to 5 minutes, depending on the extension’s sync interval.</p>
+<p><strong>Why it happens:</strong> Most extensions poll the Calendar API on a timer (e.g., every 1-5 minutes) rather than receiving real-time push notifications from Google. Some extensions let you force a manual sync. Others do not.</p>
+<p><strong>Workaround:</strong> Look for a refresh or sync button in the extension’s popup. If the extension does not have one, close and reopen the popup — some extensions trigger a fresh API call on popup open. If sync delays are a consistent problem, prioritize extensions that sync on popup open rather than on a fixed timer.</p>
+<hr>
+<h2 id="color-coding-in-extensions">Color coding in extensions</h2>
+<p>Most calendar Chrome extensions inherit the color coding you have set up in Google Calendar itself. If you have built a color system — work meetings in blue, personal events in green, deadlines in red — that system carries into the popup automatically.</p>
+<p>Extensions that do not respect Google Calendar’s color assignments will show all events in a single color or in the extension’s own color scheme. Before committing to an extension, add a few color-coded test events and verify they display correctly in the popup.</p>
+<p>For a full guide to building a color system that works across all your calendar views, see <a href="/blog/color-code-google-calendar-events">how to color-code events in Google Calendar</a>.</p>
+<hr>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="do-chrome-calendar-extensions-work-when-chrome-is-closed">Do Chrome calendar extensions work when Chrome is closed?</h3>
+<p>No. Chrome extensions require Chrome to be running. If Chrome is fully closed (not just minimized), the extension’s background service worker is terminated, and no notifications will fire. Some extensions display a warning about this; most do not. If you rely on calendar notifications, keep Chrome running or use Google Calendar’s mobile app as a backup.</p>
+<h3 id="can-i-use-more-than-one-google-calendar-extension-at-the-same-time">Can I use more than one Google Calendar extension at the same time?</h3>
+<p>Yes. Chrome allows multiple calendar extensions to run simultaneously. Each will make its own API calls and display its own popup. However, running multiple calendar extensions can cause duplicate notifications — one from each extension, plus any from the Google Calendar tab if it is open. If you install a second extension for testing, disable notifications on one of them first.</p>
+<h3 id="will-a-chrome-extension-slow-down-my-browser">Will a Chrome extension slow down my browser?</h3>
+<p>A well-built calendar extension adds negligible overhead. The background service worker wakes periodically to check the Calendar API, then goes idle. The popup only runs while it is open. The measurable impact is typically under 5 MB of memory. Extensions that inject content scripts into every page you visit will have a larger footprint — but calendar extensions generally do not need to do this. Check <code>chrome://extensions</code> and enable Developer mode to see each extension’s memory usage.</p>
+<h3 id="what-happens-to-my-extension-data-if-i-switch-to-a-different-chrome-profile">What happens to my extension data if I switch to a different Chrome profile?</h3>
+<p>Extensions are installed per Chrome profile. If you switch profiles, you will need to install and configure the extension again in the new profile. Your Google Calendar data is tied to the Google account you authenticate with, not the extension itself — so the same events will appear once you sign in.</p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://chromewebstore.google.com/search/google%20calendar">Chrome Web Store — Extensions for Google Calendar</a></li>
+<li><a href="https://support.google.com/calendar/answer/37242">Google Calendar Help — Turn notifications on or off</a></li>
+<li><a href="https://support.google.com/chrome/answer/3220216">Chrome Help — Manage notifications</a></li>
+<li><a href="https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3">Chrome for Developers — Manifest V3 migration guide</a></li>
+<li><a href="https://developers.google.com/calendar/api/guides/overview">Google Calendar API — Overview</a></li>
+</ul> </div>  <section class="related-posts" data-astro-cid-dpgbfi7r><h2 data-astro-cid-dpgbfi7r>Read Next</h2><div class="related-grid" data-astro-cid-dpgbfi7r><a href="/blog/google-calendar-extension-what-to-look-for.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>7 Things to Check Before Installing a Google Calendar Extension</h3><p data-astro-cid-dpgbfi7r>Most Google Calendar extensions disappoint. Use this 7-point scoring rubric to find one that actually fits your workflow before you install.</p></div></a><a href="/blog/google-calendar-add-ons-vs-chrome-extensions.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>Google Calendar Add-ons vs Chrome Extensions</h3><p data-astro-cid-dpgbfi7r>Add-ons run inside Calendar; extensions run in Chrome. Here&#39;s what each can do, their trade-offs, and which type fits your workflow.</p></div></a></div></section> <footer> <a href="/blog.html">&larr; Back to blog</a> </footer> </article>  <section class="support-cta" data-astro-cid-7dkdpa4i> <div class="container" data-astro-cid-7dkdpa4i> <div class="cta-card" data-astro-cid-7dkdpa4i> <div class="cta-content" data-astro-cid-7dkdpa4i> <h2 data-astro-cid-7dkdpa4i>Your calendar + time zones, at a glance.</h2> <p data-astro-cid-7dkdpa4i>See your schedule instantly, convert time zones, and get meeting alerts—without switching tabs.</p> <div class="cta-actions" data-astro-cid-7dkdpa4i> <a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="cta-btn" data-astro-cid-7dkdpa4i> <img src="/images/icon48.png" alt="" class="btn-icon" data-astro-cid-7dkdpa4i>
 Add to Chrome - Free
-</a> </div> </div> </div> </div> </section>  <footer> <div class="container"> <p>&copy; 2026 TimeHopper. Built for remote work.</p> <div class="footer-links"> <a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms of Service</a> <a href="mailto:danwalshx@gmail.com">Contact Support</a> </div> </div> </footer> </body></html> 
+</a> </div> </div> </div> </div> </section>  <footer> <div class="container"> <p>&copy; 2026 TimeHopper. Built for remote work.</p> <div class="footer-links"> <a href="/blog.html">Blog</a> <a href="/tools/convert.html">Time Zone Converter</a> <a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms of Service</a> <a href="mailto:danwalshx@gmail.com">Contact Support</a> </div> </div> </footer> </body></html> 

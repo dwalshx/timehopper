@@ -1,106 +1,211 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/images/icon128.png"><meta name="generator" content="Astro v5.17.2"><!-- Canonical URL --><link rel="canonical" href="https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"><!-- Primary Meta Tags --><title>How to Change Time Zone in Google Calendar (The Complete Guide) - TimeHopper Blog</title><meta name="title" content="How to Change Time Zone in Google Calendar (The Complete Guide) - TimeHopper Blog"><meta name="description" content="Master Google Calendar time zone settings: how to change your primary zone, add secondary zones, and understand the difference between display vs event time."><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"><meta property="og:title" content="How to Change Time Zone in Google Calendar (The Complete Guide) - TimeHopper Blog"><meta property="og:description" content="Master Google Calendar time zone settings: how to change your primary zone, add secondary zones, and understand the difference between display vs event time."><meta property="og:image" content="https://timehopperapp.com/images/icon128.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"><meta property="twitter:title" content="How to Change Time Zone in Google Calendar (The Complete Guide) - TimeHopper Blog"><meta property="twitter:description" content="Master Google Calendar time zone settings: how to change your primary zone, add secondary zones, and understand the difference between display vs event time."><meta property="twitter:image" content="https://timehopperapp.com/images/icon128.png"><!-- Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TimeHopper","url":"https://timehopperapp.com","logo":"https://timehopperapp.com/images/icon128.png","contactPoint":{"@type":"ContactPoint","email":"danwalshx@gmail.com","contactType":"customer support"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timehopperapp.com/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://timehopperapp.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to Change Time Zone in Google Calendar (The Complete Guide)","item":"https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"}]}</script><style>.support-cta[data-astro-cid-7dkdpa4i]{padding:60px 0;background:#f9f9f9}.cta-card[data-astro-cid-7dkdpa4i]{background:linear-gradient(135deg,#fd547a,#526ea1);border-radius:24px;padding:60px 40px;text-align:center;color:#fff;box-shadow:0 20px 40px #fd547a33;position:relative;overflow:hidden}.cta-card[data-astro-cid-7dkdpa4i]:before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#ffffff1a,#fff0 70%);pointer-events:none}.cta-content[data-astro-cid-7dkdpa4i]{position:relative;z-index:1;max-width:600px;margin:0 auto}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:2.5rem;margin:0 0 1rem;color:#fff;font-weight:800}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.25rem;opacity:.9;margin-bottom:2.5rem;line-height:1.5}.cta-btn[data-astro-cid-7dkdpa4i]{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#fd547a!important;padding:18px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;box-shadow:0 10px 20px #0000001a;transition:transform .2s,box-shadow .2s;text-decoration:none}.cta-btn[data-astro-cid-7dkdpa4i]:hover{transform:translateY(-3px);box-shadow:0 15px 30px #00000026;text-decoration:none}.btn-icon[data-astro-cid-7dkdpa4i]{width:24px;height:24px}@media(max-width:600px){.cta-card[data-astro-cid-7dkdpa4i]{padding:40px 20px}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:1.8rem}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.1rem}}.main-nav[data-astro-cid-pux6a34n]{background:#fffffff2;backdrop-filter:blur(10px);border-bottom:1px solid #eee;padding:15px 0;position:sticky;top:0;z-index:1000}.nav-container[data-astro-cid-pux6a34n]{display:flex;justify-content:space-between;align-items:center}.nav-logo[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:10px;text-decoration:none;color:#333;font-weight:800;font-size:1.25rem}.nav-logo-img[data-astro-cid-pux6a34n]{width:32px;height:32px}.nav-links[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:25px;list-style:none;margin:0;padding:0}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]{text-decoration:none;color:#555;font-weight:600;transition:color .2s}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]:hover{color:#fd547a}.nav-cta[data-astro-cid-pux6a34n]{background:#fd547a;color:#fff!important;padding:8px 16px;border-radius:50px;font-size:.9rem;transition:transform .2s,box-shadow .2s!important}.nav-cta[data-astro-cid-pux6a34n]:hover{transform:translateY(-2px);box-shadow:0 4px 10px #fd547a33}@media(max-width:600px){.nav-logo-text[data-astro-cid-pux6a34n]{display:none}.nav-links[data-astro-cid-pux6a34n]{gap:15px}.nav-cta[data-astro-cid-pux6a34n]{padding:6px 12px;font-size:.8rem}}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#333;line-height:1.6}.container{max-width:900px;margin:0 auto;padding:0 20px}a{color:#fd547a;text-decoration:none;transition:text-decoration .2s}a:hover{text-decoration:underline}footer{background:#333;color:#aaa;padding:40px 0;text-align:center}.footer-links{margin-top:15px;display:flex;justify-content:center;gap:20px}footer a{color:#fff;text-decoration:none;font-size:.9em}footer a:hover{text-decoration:underline}
-.related-posts[data-astro-cid-dpgbfi7r]{margin-top:60px;padding-top:40px;border-top:2px solid #f1f1f1}.related-posts[data-astro-cid-dpgbfi7r] h2[data-astro-cid-dpgbfi7r]{font-size:1.8rem;margin-bottom:2rem;color:#2c3e50}.related-grid[data-astro-cid-dpgbfi7r]{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.related-card[data-astro-cid-dpgbfi7r]{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.related-card[data-astro-cid-dpgbfi7r]:hover{transform:translateY(-3px);box-shadow:0 4px 12px #0000000d;text-decoration:none}.related-card[data-astro-cid-dpgbfi7r] h3[data-astro-cid-dpgbfi7r]{margin:0 0 10px;font-size:1.3rem;color:#fd547a}.related-card[data-astro-cid-dpgbfi7r] p[data-astro-cid-dpgbfi7r]{margin:0;font-size:.95rem;color:#666;line-height:1.4}.blog-post{max-width:800px;margin:0 auto;padding:60px 20px}.blog-post header{margin-bottom:40px;text-align:center}.blog-post .meta{color:#888;margin-bottom:1rem}.blog-post h1{font-size:3rem;line-height:1.1;margin:0 0 2rem;color:#2c3e50}.blog-post .hero-img{width:100%;border-radius:12px;margin-top:2rem}.blog-post .content{font-size:1.2rem;line-height:1.8;color:#333}.blog-post .content h2{margin-top:3rem;font-size:2rem;color:#2c3e50}.blog-post .content p{margin-bottom:1.5rem}.blog-post footer{margin-top:60px;padding-top:30px;border-top:1px solid #eee}.answer-box{background:#fff8e1;border-left:4px solid #fcc934;padding:20px 30px;border-radius:0 8px 8px 0;margin:2rem 0}.answer-box h3{margin-top:0;font-size:1.2rem;color:#856404}
-</style></head> <body> <nav class="main-nav" data-astro-cid-pux6a34n> <div class="container nav-container" data-astro-cid-pux6a34n> <a href="/" class="nav-logo" data-astro-cid-pux6a34n> <img src="/images/icon48.png" alt="TimeHopper Logo" class="nav-logo-img" data-astro-cid-pux6a34n> <span class="nav-logo-text" data-astro-cid-pux6a34n>TimeHopper</span> </a> <ul class="nav-links" data-astro-cid-pux6a34n> <li data-astro-cid-pux6a34n><a href="/" data-astro-cid-pux6a34n>Home</a></li> <li data-astro-cid-pux6a34n><a href="/blog.html" data-astro-cid-pux6a34n>Blog</a></li> <li data-astro-cid-pux6a34n><a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="nav-cta" data-astro-cid-pux6a34n>Add to Chrome</a></li> </ul> </div> </nav>   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Change Time Zone in Google Calendar (The Complete Guide)","description":"Master Google Calendar time zone settings: how to change your primary zone, add secondary zones, and understand the difference between display vs event time.","image":[],"datePublished":"2026-03-10T00:00:00.000Z","author":[{"@type":"Person","name":"Dan Walsh","url":"https://timehopperapp.com"}]}</script> <article class="container blog-post"> <header> <div class="meta"> <time datetime="2026-03-10T00:00:00.000Z"> March 10, 2026 </time> </div> <h1>How to Change Time Zone in Google Calendar (The Complete Guide)</h1>  </header> <div class="content"> <h1 id="how-to-change-time-zone-in-google-calendar-the-complete-guide">How to Change Time Zone in Google Calendar (The Complete Guide)</h1>
-<p><strong>Direct answer:</strong> To change your time zone in Google Calendar, navigate to <strong>Settings</strong> (gear icon) -> <strong>Settings</strong> -> <strong>General</strong> -> <strong>Time zone</strong>. From here, you can select your primary time zone from a dropdown menu and choose to display a secondary time zone alongside your calendar grid.</p>
-<p>Getting this setting right is the difference between showing up on time and being an hour late. Use the checklists below to master your view.</p>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/images/icon128.png"><meta name="generator" content="Astro v5.17.2"><!-- Canonical URL --><link rel="canonical" href="https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"><!-- Primary Meta Tags --><title>Change Your Google Calendar Time Zone (Every Platform) - TimeHopper Blog</title><meta name="title" content="Change Your Google Calendar Time Zone (Every Platform) - TimeHopper Blog"><meta name="description" content="Change your Google Calendar time zone on desktop, Android, and iOS. Plus the display vs. event zone setting most people get wrong."><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"><meta property="og:title" content="Change Your Google Calendar Time Zone (Every Platform) - TimeHopper Blog"><meta property="og:description" content="Change your Google Calendar time zone on desktop, Android, and iOS. Plus the display vs. event zone setting most people get wrong."><meta property="og:image" content="https://timehopperapp.com/images/icon128.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"><meta property="twitter:title" content="Change Your Google Calendar Time Zone (Every Platform) - TimeHopper Blog"><meta property="twitter:description" content="Change your Google Calendar time zone on desktop, Android, and iOS. Plus the display vs. event zone setting most people get wrong."><meta property="twitter:image" content="https://timehopperapp.com/images/icon128.png"><!-- Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TimeHopper","url":"https://timehopperapp.com","logo":"https://timehopperapp.com/images/icon128.png","contactPoint":{"@type":"ContactPoint","email":"danwalshx@gmail.com","contactType":"customer support"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timehopperapp.com/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://timehopperapp.com/blog.html"},{"@type":"ListItem","position":3,"name":"Change Your Google Calendar Time Zone (Every Platform)","item":"https://timehopperapp.com/blog/how-to-change-time-zone-in-google-calendar.html"}]}</script><style>.support-cta[data-astro-cid-7dkdpa4i]{padding:60px 0;background:#f9f9f9}.cta-card[data-astro-cid-7dkdpa4i]{background:linear-gradient(135deg,#fd547a,#526ea1);border-radius:24px;padding:60px 40px;text-align:center;color:#fff;box-shadow:0 20px 40px #fd547a33;position:relative;overflow:hidden}.cta-card[data-astro-cid-7dkdpa4i]:before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#ffffff1a,#fff0 70%);pointer-events:none}.cta-content[data-astro-cid-7dkdpa4i]{position:relative;z-index:1;max-width:600px;margin:0 auto}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:2.5rem;margin:0 0 1rem;color:#fff;font-weight:800}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.25rem;opacity:.9;margin-bottom:2.5rem;line-height:1.5}.cta-btn[data-astro-cid-7dkdpa4i]{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#fd547a!important;padding:18px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;box-shadow:0 10px 20px #0000001a;transition:transform .2s,box-shadow .2s;text-decoration:none}.cta-btn[data-astro-cid-7dkdpa4i]:hover{transform:translateY(-3px);box-shadow:0 15px 30px #00000026;text-decoration:none}.btn-icon[data-astro-cid-7dkdpa4i]{width:24px;height:24px}@media(max-width:600px){.cta-card[data-astro-cid-7dkdpa4i]{padding:40px 20px}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:1.8rem}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.1rem}}.main-nav[data-astro-cid-pux6a34n]{background:#fffffff2;backdrop-filter:blur(10px);border-bottom:1px solid #eee;padding:15px 0;position:sticky;top:0;z-index:1000}.nav-container[data-astro-cid-pux6a34n]{display:flex;justify-content:space-between;align-items:center}.nav-logo[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:10px;text-decoration:none;color:#333;font-weight:800;font-size:1.25rem}.nav-logo-img[data-astro-cid-pux6a34n]{width:32px;height:32px}.nav-links[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:25px;list-style:none;margin:0;padding:0}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]{text-decoration:none;color:#555;font-weight:600;transition:color .2s}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]:hover{color:#fd547a}.nav-cta[data-astro-cid-pux6a34n]{background:#fd547a;color:#fff!important;padding:8px 16px;border-radius:50px;font-size:.9rem;transition:transform .2s,box-shadow .2s!important}.nav-cta[data-astro-cid-pux6a34n]:hover{transform:translateY(-2px);box-shadow:0 4px 10px #fd547a33}@media(max-width:600px){.nav-logo-text[data-astro-cid-pux6a34n]{display:none}.nav-links[data-astro-cid-pux6a34n]{gap:15px}.nav-cta[data-astro-cid-pux6a34n]{padding:6px 12px;font-size:.8rem}}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#333;line-height:1.6}.container{max-width:900px;margin:0 auto;padding:0 20px}a{color:#fd547a;text-decoration:none;transition:text-decoration .2s}a:hover{text-decoration:underline}footer{background:#333;color:#aaa;padding:40px 0;text-align:center}.footer-links{margin-top:15px;display:flex;justify-content:center;gap:20px}footer a{color:#fff;text-decoration:none;font-size:.9em}footer a:hover{text-decoration:underline}
+.related-posts[data-astro-cid-dpgbfi7r]{margin-top:60px;padding-top:40px;border-top:2px solid #f1f1f1}.related-posts[data-astro-cid-dpgbfi7r] h2[data-astro-cid-dpgbfi7r]{font-size:1.8rem;margin-bottom:2rem;color:#2c3e50}.related-grid[data-astro-cid-dpgbfi7r]{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.related-card[data-astro-cid-dpgbfi7r]{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.related-card[data-astro-cid-dpgbfi7r]:hover{transform:translateY(-3px);box-shadow:0 4px 12px #0000000d;text-decoration:none}.related-card[data-astro-cid-dpgbfi7r] h3[data-astro-cid-dpgbfi7r]{margin:0 0 10px;font-size:1.3rem;color:#fd547a}.related-card[data-astro-cid-dpgbfi7r] p[data-astro-cid-dpgbfi7r]{margin:0;font-size:.95rem;color:#666;line-height:1.4}.blog-post{max-width:800px;margin:0 auto;padding:60px 20px}.blog-post header{margin-bottom:40px;text-align:center}.blog-post .meta{color:#888;margin-bottom:1rem}.blog-post h1{text-align:center;font-size:3rem;line-height:1.1;margin:0 0 2rem;color:#2c3e50}.blog-post .hero-img{width:100%;border-radius:12px;margin-top:2rem}.blog-post .content{font-size:1.2rem;line-height:1.8;color:#333}.blog-post .content h2{margin-top:3rem;font-size:2rem;color:#2c3e50}.blog-post .content p{margin-bottom:1.5rem}.blog-post footer{margin-top:60px;padding-top:30px;border-top:1px solid #eee}.blog-post .content blockquote{border-left:3px solid #cbd5e1;margin:2rem 0;padding:.5rem 0 .5rem 1.5rem;color:#475569;font-style:italic}.blog-post .content blockquote p{margin-bottom:.75rem}.blog-post .content blockquote p:last-child{margin-bottom:0}.blog-post .content .pull-quote{border-left:none;border-top:2px solid #fd547a;border-bottom:2px solid #fd547a;margin:3rem 0;padding:2rem 1.5rem;text-align:center;font-style:normal;color:#2c3e50}.blog-post .content .pull-quote p{font-size:1.5rem;line-height:1.4;font-weight:500;margin-bottom:0}@media(max-width:768px){.blog-post .content .pull-quote{margin:2rem 0;padding:1.5rem 1rem}.blog-post .content .pull-quote p{font-size:1.25rem}}.answer-box{background:#fff8e1;border-left:4px solid #fcc934;padding:20px 30px;border-radius:0 8px 8px 0;margin:2rem 0}.answer-box h3{margin-top:0;font-size:1.2rem;color:#856404}.blog-post .content table{width:100%;border-collapse:separate;border-spacing:0;margin:1.5rem 0 2rem;font-size:.95rem;line-height:1.5;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0}.blog-post .content thead{background:#f8fafc}.blog-post .content th{padding:12px 16px;text-align:left;font-weight:600;color:#2c3e50;border-bottom:2px solid #e2e8f0;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em}.blog-post .content td{padding:12px 16px;border-bottom:1px solid #f1f5f9;vertical-align:top;color:#475569}.blog-post .content tbody tr:last-child td{border-bottom:none}.blog-post .content tbody tr:hover{background:#f8fafc}.blog-post .content td strong{color:#2c3e50}.blog-post .content td code{font-size:.85em;background:#f1f5f9;padding:2px 6px;border-radius:4px;color:#334155}@media(max-width:768px){.blog-post .content table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.blog-post .content th,.blog-post .content td{min-width:140px;padding:10px 12px;font-size:.9rem}}.sources-section h2{font-size:1.4rem;color:#64748b}.sources-section ul{list-style:none;padding:0}.sources-section li{padding:6px 0}.sources-section .publisher{color:#94a3b8;font-size:.9rem}
+</style></head> <body> <nav class="main-nav" data-astro-cid-pux6a34n> <div class="container nav-container" data-astro-cid-pux6a34n> <a href="/" class="nav-logo" data-astro-cid-pux6a34n> <img src="/images/icon48.png" alt="TimeHopper Logo" class="nav-logo-img" data-astro-cid-pux6a34n> <span class="nav-logo-text" data-astro-cid-pux6a34n>TimeHopper</span> </a> <ul class="nav-links" data-astro-cid-pux6a34n> <li data-astro-cid-pux6a34n><a href="/" data-astro-cid-pux6a34n>Home</a></li> <li data-astro-cid-pux6a34n><a href="/blog.html" data-astro-cid-pux6a34n>Blog</a></li> <li data-astro-cid-pux6a34n><a href="/tools/convert.html" data-astro-cid-pux6a34n>Tools</a></li> <li data-astro-cid-pux6a34n><a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="nav-cta" data-astro-cid-pux6a34n>Add to Chrome</a></li> </ul> </div> </nav>   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Change Your Google Calendar Time Zone (Every Platform)","description":"Change your Google Calendar time zone on desktop, Android, and iOS. Plus the display vs. event zone setting most people get wrong.","image":[],"datePublished":"2026-03-10T00:00:00.000Z","author":[{"@type":"Person","name":"Dan Walsh","url":"https://timehopperapp.com"}]}</script> <article class="container blog-post"> <header> <div class="meta"> <time datetime="2026-03-10T00:00:00.000Z"> March 10, 2026 </time> </div>  </header> <div class="content"> <h1 id="how-to-change-time-zone-in-google-calendar-desktop-android-ios">How to Change Time Zone in Google Calendar (Desktop, Android, iOS)</h1>
+<p><strong>Direct answer:</strong> Open Google Calendar settings, go to <strong>General > Time zone</strong>, and select your new zone from the dropdown. On mobile, open the Google Calendar app, tap <strong>Settings > General > Time zone</strong>, and choose your location. The change takes effect immediately — every event on your calendar shifts to display in the new zone.</p>
+<p>One critical detail before you start: <strong>changing your time zone shifts how events display, not when they actually occur.</strong> A meeting scheduled for 2:00 PM Eastern still happens at the same moment in time. If you switch your calendar to Pacific, that meeting now shows as 11:00 AM. Understanding this distinction prevents the most common time zone mistakes.</p>
 <hr>
-<h2 id="how-do-i-change-my-primary-time-zone-in-google-calendar">How do I change my primary time zone in Google Calendar?</h2>
-<p><strong>Direct answer:</strong> Your primary time zone determines how your entire calendar grid is displayed. When you change this setting, every event on your calendar will “shift” to match the local time of your newly selected region.</p>
-<p>Follow these 5 steps to update your base view:</p>
+<h2 id="change-your-time-zone-on-desktop-web">Change your time zone on desktop (web)</h2>
+<p><strong>Direct answer:</strong> The web version of Google Calendar gives you the most control over time zone settings. Here’s the exact path.</p>
 <ol>
-<li>Open <a href="https://calendar.google.com">Google Calendar</a> on your desktop.</li>
-<li>Click the <strong>Settings menu</strong> (gear icon) in the top right.</li>
-<li>Select <strong>Settings</strong>.</li>
-<li>In the left-hand sidebar, click <strong>General</strong> and then <strong>Time zone</strong>.</li>
-<li>Click <strong>Primary time zone</strong> and select your current “Area/City” (e.g., America/New_York).</li>
-</ol>
-<p><strong>Important Note:</strong> Changing your calendar time zone in the web app <em>usually</em> propagates to the mobile app, but you may need to <strong>manually refresh</strong> your mobile calendar for the changes to take effect immediately. Also, modifying your Windows or macOS system clock alone will not necessarily update your Google Calendar grid settings.</p>
-<hr>
-<h2 id="display-zone-vs-event-zone-whats-the-difference">Display Zone vs. Event Zone: What’s the difference?</h2>
-<p><strong>Direct answer:</strong> A “Display Zone” controls your <strong>view</strong> (how meetings look on your grid), while an “Event Zone” controls the <strong>intent</strong> of a specific meeting (e.g., “This meeting starts at 9 AM London time, regardless of where the host is”).</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th align="left">Feature</th><th align="left">Display Time Zone</th><th align="left">Event Time Zone</th></tr></thead><tbody><tr><td align="left"><strong>Scope</strong></td><td align="left">Your entire calendar grid</td><td align="left">A single event or invite</td></tr><tr><td align="left"><strong>Impact</strong></td><td align="left">Visually shifts all blocks</td><td align="left">Anchors the meeting to one location</td></tr><tr><td align="left"><strong>Best For</strong></td><td align="left">Daily planning at home</td><td align="left">Global meetings / Travel</td></tr></tbody></table>
-<hr>
-<h2 id="add-a-secondary-time-zone-for-easier-coordination">Add a Secondary Time Zone for easier coordination</h2>
-<p><strong>Direct answer:</strong> If you work with teammates in another region, adding a <strong>Secondary Time Zone</strong> is safer than changing your primary settings. This adds a second column of numbers to the <strong>left-hand side</strong> of your calendar grid, allowing you to see their local time and yours simultaneously.</p>
-<p><strong>When to use a secondary zone:</strong></p>
+<li>Open <a href="https://calendar.google.com">Google Calendar</a> in your browser.</li>
+<li>Click the <strong>gear icon</strong> (top-right corner) and select <strong>Settings</strong>.</li>
+<li>In the left sidebar, click <strong>General</strong>.</li>
+<li>Click <strong>Time zone</strong>.</li>
+<li>Under <strong>Primary time zone</strong>, click the dropdown and select your zone.
 <ul>
-<li><strong>If</strong> you have a recurring daily sync with a different coast -> <strong>Add</strong> a Secondary Zone for that coast.</li>
-<li><strong>If</strong> you are a freelancer with clients in Europe -> <strong>Add</strong> GMT/UTC as a second anchor.</li>
-<li><strong>If</strong> you are planning a trip and want to see the “Arrival” and “Departure” times in one view -> <strong>Add</strong> the destination zone temporarily.</li>
+<li>Use the “Area/City” format (e.g., “America/New_York,” not “EST”). This ensures Google handles Daylight Saving Time transitions automatically.</li>
 </ul>
-<p>To enable this: Go to <strong>Settings</strong> -> <strong>Time zone</strong> -> Check <strong>Display secondary time zone</strong>.</p>
-<hr>
-<h2 id="the-travelers-decision-matrix-should-you-change-your-settings">The Traveler’s Decision Matrix: Should you change your settings?</h2>
-<p><strong>Direct answer:</strong> You should only change your <strong>Primary</strong> settings if you are staying in a new destination for more than 48 hours. For shorter trips, it is often less confusing to keep your “Home” zone primary and add the destination as a “Secondary” zone.</p>
-<h3 id="decision-rule-travel-scenario-vs-strategy">Decision Rule: Travel Scenario vs. Strategy</h3>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th align="left">Scenario</th><th align="left">Strategy</th></tr></thead><tbody><tr><td align="left"><strong>Short Trip (1-2 days)</strong></td><td align="left">Keep Home Base primary; Add Secondary zone for destination.</td></tr><tr><td align="left"><strong>Relocation / Long Stay</strong></td><td align="left">Flip Primary to new city; Update computer clock to match.</td></tr><tr><td align="left"><strong>Digital Nomad (Constant travel)</strong></td><td align="left">Enable “Ask to update time zone” in Google Calendar settings.</td></tr></tbody></table>
-<hr>
-<h2 id="3-common-time-zone-mistakes-that-mess-up-your-schedule">3 Common Time Zone Mistakes that mess up your schedule</h2>
-<p><strong>Direct answer:</strong> The most common errors come from confusing <strong>system-level</strong> clock changes with <strong>application-level</strong> calendar settings.</p>
-<ol>
-<li><strong>Changing the OS time only:</strong> Your Windows/Mac clock doesn’t always automatically force Google Calendar to update its internal grid. Verify both.</li>
-<li><strong>Forgetting “Event Time Zones”:</strong> If you create a meeting for “9 AM” while in NYC, but it was meant for “9 AM LA time,” it will show up at Noon in LA. Always check the <strong>Time Zone</strong> button next to the start/end time when creating events.</li>
-<li><strong>Ambiguous Abbreviations:</strong> Avoid “EST” or “GMT.” Use the “City/Country” format (e.g., America/New_York) to ensure Google handles Daylight Saving Time (DST) changes for you automatically.</li>
+</li>
+<li>Changes save automatically.</li>
 </ol>
+<h3 id="what-happens-when-you-change-your-primary-zone">What happens when you change your primary zone</h3>
+<p>Every event on your calendar immediately shifts to display in the new zone. A 3:00 PM meeting in your old zone recalculates to whatever time it is in your new zone. No events are deleted or moved — only the display changes.</p>
+<p>Recurring events also shift. If you have a daily standup at 9:00 AM Eastern and you switch to Pacific, it now shows at 6:00 AM. The actual meeting time hasn’t changed — just how your calendar displays it.</p>
 <hr>
-<h2 id="when-to-use-a-world-clock-instead-of-changing-settings">When to use a world clock instead of changing settings</h2>
-<p><strong>Direct answer:</strong> Changing your Google Calendar settings too frequently increases the risk of “losing your anchor” and missing appointments. For a persistent view of 5+ zones at once, use a dedicated world clock tool.</p>
-<p><strong>TimeHopper</strong> provides a persistent, sidebar-based world clock that lives outside your calendar settings. You can track multiple team time zones and see an upcoming meeting countdown without ever shifting your primary Google Calendar view. It’s the professional way to “hop” across zones without the settings fatigue.</p>
-<p>For more advanced time zone troubleshooting, see our guides on <a href="/blog/google-calendar-time-zone-wrong-fix.html">Fixing Wrong Time Zones</a> or <a href="/blog/multiple-time-zones-one-view-labeling-system.html">Managing Multiple Zones in One View</a>.</p>
+<h2 id="change-your-time-zone-on-android">Change your time zone on Android</h2>
+<p><strong>Direct answer:</strong> The Android Google Calendar app can either follow your device’s time zone automatically or let you set one manually.</p>
+<ol>
+<li>Open the <strong>Google Calendar</strong> app.</li>
+<li>Tap the <strong>hamburger menu</strong> (three horizontal lines, top-left).</li>
+<li>Tap <strong>Settings</strong>.</li>
+<li>Tap <strong>General</strong>.</li>
+<li>Under <strong>Time zone</strong>, you’ll see the current setting.
+<ul>
+<li>If “Use device time zone” is enabled, the calendar follows your phone’s automatic time zone.</li>
+<li>To set a specific zone, disable “Use device time zone” and select your preferred zone manually.</li>
+</ul>
+</li>
+</ol>
+<h3 id="android-specific-notes">Android-specific notes</h3>
+<ul>
+<li><strong>“Use device time zone” is on by default.</strong> This means your calendar automatically updates when you travel. For most people, this is the right setting.</li>
+<li>If you disable automatic zone detection and set a manual zone, your calendar stays locked to that zone regardless of where your phone thinks you are.</li>
+<li>If events appear at wrong times after traveling, check whether your phone’s system time zone updated correctly: <strong>Android Settings > System > Date &#x26; time > Time zone</strong>.</li>
+</ul>
+<hr>
+<h2 id="change-your-time-zone-on-ios-iphone--ipad">Change your time zone on iOS (iPhone / iPad)</h2>
+<p><strong>Direct answer:</strong> On iOS, time zone settings for Google Calendar are inside the app, not in Apple’s Settings.</p>
+<ol>
+<li>Open the <strong>Google Calendar</strong> app.</li>
+<li>Tap the <strong>hamburger menu</strong> (three horizontal lines, top-left).</li>
+<li>Tap <strong>Settings</strong>.</li>
+<li>Tap <strong>General</strong>.</li>
+<li>Tap <strong>Time zone</strong> and select your zone.</li>
+</ol>
+<h3 id="ios-specific-notes">iOS-specific notes</h3>
+<ul>
+<li>If you also use Apple’s built-in Calendar app, its time zone settings are separate. Changing one doesn’t affect the other.</li>
+<li>Apple’s “Time Zone Override” feature (in <strong>iOS Settings > Calendar > Time Zone Override</strong>) can conflict with Google Calendar’s zone. If events show wrong times on iOS, check both settings.</li>
+<li>When “Time Zone Override” is enabled in Apple’s calendar settings, events display in a fixed zone regardless of your location. This can create confusion if you expect times to update as you travel.</li>
+</ul>
+<hr>
+<h2 id="display-zone-vs-event-zone-the-distinction-that-prevents-errors">Display zone vs. event zone: the distinction that prevents errors</h2>
+<p><strong>Direct answer:</strong> Your “display zone” controls how your calendar grid looks. An “event zone” locks a specific event to a specific location’s time. Confusing the two is the #1 cause of time zone scheduling errors.</p>
+<h3 id="display-time-zone-your-calendar-view">Display time zone (your calendar view)</h3>
+<p>Your primary time zone is a display setting. It determines the hour labels on the left side of your calendar grid. When you change it, every event shifts visually.</p>
+<p><strong>Example:</strong> You’re in New York (Eastern). Your calendar shows a meeting at 2:00 PM. You change your display zone to London (GMT). That meeting now shows at 7:00 PM. The meeting itself didn’t move — your view shifted.</p>
+<h3 id="event-time-zone-a-single-events-anchor">Event time zone (a single event’s anchor)</h3>
+<p>When you create an event, you can assign it a specific time zone. This anchors the event to that zone regardless of your display settings.</p>
+<p><strong>Example:</strong> You create a meeting at “3:00 PM London time.” If your display zone is Eastern, the meeting shows at 10:00 AM on your grid. If you later switch your display zone to Pacific, it shows at 7:00 AM. The event stays anchored to 3:00 PM London.</p>
+<h3 id="how-to-set-an-events-time-zone">How to set an event’s time zone</h3>
+<ol>
+<li>Create or edit an event in Google Calendar (web).</li>
+<li>Click the <strong>time zone</strong> link next to the start time (it may say your current zone, or you may need to click “More options” first).</li>
+<li>Select the zone you want to anchor the event to.</li>
+<li>Set the start and end times in that zone.</li>
+<li>Save.</li>
+</ol>
+<h3 id="when-to-use-each">When to use each</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Situation</th><th align="left">What to change</th></tr></thead><tbody><tr><td align="left">You moved to a new city</td><td align="left">Change your <strong>display zone</strong> (primary time zone)</td></tr><tr><td align="left">You’re scheduling a meeting in someone else’s zone</td><td align="left">Set the <strong>event zone</strong> on that specific event</td></tr><tr><td align="left">You’re traveling for a few days</td><td align="left">Add a <strong>secondary display zone</strong> (see below) — don’t change your primary</td></tr><tr><td align="left">You work with a team in another zone daily</td><td align="left">Add a <strong>secondary display zone</strong> for their location</td></tr></tbody></table>
+<hr>
+<h2 id="add-a-secondary-time-zone-for-cross-zone-coordination">Add a secondary time zone for cross-zone coordination</h2>
+<p><strong>Direct answer:</strong> Instead of constantly switching your primary zone, add a second zone column to your calendar. This shows two sets of hour labels side by side.</p>
+<h3 id="how-to-enable-a-secondary-time-zone-web">How to enable a secondary time zone (web)</h3>
+<ol>
+<li>Open <strong>Settings</strong> (gear icon) > <strong>Settings</strong>.</li>
+<li>Go to <strong>General > Time zone</strong>.</li>
+<li>Check <strong>Display secondary time zone</strong>.</li>
+<li>Select the second zone from the dropdown.</li>
+<li>Optionally, add labels (e.g., “NYC” and “London”) so you can tell which column is which at a glance.</li>
+</ol>
+<h3 id="when-a-secondary-zone-is-the-right-choice">When a secondary zone is the right choice</h3>
+<ul>
+<li>You have regular meetings with people in a different zone and need to quickly see “what time is it there?”</li>
+<li>You’re traveling for less than a week and want to see destination time alongside home time.</li>
+<li>You coordinate across two offices or time zones daily.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>Google Calendar supports exactly two display zones (primary + secondary). You cannot add a third.</li>
+<li>Secondary zones only appear on the web and some desktop views. Mobile apps don’t show the secondary zone column.</li>
+<li>If you need to track three or more zones simultaneously, you’ll need either Google’s built-in world clock widget (on the web, under “Other calendars”) or a dedicated tool. <a href="/">TimeHopper</a> provides a persistent multi-zone display that works alongside your calendar without requiring settings changes.</li>
+</ul>
+<hr>
+<h2 id="the-travelers-decision-matrix">The traveler’s decision matrix</h2>
+<p><strong>Direct answer:</strong> Whether to change your time zone settings depends on trip length and how you schedule meetings during travel. Here’s a decision framework.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Scenario</th><th align="left">Recommended strategy</th><th align="left">Why</th></tr></thead><tbody><tr><td align="left"><strong>Day trip or 1-2 day trip</strong></td><td align="left">Keep your primary zone. Add destination as secondary zone.</td><td align="left">Avoids confusion. Your regular schedule stays visually consistent.</td></tr><tr><td align="left"><strong>3-7 day trip</strong></td><td align="left">Keep your primary zone. Add destination as secondary. Enable “Ask to update time zone.”</td><td align="left">Google will prompt you to update when it detects a zone change, giving you the choice.</td></tr><tr><td align="left"><strong>Relocation or 1+ week stay</strong></td><td align="left">Change your primary zone to the new location. Remove or update secondary zone.</td><td align="left">You’re operating in the new zone full-time. Your calendar should reflect that.</td></tr><tr><td align="left"><strong>Frequent travel (digital nomad)</strong></td><td align="left">Enable “Use device time zone” on mobile. Set a fixed primary zone on web.</td><td align="left">Mobile auto-updates as you move. Web stays anchored to your “home base.”</td></tr></tbody></table>
+<h3 id="the-ask-to-update-time-zone-setting">The “Ask to update time zone” setting</h3>
+<p>Google Calendar can detect when you’ve traveled to a different time zone and prompt you to update your calendar.</p>
+<p><strong>To enable it (web):</strong></p>
+<ol>
+<li>Go to <strong>Settings > General > Time zone</strong>.</li>
+<li>Check <strong>Ask to update my primary time zone to current location</strong>.</li>
+</ol>
+<p><strong>To enable it (mobile):</strong></p>
+<ul>
+<li>On Android and iOS, the “Use device time zone” toggle serves a similar purpose. When enabled, your calendar follows your phone’s detected zone.</li>
+</ul>
+<p>This setting is useful for infrequent travelers. For frequent travelers, it can be annoying — you’ll get prompted every time you cross a zone boundary.</p>
+<hr>
+<h2 id="common-mistakes-with-time-zone-settings">Common mistakes with time zone settings</h2>
+<p><strong>Direct answer:</strong> Five errors account for most time zone frustration. Here’s each one and how to avoid it.</p>
+<h3 id="mistake-1-changing-your-os-clock-instead-of-your-calendar-setting">Mistake 1: Changing your OS clock instead of your calendar setting</h3>
+<p>Your computer’s system clock and Google Calendar’s time zone are independent settings. Changing one doesn’t necessarily change the other. If you update your Windows or macOS time zone but don’t update Google Calendar, your calendar grid stays on the old zone.</p>
+<p><strong>Fix:</strong> Always change the time zone inside Google Calendar settings directly. Don’t rely on your OS clock to propagate the change.</p>
+<h3 id="mistake-2-using-abbreviations-instead-of-city-names">Mistake 2: Using abbreviations instead of city names</h3>
+<p>Setting your zone to “EST” locks it to Eastern Standard Time year-round — it won’t switch to EDT (Eastern Daylight Time) in summer. This means your calendar will be one hour off for roughly half the year.</p>
+<p><strong>Fix:</strong> Always use the “Area/City” format: “America/New_York” instead of “EST.” Google handles DST transitions automatically when you use city-based zones.</p>
+<h3 id="mistake-3-forgetting-event-level-time-zones-when-scheduling-across-zones">Mistake 3: Forgetting event-level time zones when scheduling across zones</h3>
+<p>You’re in New York and create a meeting at “9:00 AM” for your colleague in Los Angeles. Without setting an event zone, that meeting is 9:00 AM Eastern — which is 6:00 AM in LA.</p>
+<p><strong>Fix:</strong> When scheduling cross-zone meetings, click the time zone link next to the event time and set it explicitly. Or verbally confirm: “9 AM your time or mine?”</p>
+<h3 id="mistake-4-changing-your-primary-zone-before-a-trip-then-forgetting-to-change-it-back">Mistake 4: Changing your primary zone before a trip (then forgetting to change it back)</h3>
+<p>You switch to Tokyo time for a business trip. Your week in Tokyo goes smoothly. You fly home, forget to switch back, and miss a Monday morning meeting because your calendar still shows Tokyo time.</p>
+<p><strong>Fix:</strong> Use the secondary time zone feature for trips instead of changing your primary zone. Or enable “Ask to update time zone” so Google prompts you when it detects you’ve moved.</p>
+<h3 id="mistake-5-assuming-mobile-and-web-share-the-same-zone-setting">Mistake 5: Assuming mobile and web share the same zone setting</h3>
+<p>If “Use device time zone” is enabled on mobile but you’ve manually set a different zone on the web, your mobile calendar and web calendar can show different times for the same event.</p>
+<p><strong>Fix:</strong> Decide on one strategy. Either use automatic zone detection everywhere, or set a manual zone on both platforms. Check both after making any change.</p>
 <hr>
 <h2 id="faq">FAQ</h2>
-<h3 id="why-are-my-meetings-one-hour-off">Why are my meetings one hour off?</h3>
-<p>This is almost always a Daylight Saving Time (DST) mismatch. Ensure both you and the meeting host have selected a “City” (like London or New York) as the time zone anchor instead of a fixed GMT offset.</p>
-<h3 id="can-i-have-three-time-zones-visible">Can I have three time zones visible?</h3>
-<p>Google Calendar natively supports two (Primary and Secondary). For a third or fourth, you’ll need an extension or a dedicated world clock tool like TimeHopper.</p>
+<h3 id="why-are-my-meetings-showing-one-hour-off">Why are my meetings showing one hour off?</h3>
+<p>This is almost always a Daylight Saving Time (DST) issue. If you used a fixed offset (like “GMT-5” or “EST”) instead of a city name (like “America/New_York”), your calendar doesn’t adjust for DST. Change your time zone to use the city format, and the one-hour offset should resolve at the next DST transition.</p>
+<h3 id="can-i-show-three-or-more-time-zones-on-my-calendar">Can I show three or more time zones on my calendar?</h3>
+<p>Not natively. Google Calendar supports two display zones (primary + secondary). For additional zones, you can use Google’s world clock widget (visible on the web sidebar) or a browser extension. <a href="/">TimeHopper</a> displays multiple zones in a persistent sidebar without requiring settings changes.</p>
+<h3 id="does-changing-my-time-zone-affect-events-other-people-invited-me-to">Does changing my time zone affect events other people invited me to?</h3>
+<p>No. Changing your display zone doesn’t alter when events occur. It only changes how they appear on your grid. Other attendees’ views are unaffected. The event still happens at the same moment in time — it just displays differently on your calendar.</p>
+<h3 id="what-happens-to-recurring-events-when-i-change-time-zones">What happens to recurring events when I change time zones?</h3>
+<p>Recurring events shift to display in your new zone. If you have a daily 9:00 AM Eastern meeting and switch to Pacific, it shows at 6:00 AM. The meeting still occurs at the same absolute time. If you need the meeting to be at 9:00 AM in your new zone, you’ll need to edit the recurring series.</p>
+<h3 id="should-i-use-use-device-time-zone-on-mobile">Should I use “Use device time zone” on mobile?</h3>
+<p>For most people, yes. It means your calendar automatically adjusts when you travel, showing events in local time. Disable it only if you need your calendar locked to a specific zone regardless of location — for example, if you’re a remote worker whose team operates in a fixed zone and you want your calendar to always reflect that zone.</p>
 <hr>
 <h2 id="sources">Sources</h2>
-<p>(Included in frontmatter)</p> </div> <section class="sources-section"> <hr> <h2>Sources</h2> <ul> <li> <a href="https://support.google.com/calendar/answer/37064?co=GENIE.Platform%3DDesktop&hl=en" target="_blank" rel="noopener noreferrer"> Google Calendar Help: Use Google Calendar in different time zones (Desktop) </a> <span class="publisher"> (Google)</span> </li><li> <a href="https://support.google.com/calendar/answer/37064?co=GENIE.Platform%3DAndroid&hl=en" target="_blank" rel="noopener noreferrer"> Google Calendar Help: Use Google Calendar in different time zones (Android) </a> <span class="publisher"> (Google)</span> </li> </ul> </section> <section class="related-posts" data-astro-cid-dpgbfi7r><h2 data-astro-cid-dpgbfi7r>Read Next</h2><div class="related-grid" data-astro-cid-dpgbfi7r><a href="/blog/hide-weekends-google-calendar.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>How to Hide Weekends in Google Calendar (Cleaner Week View)</h3><p data-astro-cid-dpgbfi7r>Hide Saturdays and Sundays in Google Calendar for a cleaner work-week view—plus tips for remote teams and non-standard work weeks.</p></div></a><a href="/blog/color-code-google-calendar-events.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>How to Color-Code Events in Google Calendar (So Your Week is Readable)</h3><p data-astro-cid-dpgbfi7r>Color-code Google Calendar events and calendars to make your schedule glanceable: categories, rules of thumb, and a simple system that scales.</p></div></a></div></section> <footer> <a href="/blog.html">&larr; Back to blog</a> </footer> </article>  <section class="support-cta" data-astro-cid-7dkdpa4i> <div class="container" data-astro-cid-7dkdpa4i> <div class="cta-card" data-astro-cid-7dkdpa4i> <div class="cta-content" data-astro-cid-7dkdpa4i> <h2 data-astro-cid-7dkdpa4i>Your calendar + time zones, at a glance.</h2> <p data-astro-cid-7dkdpa4i>See your schedule instantly, convert time zones, and get meeting alerts—without switching tabs.</p> <div class="cta-actions" data-astro-cid-7dkdpa4i> <a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="cta-btn" data-astro-cid-7dkdpa4i> <img src="/images/icon48.png" alt="" class="btn-icon" data-astro-cid-7dkdpa4i>
+<ul>
+<li><a href="https://support.google.com/calendar/answer/37064">Google Calendar Help: Change your time zone</a> — official documentation on time zone settings and display options.</li>
+<li><a href="https://support.google.com/calendar/answer/6261951">Google Calendar Help: Use Google Calendar on different devices</a> — cross-device sync behavior including time zone propagation.</li>
+</ul> </div>  <section class="related-posts" data-astro-cid-dpgbfi7r><h2 data-astro-cid-dpgbfi7r>Read Next</h2><div class="related-grid" data-astro-cid-dpgbfi7r><a href="/blog/google-calendar-time-zone-confusion-travel.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>Google Calendar Time Zones for Travel: Pre-Flight Checklist</h3><p data-astro-cid-dpgbfi7r>Avoid scrambled meeting times on your next trip. Use this before/during/after checklist to keep Google Calendar time zones under control.</p></div></a><a href="/blog/multiple-time-zones-one-view-labeling-system.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>Track 3+ Time Zones in One Google Calendar View</h3><p data-astro-cid-dpgbfi7r>See multiple time zones side-by-side in Google Calendar using secondary clocks, the world clock sidebar, and a labeling system that kills confusion.</p></div></a></div></section> <footer> <a href="/blog.html">&larr; Back to blog</a> </footer> </article>  <section class="support-cta" data-astro-cid-7dkdpa4i> <div class="container" data-astro-cid-7dkdpa4i> <div class="cta-card" data-astro-cid-7dkdpa4i> <div class="cta-content" data-astro-cid-7dkdpa4i> <h2 data-astro-cid-7dkdpa4i>Your calendar + time zones, at a glance.</h2> <p data-astro-cid-7dkdpa4i>See your schedule instantly, convert time zones, and get meeting alerts—without switching tabs.</p> <div class="cta-actions" data-astro-cid-7dkdpa4i> <a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="cta-btn" data-astro-cid-7dkdpa4i> <img src="/images/icon48.png" alt="" class="btn-icon" data-astro-cid-7dkdpa4i>
 Add to Chrome - Free
-</a> </div> </div> </div> </div> </section>  <footer> <div class="container"> <p>&copy; 2026 TimeHopper. Built for remote work.</p> <div class="footer-links"> <a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms of Service</a> <a href="mailto:danwalshx@gmail.com">Contact Support</a> </div> </div> </footer> </body></html> 
+</a> </div> </div> </div> </div> </section>  <footer> <div class="container"> <p>&copy; 2026 TimeHopper. Built for remote work.</p> <div class="footer-links"> <a href="/blog.html">Blog</a> <a href="/tools/convert.html">Time Zone Converter</a> <a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms of Service</a> <a href="mailto:danwalshx@gmail.com">Contact Support</a> </div> </div> </footer> </body></html> 

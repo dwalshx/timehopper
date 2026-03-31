@@ -41,6 +41,22 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </div>
 
+    <div class="tools-section">
+        <div class="container">
+            <h2>Free Time Zone Tools</h2>
+            <p class="tools-intro">No sign-up required. Convert times between any zone pair instantly.</p>
+            <div class="tools-grid">
+                <a href="/tools/convert/pst-to-est.html" class="tool-link">PST → EST</a>
+                <a href="/tools/convert/utc-to-est.html" class="tool-link">UTC → EST</a>
+                <a href="/tools/convert/gmt-to-pst.html" class="tool-link">GMT → PST</a>
+                <a href="/tools/convert/ist-to-est.html" class="tool-link">IST → EST</a>
+                <a href="/tools/convert/est-to-cet.html" class="tool-link">EST → CET</a>
+                <a href="/tools/convert/utc-to-pst.html" class="tool-link">UTC → PST</a>
+            </div>
+            <a href="/tools/convert.html" class="tools-all">View all 20 converters →</a>
+        </div>
+    </div>
+
     <div class="privacy-section">
         <div class="container">
             <h2>Transparency & Data Usage</h2>
@@ -136,6 +152,57 @@ import Layout from '../layouts/Layout.astro';
         display: flex;
         align-items: center;
         gap: 10px;
+    }
+
+    /* Tools Section */
+    .tools-section {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .tools-section h2 {
+        font-size: 2em;
+        margin-bottom: 8px;
+        color: #2c3e50;
+    }
+
+    .tools-intro {
+        color: #94a3b8;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+
+    .tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .tool-link {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        color: #1e293b !important;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none !important;
+        transition: all 0.2s;
+    }
+
+    .tool-link:hover {
+        border-color: #fd547a;
+        box-shadow: 0 4px 12px rgba(253, 84, 122, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .tools-all {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 0.95rem;
     }
 
     /* Privacy Section */
