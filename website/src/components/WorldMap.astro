@@ -1,0 +1,119 @@
+---
+import { timezoneZones, formatOffsetLabel, type TimezoneZone } from '../data/timezone-zones';
+
+// SVG layout constants
+const SVG_WIDTH = 1200;
+const SVG_HEIGHT = 600;
+const TOTAL_BANDS = timezoneZones.length; // 39
+const BAND_WIDTH = SVG_WIDTH / TOTAL_BANDS; // ~30.77px
+
+// Compute x position for each band
+const bandPositions = timezoneZones.map((_, index) => index * BAND_WIDTH);
+
+// Color gradient: cool-to-warm from UTC-12 (left) to UTC+14 (right)
+// Hue interpolates from 210 (cool deep blue) to 15 (warm burnt orange)
+// Saturation and lightness stay in dark-theme range
+function computeBandColor(index: number): string {
+  const t = index / (TOTAL_BANDS - 1); // 0..1
+  const hue = Math.round(210 - t * (210 - 15)); // 210 → 15
+  const saturation = Math.round(60 + t * 10);   // 60% → 70%
+  const lightness = Math.round(25 + t * 10);    // 25% → 35%
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
+
+const bandColors: string[] = timezoneZones.map((_, index) => computeBandColor(index));
+
+// Text centering: x at band center
+const textCenters = timezoneZones.map((_, index) => index * BAND_WIDTH + BAND_WIDTH / 2);
+---
+
+<div class="world-map-container">
+  <svg
+    viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
+    preserveAspectRatio="xMidYMid meet"
+    role="img"
+    aria-label="World timezone map showing all UTC offset zones"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- Dark background -->
+    <rect width={SVG_WIDTH} height={SVG_HEIGHT} fill="#0f172a" />
+
+    {timezoneZones.map((zone: TimezoneZone, index: number) => {
+      const x = bandPositions[index];
+      const cx = textCenters[index];
+      const color = bandColors[index];
+      const offsetLabel = formatOffsetLabel(zone.utcOffsetMinutes);
+
+      return (
+        <g
+          data-tz={zone.iana}
+          data-offset={zone.utcOffsetMinutes}
+          data-abbr={zone.abbr}
+          data-region={zone.region}
+          data-pair={zone.converterPair || ''}
+        >
+          {/* Band fill */}
+          <rect
+            x={x}
+            y={0}
+            width={BAND_WIDTH}
+            height={SVG_HEIGHT}
+            fill={color}
+          />
+          {/* Separator line */}
+          <line
+            x1={x}
+            y1={0}
+            x2={x}
+            y2={SVG_HEIGHT}
+            stroke="rgba(255,255,255,0.08)"
+            stroke-width="1"
+          />
+          {/* Zone abbreviation label */}
+          <text
+            x={cx}
+            y={290}
+            text-anchor="middle"
+            dominant-baseline="middle"
+            fill="rgba(255,255,255,0.85)"
+            font-size="10"
+            font-weight="700"
+            font-family="system-ui, -apple-system, sans-serif"
+          >
+            {zone.abbr}
+          </text>
+          {/* UTC offset label */}
+          <text
+            x={cx}
+            y={310}
+            text-anchor="middle"
+            dominant-baseline="middle"
+            fill="rgba(255,255,255,0.5)"
+            font-size="7.5"
+            font-family="system-ui, -apple-system, sans-serif"
+          >
+            {offsetLabel}
+          </text>
+        </g>
+      );
+    })}
+  </svg>
+</div>
+
+<style>
+  .world-map-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.4);
+    background: #0f172a;
+  }
+
+  .world-map-container svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
