@@ -27,6 +27,7 @@ Help people understand and navigate time zone differences through clear, interac
 - ✓ AI discoverability (llms.txt, ai-plugin.json, oEmbed, JSON-LD) — v1.0
 - ✓ SEO blog with 40+ articles (editorial pipeline) — v1.0
 - ✓ Dark theme, zero-dependency, responsive design pattern — v1.0
+- ✓ Comprehensive timezone data layer (39 zones, UTC-12 to UTC+14, IANA-based) — v1.1 Phase 5
 
 ### Active
 
@@ -42,7 +43,7 @@ Help people understand and navigate time zone differences through clear, interac
 ## Context
 
 - **Stack:** Astro static site, output to `/docs/`, `build.format: 'file'` for .html outputs
-- **Data layer:** `timezone-pairs.ts` with 12 base zones (PST, MST, CST, EST, UTC, GMT, CET, EET, IST, SGT, JST, AEST) and 40 pairs
+- **Data layer:** `timezone-pairs.ts` with 12 base zones and 40 pairs; `timezone-zones.ts` with 39 zones covering all UTC offsets
 - **Components:** `TimezoneConverter.astro` — vanilla JS widget using browser Intl API
 - **Deploy:** Static files in `/docs/` served via GitHub Pages
 - **Design:** Dark gradient theme (#1e293b to #334155), card-based UI, responsive
@@ -83,4 +84,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-30 after GSD initialization*
+*Last updated: 2026-03-31 after Phase 5 completion*
