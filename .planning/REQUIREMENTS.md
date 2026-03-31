@@ -9,11 +9,11 @@ Requirements for timezone data foundation. Each maps to roadmap phases.
 
 ### Timezone Data
 
-- [ ] **TZD-01**: Site has a comprehensive timezone-zones.ts data file covering all major UTC offsets (UTC-12 through UTC+14)
-- [ ] **TZD-02**: Each zone entry includes IANA identifier, abbreviation, UTC offset, region name, and representative city
-- [ ] **TZD-03**: Half-hour and quarter-hour offsets are represented (UTC+5:30 India, UTC+5:45 Nepal, UTC+9:30 Darwin, UTC+3:30 Iran)
-- [ ] **TZD-04**: Each zone cross-references existing converter pair slugs where available (12 of ~38 zones)
-- [ ] **TZD-05**: Zone data uses IANA identifiers for DST-safe time resolution via Intl API (no fixed UTC offsets)
+- [x] **TZD-01**: Site has a comprehensive timezone-zones.ts data file covering all major UTC offsets (UTC-12 through UTC+14)
+- [x] **TZD-02**: Each zone entry includes IANA identifier, abbreviation, UTC offset, region name, and representative city
+- [x] **TZD-03**: Half-hour and quarter-hour offsets are represented (UTC+5:30 India, UTC+5:45 Nepal, UTC+9:30 Darwin, UTC+3:30 Iran)
+- [x] **TZD-04**: Each zone cross-references existing converter pair slugs where available (12 of ~38 zones)
+- [x] **TZD-05**: Zone data uses IANA identifiers for DST-safe time resolution via Intl API (no fixed UTC offsets)
 
 ## v1.2+ Requirements
 
@@ -50,11 +50,11 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TZD-01 | Phase 5 | Pending |
-| TZD-02 | Phase 5 | Pending |
-| TZD-03 | Phase 5 | Pending |
-| TZD-04 | Phase 5 | Pending |
-| TZD-05 | Phase 5 | Pending |
+| TZD-01 | Phase 5 | Complete |
+| TZD-02 | Phase 5 | Complete |
+| TZD-03 | Phase 5 | Complete |
+| TZD-04 | Phase 5 | Complete |
+| TZD-05 | Phase 5 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 5 total
