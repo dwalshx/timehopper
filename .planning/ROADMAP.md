@@ -52,7 +52,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Create WorldMap.astro with inline SVG timezone bands, color gradient, labels, and data-tz attributes
+- [x] 06-01-PLAN.md — Create WorldMap.astro with inline SVG timezone bands, color gradient, labels, and data-tz attributes
 - [ ] 06-02-PLAN.md — Add live clock overlay and single shared timer to WorldMap.astro
 
 **UI hint**: yes
@@ -152,7 +152,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 5. Timezone Data Foundation | v1.1 | 1/1 | Complete | 2026-03-31 |
-| 6. SVG Asset & Map Component | v1.2 | 0/2 | Planning complete | - |
+| 6. SVG Asset & Map Component | v1.2 | 1/2 | In Progress|  |
 | 7. Map Interactivity | v1.2 | 0/? | Not started | - |
 | 8. Pages & Integration | v1.2 | 0/? | Not started | - |
 | 9. Mobile & Polish | v1.2 | 0/? | Not started | - |

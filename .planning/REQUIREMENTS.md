@@ -9,8 +9,8 @@ Requirements for interactive world time zone map. Each maps to roadmap phases.
 
 ### SVG Map Component
 
-- [ ] **MAP-01**: WorldMap.astro component renders an inline SVG world map with color-coded timezone bands
-- [ ] **MAP-02**: Each timezone region in the SVG has a `data-tz` attribute linking to its IANA identifier from timezone-zones.ts
+- [x] **MAP-01**: WorldMap.astro component renders an inline SVG world map with color-coded timezone bands
+- [x] **MAP-02**: Each timezone region in the SVG has a `data-tz` attribute linking to its IANA identifier from timezone-zones.ts
 - [ ] **MAP-03**: Live clocks update every second for all visible zones using a single shared setInterval
 
 ### Map Interactivity
@@ -61,8 +61,8 @@ Requirements for interactive world time zone map. Each maps to roadmap phases.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MAP-01 | Phase 6 | Pending |
-| MAP-02 | Phase 6 | Pending |
+| MAP-01 | Phase 6 | Complete |
+| MAP-02 | Phase 6 | Complete |
 | MAP-03 | Phase 6 | Pending |
 | INT-01 | Phase 7 | Pending |
 | INT-02 | Phase 7 | Pending |
