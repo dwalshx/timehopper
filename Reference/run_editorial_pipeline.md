@@ -30,6 +30,7 @@ PRIMITIVES = Reference/editorial_primitives_library.md
 BRAND_VOICE = Reference/brand_voice_v1.md
 POSITIONING = Reference/positioning_document_v1.md
 SPEC = Reference/editorial_team_spec.md
+LESSONS = Reference/editorial_lessons.md
 ```
 
 ---
@@ -100,11 +101,14 @@ Launch Agent:
     - Reference/editorial_personas.md
     - Reference/brand_voice_v1.md
     - Reference/positioning_document_v1.md
+    - Reference/editorial_lessons.md (read the "Writer" section — these are patterns from prior runs to avoid or replicate)
 
   You are the Writer. [paste full Writer prompt from spec, including voice guidance, persona targeting, Quality Bar reference, backlog spinout instructions, and the 4 voice tests].
 
+  **Lessons from prior runs:** Before writing, read the Writer section of Reference/editorial_lessons.md. These are concrete patterns observed in prior pipeline runs. Apply them proactively — do not wait for the critique session to catch the same issues again.
+
   Write 03_outline.md first, then 04_draft_v1.md.
-  Receives: 01_creative_brief.md, 01c_content_contract.md, 01b2_exemplar_analysis.md, 02_source_pack.md, editorial_personas.md, brand_voice_v1.md, positioning_document_v1.md
+  Receives: 01_creative_brief.md, 01c_content_contract.md, 01b2_exemplar_analysis.md, 02_source_pack.md, editorial_personas.md, brand_voice_v1.md, positioning_document_v1.md, editorial_lessons.md
 ```
 
 ---
@@ -136,9 +140,13 @@ Launch Agent:
 ```
 Launch Agent:
   Description: "Critique editor lens"
-  Prompt: Read 04_draft_v1.md, 01c_content_contract.md, 01b2_exemplar_analysis.md, and Reference/brand_voice_v1.md.
+  Prompt: Read 04_draft_v1.md, 01c_content_contract.md, 01b2_exemplar_analysis.md, Reference/brand_voice_v1.md, and Reference/editorial_lessons.md (Critique section + Writer section).
 
-  You are the Editor Lens critic — guardian of craft, voice, and execution quality. Evaluate on three axes:
+  You are the Editor Lens critic — guardian of craft, voice, and execution quality.
+
+  **Lessons from prior runs:** Read the Critique and Writer sections of Reference/editorial_lessons.md. Check whether known patterns (e.g., repetitive H2 openings, over-explanation, em-dash density) appear in this draft. If a known pattern recurs, flag it explicitly: "This is a recurring pattern from prior runs — see editorial_lessons.md."
+
+  Evaluate on three axes:
 
   VOICE ALIGNMENT: Does this sound like TimeHopper? Check against the brand voice doc:
   - Calm authority, not tutorial-speak or tech blog generic
@@ -243,7 +251,7 @@ Launch Agent:
 ```
 Launch Agent:
   Description: "Critique facilitator"
-  Prompt: Read 04_draft_v1.md and 01c_content_contract.md.
+  Prompt: Read 04_draft_v1.md, 01c_content_contract.md, and Reference/editorial_lessons.md.
 
   You are the Facilitator closing a critique session. Here is the full exchange:
 
@@ -270,6 +278,8 @@ Launch Agent:
 
   Also include a **Contract Compliance Check** — binary pass/fail against each item in 01c_content_contract.md. If any must-have is missing, add it to the "Changing" list regardless of what the Writer said.
 
+  Also include a **Lessons Check** — scan Reference/editorial_lessons.md for known patterns. If any known lesson recurred in this draft (e.g., "Writer over-explains after experiential moments" and the critics flagged over-explanation), note it in the Decision Log under a "Recurring Patterns" section. This helps the Retrospective Agent track reinforcement.
+
   Write the full session transcript + Decision Log to 05_critique_session.md.
 ```
 
@@ -284,9 +294,11 @@ Launch critic agents again with the Writer's response, get their reactions, pass
 ```
 Launch Agent:
   Description: "Writer draft v2"
-  Prompt: Read 04_draft_v1.md, the Decision Log section of 05_critique_session.md, 01c_content_contract.md, and Reference/brand_voice_v1.md.
+  Prompt: Read 04_draft_v1.md, the Decision Log section of 05_critique_session.md, 01c_content_contract.md, Reference/brand_voice_v1.md, and Reference/editorial_lessons.md (Writer section).
 
   You are the Writer producing draft v2. Implement all items from the Decision Log "Changing" list. Contract Compliance items are non-negotiable. If rejecting any other item, note why briefly.
+
+  **Lessons from prior runs:** Check the Writer section of Reference/editorial_lessons.md. If the Decision Log flags any recurring pattern from lessons, prioritize fixing it thoroughly — these are patterns that have survived previous critique sessions.
 
   Continue following Reference/brand_voice_v1.md for voice. Run the 4 voice tests before submitting.
 
@@ -303,9 +315,11 @@ Launch Agent:
 ```
 Launch Agent:
   Description: "Voice editor"
-  Prompt: Read 06_draft_v2.md, Reference/voice_editor_spec.md, and Reference/brand_voice_v1.md.
+  Prompt: Read 06_draft_v2.md, Reference/voice_editor_spec.md, Reference/brand_voice_v1.md, and Reference/editorial_lessons.md (Voice Editor section).
 
   You are the Voice Editor. Follow the full spec in Reference/voice_editor_spec.md.
+
+  **Lessons from prior runs:** Read the Voice Editor section of Reference/editorial_lessons.md before starting. These are patterns from prior runs — recurring tells, effective moves, calibration data. Use them to prioritize your De-AI and Humanize passes.
 
   Pass 1 — De-AI: Run the tells checklist (Section 2). Count and fix em-dashes, "not X — Y" constructions, three-beat rhythms, hedge fog, intensifiers, transition scaffolding, uniformity. Mechanical pass.
 
@@ -314,7 +328,7 @@ Launch Agent:
   Guardrails: Do not change argument, structure, facts, links, frontmatter, or headings. Stay within word count ±5%. Run the 4 voice tests after all changes.
 
   Write output to 06b_draft_v2_voiced.md and 06b_voice_edit_log.md.
-  Receives: 06_draft_v2.md, Reference/voice_editor_spec.md, Reference/brand_voice_v1.md
+  Receives: 06_draft_v2.md, Reference/voice_editor_spec.md, Reference/brand_voice_v1.md, Reference/editorial_lessons.md
 ```
 
 ---
@@ -373,6 +387,45 @@ Launch Agent:
 
 ---
 
+### Phase 9: Retrospective (Step 10b)
+
+**Step 10b — Retrospective Agent** (runs after publishable is assembled)
+```
+Launch Agent:
+  Description: "Pipeline retrospective"
+  Prompt: Read the following files:
+    - content_pipeline/<slug>/05_critique_session.md
+    - content_pipeline/<slug>/06b_voice_edit_log.md
+    - content_pipeline/<slug>/09_final_qc.md
+    - Reference/editorial_lessons.md
+
+  You are the Retrospective Agent. Follow the full spec in Reference/editorial_team_spec.md (Retrospective Agent prompt).
+
+  Extract actionable patterns from this pipeline run. For each artifact, identify:
+  - Writer habits (structural tells, over-explanation patterns, framework definition style)
+  - Voice Editor patterns (which De-AI tells recur, which humanize moves were most effective)
+  - Critique patterns (which lenses found real issues, which critiques were rejected and why)
+  - QC patterns (recurring technical issues, factual accuracy problems)
+  - What worked well (moves that elevated the piece — just as important as problems)
+
+  Update Reference/editorial_lessons.md:
+  - Add new lessons (New tier)
+  - Reinforce existing lessons that appeared again (bump tier)
+  - Flag graduates ready for spec promotion (add to Graduation Queue)
+  - Prune if over 30 items (drop unreinforced New lessons older than 3 runs)
+  - Retire lessons now in the specs
+
+  Write output to:
+  - content_pipeline/<slug>/10b_retrospective.md
+  - Reference/editorial_lessons.md (updated)
+
+  Receives: 05_critique_session.md, 06b_voice_edit_log.md, 09_final_qc.md, Reference/editorial_lessons.md
+```
+
+**If the Graduation Queue has items:** Surface them to the human for review. Graduated lessons get promoted into the relevant spec (editorial_team_spec.md, voice_editor_spec.md, or run_editorial_pipeline.md) and retired from the lessons file.
+
+---
+
 ## Parallelism Summary
 
 | Phase | Steps | Parallel? |
@@ -390,3 +443,4 @@ Launch Agent:
 | 6. Optimization | 7+8 | Sequential (needs voiced draft) |
 | 7. Final QC | 9 | Sequential (needs optimization) |
 | 8. Publish | 10 | Sequential (needs QC pass) |
+| 9. Retrospective | 10b | Sequential (needs QC pass + publish) |

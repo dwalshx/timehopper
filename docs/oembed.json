@@ -1,0 +1,728 @@
+{
+  "provider_name": "TimeHopper",
+  "provider_url": "https://timehopperapp.com",
+  "description": "Free, embeddable time zone converter widgets. Each widget shows live clocks and an interactive hour converter for a specific timezone pair. Embed via iframe with auto-resizing.",
+  "total_widgets": 40,
+  "widgets": [
+    {
+      "slug": "pst-to-est",
+      "from": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "PST to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/pst-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/pst-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"PST to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/pst-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/pst-to-est.html"
+    },
+    {
+      "slug": "est-to-pst",
+      "from": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "EST to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/est-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/est-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EST to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/est-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/est-to-pst.html"
+    },
+    {
+      "slug": "utc-to-est",
+      "from": {
+        "abbr": "UTC",
+        "region": "Universal",
+        "iana": "Etc/UTC"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "UTC to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/utc-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/utc-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"UTC to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/utc-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/utc-to-est.html"
+    },
+    {
+      "slug": "utc-to-pst",
+      "from": {
+        "abbr": "UTC",
+        "region": "Universal",
+        "iana": "Etc/UTC"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "UTC to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/utc-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/utc-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"UTC to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/utc-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/utc-to-pst.html"
+    },
+    {
+      "slug": "gmt-to-est",
+      "from": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "GMT to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/gmt-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/gmt-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"GMT to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/gmt-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/gmt-to-est.html"
+    },
+    {
+      "slug": "est-to-gmt",
+      "from": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "to": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "title": "EST to GMT Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/est-to-gmt.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/est-to-gmt.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EST to GMT Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/est-to-gmt.json",
+      "page_url": "https://timehopperapp.com/tools/convert/est-to-gmt.html"
+    },
+    {
+      "slug": "cst-to-est",
+      "from": {
+        "abbr": "CST",
+        "region": "US Central",
+        "iana": "America/Chicago"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "CST to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/cst-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/cst-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"CST to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/cst-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/cst-to-est.html"
+    },
+    {
+      "slug": "est-to-cst",
+      "from": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "to": {
+        "abbr": "CST",
+        "region": "US Central",
+        "iana": "America/Chicago"
+      },
+      "title": "EST to CST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/est-to-cst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/est-to-cst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EST to CST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/est-to-cst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/est-to-cst.html"
+    },
+    {
+      "slug": "ist-to-est",
+      "from": {
+        "abbr": "IST",
+        "region": "India",
+        "iana": "Asia/Kolkata"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "IST to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/ist-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/ist-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"IST to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/ist-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/ist-to-est.html"
+    },
+    {
+      "slug": "ist-to-pst",
+      "from": {
+        "abbr": "IST",
+        "region": "India",
+        "iana": "Asia/Kolkata"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "IST to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/ist-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/ist-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"IST to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/ist-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/ist-to-pst.html"
+    },
+    {
+      "slug": "gmt-to-pst",
+      "from": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "GMT to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/gmt-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/gmt-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"GMT to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/gmt-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/gmt-to-pst.html"
+    },
+    {
+      "slug": "utc-to-cst",
+      "from": {
+        "abbr": "UTC",
+        "region": "Universal",
+        "iana": "Etc/UTC"
+      },
+      "to": {
+        "abbr": "CST",
+        "region": "US Central",
+        "iana": "America/Chicago"
+      },
+      "title": "UTC to CST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/utc-to-cst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/utc-to-cst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"UTC to CST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/utc-to-cst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/utc-to-cst.html"
+    },
+    {
+      "slug": "pst-to-gmt",
+      "from": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "to": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "title": "PST to GMT Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/pst-to-gmt.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/pst-to-gmt.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"PST to GMT Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/pst-to-gmt.json",
+      "page_url": "https://timehopperapp.com/tools/convert/pst-to-gmt.html"
+    },
+    {
+      "slug": "cet-to-est",
+      "from": {
+        "abbr": "CET",
+        "region": "Central Europe",
+        "iana": "Europe/Berlin"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "CET to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/cet-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/cet-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"CET to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/cet-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/cet-to-est.html"
+    },
+    {
+      "slug": "est-to-cet",
+      "from": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "to": {
+        "abbr": "CET",
+        "region": "Central Europe",
+        "iana": "Europe/Berlin"
+      },
+      "title": "EST to CET Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/est-to-cet.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/est-to-cet.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EST to CET Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/est-to-cet.json",
+      "page_url": "https://timehopperapp.com/tools/convert/est-to-cet.html"
+    },
+    {
+      "slug": "jst-to-est",
+      "from": {
+        "abbr": "JST",
+        "region": "Japan",
+        "iana": "Asia/Tokyo"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "JST to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/jst-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/jst-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"JST to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/jst-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/jst-to-est.html"
+    },
+    {
+      "slug": "aest-to-est",
+      "from": {
+        "abbr": "AEST",
+        "region": "Australia East",
+        "iana": "Australia/Sydney"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "AEST to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/aest-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/aest-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"AEST to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/aest-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/aest-to-est.html"
+    },
+    {
+      "slug": "utc-to-ist",
+      "from": {
+        "abbr": "UTC",
+        "region": "Universal",
+        "iana": "Etc/UTC"
+      },
+      "to": {
+        "abbr": "IST",
+        "region": "India",
+        "iana": "Asia/Kolkata"
+      },
+      "title": "UTC to IST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/utc-to-ist.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/utc-to-ist.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"UTC to IST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/utc-to-ist.json",
+      "page_url": "https://timehopperapp.com/tools/convert/utc-to-ist.html"
+    },
+    {
+      "slug": "pst-to-cst",
+      "from": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "to": {
+        "abbr": "CST",
+        "region": "US Central",
+        "iana": "America/Chicago"
+      },
+      "title": "PST to CST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/pst-to-cst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/pst-to-cst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"PST to CST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/pst-to-cst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/pst-to-cst.html"
+    },
+    {
+      "slug": "est-to-ist",
+      "from": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "to": {
+        "abbr": "IST",
+        "region": "India",
+        "iana": "Asia/Kolkata"
+      },
+      "title": "EST to IST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/est-to-ist.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/est-to-ist.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EST to IST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/est-to-ist.json",
+      "page_url": "https://timehopperapp.com/tools/convert/est-to-ist.html"
+    },
+    {
+      "slug": "pst-to-jst",
+      "from": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "to": {
+        "abbr": "JST",
+        "region": "Japan",
+        "iana": "Asia/Tokyo"
+      },
+      "title": "PST to JST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/pst-to-jst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/pst-to-jst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"PST to JST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/pst-to-jst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/pst-to-jst.html"
+    },
+    {
+      "slug": "est-to-jst",
+      "from": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "to": {
+        "abbr": "JST",
+        "region": "Japan",
+        "iana": "Asia/Tokyo"
+      },
+      "title": "EST to JST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/est-to-jst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/est-to-jst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EST to JST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/est-to-jst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/est-to-jst.html"
+    },
+    {
+      "slug": "pst-to-sgt",
+      "from": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "to": {
+        "abbr": "SGT",
+        "region": "Singapore",
+        "iana": "Asia/Singapore"
+      },
+      "title": "PST to SGT Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/pst-to-sgt.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/pst-to-sgt.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"PST to SGT Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/pst-to-sgt.json",
+      "page_url": "https://timehopperapp.com/tools/convert/pst-to-sgt.html"
+    },
+    {
+      "slug": "est-to-sgt",
+      "from": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "to": {
+        "abbr": "SGT",
+        "region": "Singapore",
+        "iana": "Asia/Singapore"
+      },
+      "title": "EST to SGT Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/est-to-sgt.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/est-to-sgt.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EST to SGT Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/est-to-sgt.json",
+      "page_url": "https://timehopperapp.com/tools/convert/est-to-sgt.html"
+    },
+    {
+      "slug": "cst-to-ist",
+      "from": {
+        "abbr": "CST",
+        "region": "US Central",
+        "iana": "America/Chicago"
+      },
+      "to": {
+        "abbr": "IST",
+        "region": "India",
+        "iana": "Asia/Kolkata"
+      },
+      "title": "CST to IST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/cst-to-ist.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/cst-to-ist.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"CST to IST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/cst-to-ist.json",
+      "page_url": "https://timehopperapp.com/tools/convert/cst-to-ist.html"
+    },
+    {
+      "slug": "gmt-to-ist",
+      "from": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "to": {
+        "abbr": "IST",
+        "region": "India",
+        "iana": "Asia/Kolkata"
+      },
+      "title": "GMT to IST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/gmt-to-ist.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/gmt-to-ist.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"GMT to IST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/gmt-to-ist.json",
+      "page_url": "https://timehopperapp.com/tools/convert/gmt-to-ist.html"
+    },
+    {
+      "slug": "cet-to-ist",
+      "from": {
+        "abbr": "CET",
+        "region": "Central Europe",
+        "iana": "Europe/Berlin"
+      },
+      "to": {
+        "abbr": "IST",
+        "region": "India",
+        "iana": "Asia/Kolkata"
+      },
+      "title": "CET to IST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/cet-to-ist.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/cet-to-ist.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"CET to IST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/cet-to-ist.json",
+      "page_url": "https://timehopperapp.com/tools/convert/cet-to-ist.html"
+    },
+    {
+      "slug": "gmt-to-jst",
+      "from": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "to": {
+        "abbr": "JST",
+        "region": "Japan",
+        "iana": "Asia/Tokyo"
+      },
+      "title": "GMT to JST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/gmt-to-jst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/gmt-to-jst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"GMT to JST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/gmt-to-jst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/gmt-to-jst.html"
+    },
+    {
+      "slug": "gmt-to-sgt",
+      "from": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "to": {
+        "abbr": "SGT",
+        "region": "Singapore",
+        "iana": "Asia/Singapore"
+      },
+      "title": "GMT to SGT Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/gmt-to-sgt.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/gmt-to-sgt.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"GMT to SGT Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/gmt-to-sgt.json",
+      "page_url": "https://timehopperapp.com/tools/convert/gmt-to-sgt.html"
+    },
+    {
+      "slug": "gmt-to-aest",
+      "from": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "to": {
+        "abbr": "AEST",
+        "region": "Australia East",
+        "iana": "Australia/Sydney"
+      },
+      "title": "GMT to AEST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/gmt-to-aest.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/gmt-to-aest.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"GMT to AEST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/gmt-to-aest.json",
+      "page_url": "https://timehopperapp.com/tools/convert/gmt-to-aest.html"
+    },
+    {
+      "slug": "mst-to-est",
+      "from": {
+        "abbr": "MST",
+        "region": "US Mountain",
+        "iana": "America/Denver"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "MST to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/mst-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/mst-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"MST to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/mst-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/mst-to-est.html"
+    },
+    {
+      "slug": "mst-to-pst",
+      "from": {
+        "abbr": "MST",
+        "region": "US Mountain",
+        "iana": "America/Denver"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "MST to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/mst-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/mst-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"MST to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/mst-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/mst-to-pst.html"
+    },
+    {
+      "slug": "mst-to-cst",
+      "from": {
+        "abbr": "MST",
+        "region": "US Mountain",
+        "iana": "America/Denver"
+      },
+      "to": {
+        "abbr": "CST",
+        "region": "US Central",
+        "iana": "America/Chicago"
+      },
+      "title": "MST to CST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/mst-to-cst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/mst-to-cst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"MST to CST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/mst-to-cst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/mst-to-cst.html"
+    },
+    {
+      "slug": "cst-to-pst",
+      "from": {
+        "abbr": "CST",
+        "region": "US Central",
+        "iana": "America/Chicago"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "CST to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/cst-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/cst-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"CST to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/cst-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/cst-to-pst.html"
+    },
+    {
+      "slug": "aest-to-gmt",
+      "from": {
+        "abbr": "AEST",
+        "region": "Australia East",
+        "iana": "Australia/Sydney"
+      },
+      "to": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "title": "AEST to GMT Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/aest-to-gmt.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/aest-to-gmt.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"AEST to GMT Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/aest-to-gmt.json",
+      "page_url": "https://timehopperapp.com/tools/convert/aest-to-gmt.html"
+    },
+    {
+      "slug": "aest-to-pst",
+      "from": {
+        "abbr": "AEST",
+        "region": "Australia East",
+        "iana": "Australia/Sydney"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "AEST to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/aest-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/aest-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"AEST to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/aest-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/aest-to-pst.html"
+    },
+    {
+      "slug": "aest-to-jst",
+      "from": {
+        "abbr": "AEST",
+        "region": "Australia East",
+        "iana": "Australia/Sydney"
+      },
+      "to": {
+        "abbr": "JST",
+        "region": "Japan",
+        "iana": "Asia/Tokyo"
+      },
+      "title": "AEST to JST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/aest-to-jst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/aest-to-jst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"AEST to JST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/aest-to-jst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/aest-to-jst.html"
+    },
+    {
+      "slug": "cet-to-gmt",
+      "from": {
+        "abbr": "CET",
+        "region": "Central Europe",
+        "iana": "Europe/Berlin"
+      },
+      "to": {
+        "abbr": "GMT",
+        "region": "United Kingdom",
+        "iana": "Europe/London"
+      },
+      "title": "CET to GMT Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/cet-to-gmt.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/cet-to-gmt.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"CET to GMT Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/cet-to-gmt.json",
+      "page_url": "https://timehopperapp.com/tools/convert/cet-to-gmt.html"
+    },
+    {
+      "slug": "eet-to-est",
+      "from": {
+        "abbr": "EET",
+        "region": "Eastern Europe",
+        "iana": "Europe/Athens"
+      },
+      "to": {
+        "abbr": "EST",
+        "region": "US East Coast",
+        "iana": "America/New_York"
+      },
+      "title": "EET to EST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/eet-to-est.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/eet-to-est.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"EET to EST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/eet-to-est.json",
+      "page_url": "https://timehopperapp.com/tools/convert/eet-to-est.html"
+    },
+    {
+      "slug": "cet-to-pst",
+      "from": {
+        "abbr": "CET",
+        "region": "Central Europe",
+        "iana": "Europe/Berlin"
+      },
+      "to": {
+        "abbr": "PST",
+        "region": "US West Coast",
+        "iana": "America/Los_Angeles"
+      },
+      "title": "CET to PST Time Zone Converter",
+      "embed_url": "https://timehopperapp.com/embed/cet-to-pst.html",
+      "embed_iframe": "<iframe src=\"https://timehopperapp.com/embed/cet-to-pst.html\" width=\"100%\" height=\"420\" style=\"border:none;border-radius:12px;max-width:600px;\" loading=\"lazy\" title=\"CET to PST Time Zone Converter — TimeHopper\"></iframe>",
+      "oembed_url": "https://timehopperapp.com/oembed/cet-to-pst.json",
+      "page_url": "https://timehopperapp.com/tools/convert/cet-to-pst.html"
+    }
+  ]
+}

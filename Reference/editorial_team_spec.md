@@ -63,6 +63,7 @@ Each role in this pipeline runs as a **separate agent instance**:
 9) **Voice Editor** — De-AI pass + humanize pass (texture, warmth, personality). See `Reference/voice_editor_spec.md`
 10) **SEO/AEO + Linking + QA** — Final optimization pass
 11) **Final Reviewer** — Strict contract-driven pass/fail gate with technical verification
+12) **Retrospective Agent** — Post-run learning extraction. Updates `Reference/editorial_lessons.md` with patterns from critique, voice editing, and QC. Manages lesson lifecycle: New → Reinforced → Graduate → Retired.
 
 ### Reference Documents (passed to agents as needed)
 - `Reference/editorial_personas.md` — User personas (Operator, Planner, Juggler, Minimalist)
@@ -71,6 +72,7 @@ Each role in this pipeline runs as a **separate agent instance**:
 - `Reference/positioning_document_v1.md` — TimeHopper positioning: temporal workflow layer, not a replacement for calendars
 - `Reference/voice_editor_spec.md` — Voice Editor: De-AI tells checklist, humanize licensed moves, forage process
 - `Reference/editorial_team_template.md` — Operating principles and workflow reference
+- `Reference/editorial_lessons.md` — Accumulated lessons from prior pipeline runs (passed to Writer, Voice Editor, and critique agents)
 
 ---
 
@@ -101,6 +103,7 @@ content_probe.json
 
 ### Conditional artifacts
 content_error_packet.json    (only on QC failure)
+10b_retrospective.md         (learning extraction from each run — updates Reference/editorial_lessons.md)
 backlog_candidates.md        (when spinout candidates are identified during writing or critique)
 
 ---
@@ -444,6 +447,29 @@ Final must be Astro-ready and include:
 - internal links
 - All technical issues from Final QC resolved
 
+### Step 10b — Retrospective Agent → `10b_retrospective.md` + updates `Reference/editorial_lessons.md`
+**Agent receives:** `05_critique_session.md`, `06b_voice_edit_log.md`, `09_final_qc.md`, `Reference/editorial_lessons.md`
+
+Runs after QC passes and the publishable file is assembled. Extracts actionable patterns from the current run and updates the persistent lessons file.
+
+Must:
+- Read the current lessons file and the run's key artifacts
+- **Add** new lessons observed in this run (categorized by role: Writer, Voice Editor, Critique, Pipeline Process)
+- **Reinforce** existing lessons that appeared again (bump from New → Reinforced)
+- **Flag graduates** — lessons at Reinforced that appeared in 3+ runs, or high-impact New lessons. These are ready for human review and promotion into the relevant spec.
+- **Retire** lessons that are now in the specs (check by grepping the spec files for the lesson's core instruction)
+- **Prune** if over 30 items: drop the weakest New lessons that have not been reinforced after 3+ runs
+- Write `10b_retrospective.md` documenting what was added, reinforced, flagged, or retired
+- Write the updated `Reference/editorial_lessons.md`
+
+Lesson format:
+```
+- **[Tier]** Lesson text.
+  *Runs: slug-1, slug-2, slug-3*
+```
+
+Tiers: **New** (1 run) → **Reinforced** (2-3 runs) → **Graduate** (3+ runs or high-impact, ready for spec promotion) → **Retired** (promoted into spec, removed after 2 runs)
+
 ---
 
 ## 7) Role Prompts (Execution-Ready)
@@ -524,6 +550,36 @@ You are the SEO/AEO + Linking + QA role. Produce 07_seo_aeo_pass.md, 08_linking_
 ### Final Reviewer (prompt)
 
 You are the Final Reviewer. Produce 09_final_qc.md. Perform a hard pass/fail against the Acceptance Criteria in Section 4 of the spec, including both content checks AND technical verification (link accuracy, correct destinations, markdown validity). If fail, generate `content_error_packet.json` with exact deltas, categorized as content vs. technical issues, and role ownership for each fix.
+
+### Retrospective Agent (prompt)
+
+You are the Retrospective Agent. Your job is to extract actionable lessons from this pipeline run and update the persistent lessons file so future runs improve.
+
+Read the current `Reference/editorial_lessons.md` and this run's key artifacts: `05_critique_session.md`, `06b_voice_edit_log.md`, and `09_final_qc.md`.
+
+For each artifact, ask:
+- **What patterns appeared?** (Writer habits, Voice Editor fixes, critique findings, QC catches)
+- **What worked well?** (Moves that elevated the piece — these are just as important as problems)
+- **What was surprising?** (Unexpected issues, contradictions between critics, novel solutions)
+
+Then update `Reference/editorial_lessons.md`:
+1. **Add** new lessons, categorized by role (Writer, Voice Editor, Critique, Pipeline Process). Each lesson must be concrete and actionable — not "improve voice" but "Writer produces ~12 em-dashes per 1,000 words; threshold is 6."
+2. **Reinforce** existing lessons that appeared again in this run (bump tier from New → Reinforced).
+3. **Flag graduates** — any lesson at Reinforced tier that has appeared in 3+ runs, or a New lesson with high enough impact to graduate immediately. Add to the Graduation Queue with a recommendation for which spec to update.
+4. **Prune** if over 30 items — drop the weakest New lessons that have not been reinforced after 3+ runs since they were added. A lesson that only appeared once and has not recurred in 3 subsequent runs is noise, not signal.
+5. **Retire** — check if any lesson's core instruction now appears in the relevant spec (grep for key phrases). If so, move to Retired section.
+
+**Lesson format:**
+```
+- **[Tier]** Concrete, actionable lesson text.
+  *Runs: slug-1, slug-2*
+```
+
+**Tiers:** New (1 run) → Reinforced (2-3 runs) → Graduate (3+ runs or high-impact) → Retired (in spec)
+
+**Cap:** 30 items max. Quality over quantity — one sharp lesson beats three vague ones.
+
+Output: `10b_retrospective.md` (what changed in the lessons file and why) and the updated `Reference/editorial_lessons.md`.
 
 ---
 

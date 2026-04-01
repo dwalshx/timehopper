@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/png" href="/images/icon128.png"><meta name="generator" content="Astro v5.17.2"><!-- Canonical URL --><link rel="canonical" href="https://timehopperapp.com/blog/google-calendar-recurring-events.html"><!-- Primary Meta Tags --><title>Google Calendar Recurring Events: Create, Edit &amp; Fix - TimeHopper Blog</title><meta name="title" content="Google Calendar Recurring Events: Create, Edit &#38; Fix - TimeHopper Blog"><meta name="description" content="Complete guide to Google Calendar recurring events. Create custom patterns, understand editing consequences, fix time zone issues, and troubleshoot wrong times."><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://timehopperapp.com/blog/google-calendar-recurring-events.html"><meta property="og:title" content="Google Calendar Recurring Events: Create, Edit &#38; Fix - TimeHopper Blog"><meta property="og:description" content="Complete guide to Google Calendar recurring events. Create custom patterns, understand editing consequences, fix time zone issues, and troubleshoot wrong times."><meta property="og:image" content="https://timehopperapp.com/images/icon128.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://timehopperapp.com/blog/google-calendar-recurring-events.html"><meta property="twitter:title" content="Google Calendar Recurring Events: Create, Edit &#38; Fix - TimeHopper Blog"><meta property="twitter:description" content="Complete guide to Google Calendar recurring events. Create custom patterns, understand editing consequences, fix time zone issues, and troubleshoot wrong times."><meta property="twitter:image" content="https://timehopperapp.com/images/icon128.png"><!-- Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TimeHopper","url":"https://timehopperapp.com","logo":"https://timehopperapp.com/images/icon128.png","contactPoint":{"@type":"ContactPoint","email":"danwalshx@gmail.com","contactType":"customer support"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timehopperapp.com/index.html"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://timehopperapp.com/blog.html"},{"@type":"ListItem","position":3,"name":"Google Calendar Recurring Events: Create, Edit & Fix","item":"https://timehopperapp.com/blog/google-calendar-recurring-events.html"}]}</script><style>.support-cta[data-astro-cid-7dkdpa4i]{padding:60px 0;background:#f9f9f9}.cta-card[data-astro-cid-7dkdpa4i]{background:linear-gradient(135deg,#fd547a,#526ea1);border-radius:24px;padding:60px 40px;text-align:center;color:#fff;box-shadow:0 20px 40px #fd547a33;position:relative;overflow:hidden}.cta-card[data-astro-cid-7dkdpa4i]:before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#ffffff1a,#fff0 70%);pointer-events:none}.cta-content[data-astro-cid-7dkdpa4i]{position:relative;z-index:1;max-width:600px;margin:0 auto}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:2.5rem;margin:0 0 1rem;color:#fff;font-weight:800}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.25rem;opacity:.9;margin-bottom:2.5rem;line-height:1.5}.cta-btn[data-astro-cid-7dkdpa4i]{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#fd547a!important;padding:18px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;box-shadow:0 10px 20px #0000001a;transition:transform .2s,box-shadow .2s;text-decoration:none}.cta-btn[data-astro-cid-7dkdpa4i]:hover{transform:translateY(-3px);box-shadow:0 15px 30px #00000026;text-decoration:none}.btn-icon[data-astro-cid-7dkdpa4i]{width:24px;height:24px}@media(max-width:600px){.cta-card[data-astro-cid-7dkdpa4i]{padding:40px 20px}.cta-card[data-astro-cid-7dkdpa4i] h2[data-astro-cid-7dkdpa4i]{font-size:1.8rem}.cta-card[data-astro-cid-7dkdpa4i] p[data-astro-cid-7dkdpa4i]{font-size:1.1rem}}.main-nav[data-astro-cid-pux6a34n]{background:#fffffff2;backdrop-filter:blur(10px);border-bottom:1px solid #eee;padding:15px 0;position:sticky;top:0;z-index:1000}.nav-container[data-astro-cid-pux6a34n]{display:flex;justify-content:space-between;align-items:center}.nav-logo[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:10px;text-decoration:none;color:#333;font-weight:800;font-size:1.25rem}.nav-logo-img[data-astro-cid-pux6a34n]{width:32px;height:32px}.nav-links[data-astro-cid-pux6a34n]{display:flex;align-items:center;gap:25px;list-style:none;margin:0;padding:0}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]{text-decoration:none;color:#555;font-weight:600;transition:color .2s}.nav-links[data-astro-cid-pux6a34n] a[data-astro-cid-pux6a34n]:hover{color:#fd547a}.nav-cta[data-astro-cid-pux6a34n]{background:#fd547a;color:#fff!important;padding:8px 16px;border-radius:50px;font-size:.9rem;transition:transform .2s,box-shadow .2s!important}.nav-cta[data-astro-cid-pux6a34n]:hover{transform:translateY(-2px);box-shadow:0 4px 10px #fd547a33}@media(max-width:600px){.nav-logo-text[data-astro-cid-pux6a34n]{display:none}.nav-links[data-astro-cid-pux6a34n]{gap:15px}.nav-cta[data-astro-cid-pux6a34n]{padding:6px 12px;font-size:.8rem}}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#333;line-height:1.6}.container{max-width:900px;margin:0 auto;padding:0 20px}a{color:#fd547a;text-decoration:none;transition:text-decoration .2s}a:hover{text-decoration:underline}footer{background:#333;color:#aaa;padding:40px 0;text-align:center}.footer-links{margin-top:15px;display:flex;justify-content:center;gap:20px}footer a{color:#fff;text-decoration:none;font-size:.9em}footer a:hover{text-decoration:underline}
+.related-posts[data-astro-cid-dpgbfi7r]{margin-top:60px;padding-top:40px;border-top:2px solid #f1f1f1}.related-posts[data-astro-cid-dpgbfi7r] h2[data-astro-cid-dpgbfi7r]{font-size:1.8rem;margin-bottom:2rem;color:#2c3e50}.related-grid[data-astro-cid-dpgbfi7r]{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}.related-card[data-astro-cid-dpgbfi7r]{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.related-card[data-astro-cid-dpgbfi7r]:hover{transform:translateY(-3px);box-shadow:0 4px 12px #0000000d;text-decoration:none}.related-card[data-astro-cid-dpgbfi7r] h3[data-astro-cid-dpgbfi7r]{margin:0 0 10px;font-size:1.3rem;color:#fd547a}.related-card[data-astro-cid-dpgbfi7r] p[data-astro-cid-dpgbfi7r]{margin:0;font-size:.95rem;color:#666;line-height:1.4}.blog-post{max-width:800px;margin:0 auto;padding:60px 20px}.blog-post header{margin-bottom:40px;text-align:center}.blog-post .meta{color:#888;margin-bottom:1rem}.blog-post h1{text-align:center;font-size:3rem;line-height:1.1;margin:0 0 2rem;color:#2c3e50}.blog-post .hero-img{width:100%;border-radius:12px;margin-top:2rem}.blog-post .content{font-size:1.2rem;line-height:1.8;color:#333}.blog-post .content h2{margin-top:3rem;font-size:2rem;color:#2c3e50}.blog-post .content p{margin-bottom:1.5rem}.blog-post footer{margin-top:60px;padding-top:30px;border-top:1px solid #eee}.blog-post .content blockquote{border-left:3px solid #cbd5e1;margin:2rem 0;padding:.5rem 0 .5rem 1.5rem;color:#475569;font-style:italic}.blog-post .content blockquote p{margin-bottom:.75rem}.blog-post .content blockquote p:last-child{margin-bottom:0}.blog-post .content .pull-quote{border-left:none;border-top:2px solid #fd547a;border-bottom:2px solid #fd547a;margin:3rem 0;padding:2rem 1.5rem;text-align:center;font-style:normal;color:#2c3e50}.blog-post .content .pull-quote p{font-size:1.5rem;line-height:1.4;font-weight:500;margin-bottom:0}@media(max-width:768px){.blog-post .content .pull-quote{margin:2rem 0;padding:1.5rem 1rem}.blog-post .content .pull-quote p{font-size:1.25rem}}.answer-box{background:#fff8e1;border-left:4px solid #fcc934;padding:20px 30px;border-radius:0 8px 8px 0;margin:2rem 0}.answer-box h3{margin-top:0;font-size:1.2rem;color:#856404}.blog-post .content table{width:100%;border-collapse:separate;border-spacing:0;margin:1.5rem 0 2rem;font-size:.95rem;line-height:1.5;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0}.blog-post .content thead{background:#f8fafc}.blog-post .content th{padding:12px 16px;text-align:left;font-weight:600;color:#2c3e50;border-bottom:2px solid #e2e8f0;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em}.blog-post .content td{padding:12px 16px;border-bottom:1px solid #f1f5f9;vertical-align:top;color:#475569}.blog-post .content tbody tr:last-child td{border-bottom:none}.blog-post .content tbody tr:hover{background:#f8fafc}.blog-post .content td strong{color:#2c3e50}.blog-post .content td code{font-size:.85em;background:#f1f5f9;padding:2px 6px;border-radius:4px;color:#334155}@media(max-width:768px){.blog-post .content table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.blog-post .content th,.blog-post .content td{min-width:140px;padding:10px 12px;font-size:.9rem}}.sources-section h2{font-size:1.4rem;color:#64748b}.sources-section ul{list-style:none;padding:0}.sources-section li{padding:6px 0}.sources-section .publisher{color:#94a3b8;font-size:.9rem}
+</style></head> <body> <nav class="main-nav" data-astro-cid-pux6a34n> <div class="container nav-container" data-astro-cid-pux6a34n> <a href="/" class="nav-logo" data-astro-cid-pux6a34n> <img src="/images/icon48.png" alt="TimeHopper Logo" class="nav-logo-img" data-astro-cid-pux6a34n> <span class="nav-logo-text" data-astro-cid-pux6a34n>TimeHopper</span> </a> <ul class="nav-links" data-astro-cid-pux6a34n> <li data-astro-cid-pux6a34n><a href="/" data-astro-cid-pux6a34n>Home</a></li> <li data-astro-cid-pux6a34n><a href="/blog.html" data-astro-cid-pux6a34n>Blog</a></li> <li data-astro-cid-pux6a34n><a href="/tools/convert.html" data-astro-cid-pux6a34n>Tools</a></li> <li data-astro-cid-pux6a34n><a href="/tools/map.html" data-astro-cid-pux6a34n>Map</a></li> <li data-astro-cid-pux6a34n><a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="nav-cta" data-astro-cid-pux6a34n>Add to Chrome</a></li> </ul> </div> </nav>   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Calendar Recurring Events: Create, Edit & Fix","description":"Complete guide to Google Calendar recurring events. Create custom patterns, understand editing consequences, fix time zone issues, and troubleshoot wrong times.","image":[],"datePublished":"2026-03-30T00:00:00.000Z","author":[{"@type":"Person","name":"Dan Walsh","url":"https://timehopperapp.com"}]}</script> <article class="container blog-post"> <header> <div class="meta"> <time datetime="2026-03-30T00:00:00.000Z"> March 29, 2026 </time> </div>  </header> <div class="content"> <h1 id="google-calendar-recurring-events-how-to-create-edit-and-fix-common-problems">Google Calendar Recurring Events: How to Create, Edit, and Fix Common Problems</h1>
+<p>Recurring events keep your weekly standups, biweekly 1:1s, and monthly reviews on the calendar without manual entry. This guide covers creation, custom patterns, editing without breaking your series, and the time zone edge cases that trip people up. (Note: this covers recurring <em>events</em>, not repeating tasks in Google Tasks, which follow different rules.)</p>
+<h2 id="how-do-you-create-a-recurring-event-in-google-calendar">How Do You Create a Recurring Event in Google Calendar?</h2>
+<p>To create a recurring event, open Google Calendar, add a new event, set the recurrence pattern, and save. The event repeats automatically on that schedule. Here are the steps.</p>
+<p><strong>On web (Desktop):</strong></p>
+<ol>
+<li>Open <a href="https://calendar.google.com">Google Calendar</a>.</li>
+<li>Click an empty time slot, or click the <strong>+</strong> button to create a new event.</li>
+<li>Enter the event title and adjust the time.</li>
+<li>Click <strong>Does not repeat</strong> (below the time fields) to open the <a href="https://support.google.com/calendar/answer/37115">recurrence options</a>.</li>
+<li>Select a preset pattern: <strong>Daily</strong>, <strong>Weekly</strong>, <strong>Monthly</strong>, <strong>Annually</strong>, <strong>Every weekday (Mon-Fri)</strong>, or <strong>Custom</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p><strong>On mobile (Android and iOS):</strong></p>
+<p>Tap to create a new event, then tap <strong>More options</strong> to access the full event editor. Tap <strong>Does not repeat</strong> and select your recurrence pattern. The same presets and Custom option are available; the interface is more compact.</p>
+<h3 id="recurrence-options-at-a-glance">Recurrence Options at a Glance</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>What It Does</th><th>Example Use</th></tr></thead><tbody><tr><td>Daily</td><td>Repeats every day</td><td>Daily standup</td></tr><tr><td>Weekly</td><td>Same day each week</td><td>Monday team sync</td></tr><tr><td>Monthly</td><td>Same date each month</td><td>15th-of-month report review</td></tr><tr><td>Annually</td><td>Once per year</td><td>Annual performance review</td></tr><tr><td>Every weekday</td><td>Monday through Friday</td><td>Weekday morning check-in</td></tr><tr><td>Custom</td><td>Any pattern you define</td><td>Every 2 weeks on Tuesday</td></tr></tbody></table>
+<p>One limit to know: Google Calendar caps recurring events at <strong>730 occurrences</strong>. For a weekly event, that’s about 14 years. For a daily event, it’s about 2 years. If you need the series to extend beyond that, you’ll need to create a new recurring event when the original reaches its limit.</p>
+<h2 id="how-do-you-set-up-custom-recurrence-patterns">How Do You Set Up Custom Recurrence Patterns?</h2>
+<p>Click <strong>Custom</strong> in the recurrence dropdown to define any pattern Google Calendar supports. You’ll set three things: the repeat interval, the specific days, and the end condition.</p>
+<p>Here’s how the Custom dialog works on web:</p>
+<ol>
+<li><strong>Repeat every:</strong> Set the number and unit. “Every 2 weeks,” “Every 3 months,” “Every 1 day.”</li>
+<li><strong>Repeat on:</strong> For weekly patterns, select specific days of the week (e.g., Tuesday and Thursday).</li>
+<li><strong>Ends:</strong> Choose <strong>Never</strong>, <strong>On</strong> (a specific date), or <strong>After</strong> (a number of occurrences).</li>
+</ol>
+<h3 id="common-patterns-people-search-for">Common Patterns People Search For</h3>
+<p><strong>Every 2 weeks on Tuesday:</strong>
+Set “Repeat every 2 weeks.” Select Tuesday. Choose your end condition.</p>
+<p><strong>First Monday of every month:</strong>
+Create the event on a date that is the first Monday (e.g., March 2). Set recurrence to <strong>Monthly</strong>. Google Calendar infers “first Monday” from the date and offers it as an option in the dropdown. If you create the event on March 2 and it’s a Monday, you’ll see “Monthly on the first Monday” as a choice.</p>
+<p><strong>Every weekday (Mon-Fri):</strong>
+Select the <strong>Every weekday (Mon-Fri)</strong> preset, or use Custom: “Repeat every 1 week” and select Monday through Friday.</p>
+<p><strong>Tuesday and Thursday every week:</strong>
+Use Custom: “Repeat every 1 week.” Select both Tuesday and Thursday.</p>
+<p>If your pattern involves a specific weekday-of-month (like “first Monday” or “third Wednesday”), create the event on that exact day and choose Monthly. Google Calendar reads the pattern from the date.</p>
+<h2 id="what-happens-when-you-edit-a-recurring-event">What Happens When You Edit a Recurring Event?</h2>
+<p>When you save changes to a recurring event, Google Calendar asks you to choose one of three scopes: <strong>This event</strong>, <strong>This and following events</strong>, or <strong>All events</strong>. Each option behaves differently, and one of them can catch you off guard.</p>
+<h3 id="the-three-editing-scopes">The Three Editing Scopes</h3>
+<p><strong>This event:</strong> Changes only the selected instance. Every other occurrence in the series stays the same. Use this when you need to reschedule a single meeting or update the agenda for one session.</p>
+<p><strong>All events:</strong> Applies your change to every instance in the series, past and future. Use this when the meeting permanently changes (new time, new room, new title).</p>
+<p><strong>This and following events:</strong> This is the one that surprises people. It does not simply update future instances. It <em>splits</em> the series into two. The original series ends at the instance before your edit. A new, separate series begins from the edited instance forward.</p>
+<h3 id="why-the-series-split-matters">Why the Series Split Matters</h3>
+<p>Say you have a weekly Wednesday standup. You decide to move it to Thursday starting March 18. You select “This and following events.”</p>
+<p>Google Calendar now has two independent series:</p>
+<ul>
+<li><strong>Series A:</strong> Weekly Wednesday standup, ending March 11.</li>
+<li><strong>Series B:</strong> Weekly Thursday standup, starting March 18.</li>
+</ul>
+<p>If you had made per-instance edits to future Wednesdays (changed a title, adjusted a time for one specific week), those changes may be lost. The new series starts fresh.</p>
+<h3 id="before-you-edit-a-quick-checklist">Before You Edit: A Quick Checklist</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Changing just today’s instance? Select <strong>This event</strong>.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Changing the meeting permanently, all instances? Select <strong>All events</strong>.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Changing from a specific date forward? Select <strong>This and following events</strong>, but know it splits the series and may discard per-instance edits on future occurrences.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Not sure? Start with <strong>This event</strong>. You can always make broader changes later. You can’t easily un-split a series.</li>
+</ul>
+<h3 id="edge-cases-to-watch">Edge Cases to Watch</h3>
+<ul>
+<li><strong>Deleting a single instance</strong> removes only that occurrence. The rest of the series continues as normal.</li>
+<li><strong>“This and following events”</strong> may discard per-instance exceptions (time overrides, title changes) that you previously made to future occurrences.</li>
+<li><strong>Changing the recurrence rule via “All events”</strong> (e.g., switching from weekly to biweekly) resets all single-instance exceptions across the series.</li>
+<li><strong>Undo works immediately.</strong> If you accidentally applied an edit to the wrong scope, press <strong>Ctrl+Z</strong> (or <strong>Cmd+Z</strong> on Mac) right away. Google Calendar supports undo for recent changes.</li>
+</ul>
+<h2 id="how-do-recurring-events-work-across-time-zones">How Do Recurring Events Work Across Time Zones?</h2>
+<p>Google Calendar stores each recurring event in the time zone where it was created. Every instance stays at the same local time in that creation zone. Attendees in other zones see the event converted to their local time, which shifts when DST transitions don’t align between zones.</p>
+<h3 id="the-creation-zone-rule">The Creation-Zone Rule</h3>
+<p>When you create a recurring 9 AM meeting and your calendar is set to US Eastern, Google Calendar generates every instance at 9 AM Eastern. It doesn’t store “9 AM” as an abstract concept. It stores it relative to the US Eastern time zone, including that zone’s DST rules.</p>
+<p>For you, the meeting is always at 9 AM. For your colleague in London, the math changes twice a year.</p>
+<h3 id="a-concrete-dst-example">A Concrete DST Example</h3>
+<p>You schedule a weekly standup at 9 AM US Eastern. Your London colleague sees it at 2 PM GMT during the winter months (ET is UTC-5, GMT is UTC+0).</p>
+<p>In mid-March, the US shifts to Eastern Daylight Time (UTC-4), but the UK hasn’t switched to BST yet. Your meeting is still 9 AM Eastern, but now it’s only 4 hours behind UTC instead of 5. Your London colleague sees the meeting at 1 PM GMT for the one or two weeks between the US and UK clock changes.</p>
+<p>Then the UK shifts to BST, and the meeting goes back to appearing at 2 PM local time for London. This is correct behavior, but it confuses people who expect the meeting to always appear at the same time everywhere.</p>
+<h3 id="what-happens-when-you-change-your-calendars-time-zone">What Happens When You Change Your Calendar’s Time Zone</h3>
+<p>If you <a href="/blog/how-to-change-time-zone-in-google-calendar">change your calendar’s primary time zone</a>, existing recurring events retain their original creation time zone. They don’t shift to match your new zone. A 9 AM Eastern recurring meeting stays at 9 AM Eastern even if you move your calendar to Pacific. You’ll now see it at 6 AM on your calendar.</p>
+<p>To change the time zone of an existing recurring event, open the event, click the time zone option near the time fields, and select the new zone. Then save with <strong>All events</strong> to apply it across the series.</p>
+<h3 id="scheduling-across-zones-without-surprises">Scheduling Across Zones Without Surprises</h3>
+<p>If you schedule recurring meetings with attendees in multiple time zones, set the event time zone explicitly rather than relying on your calendar’s default. This makes the event’s anchor zone visible and intentional.</p>
+<p><a href="/blog/add-secondary-time-zone-google-calendar">Adding a secondary time zone</a> to your calendar view helps you see two zones at once. For teams spread across more than two zones, <a href="https://chromewebstore.google.com/detail/timehopper-time-zone-conv/jckljcbopecepadagmnjbfjgojpnfkhl">TimeHopper</a> shows every attendee’s local time inline on your calendar, so you catch DST-driven conflicts before they happen.</p>
+<h2 id="why-is-my-recurring-event-showing-the-wrong-time">Why Is My Recurring Event Showing the Wrong Time?</h2>
+<p>The most common causes are a DST transition, a calendar time zone mismatch, or an unintended series edit. Match your symptom to the fix below.</p>
+<p><strong>“My recurring event shifted by one hour.”</strong>
+Cause: a DST transition changed the offset between your time zone and the event’s creation zone. The event is still at the correct time in its original zone. Fix: open the event, check the time zone assigned to it, and verify it matches your intent. For a deeper walkthrough, see <a href="/blog/google-calendar-time-zone-wrong-fix">how to fix a wrong time zone in Google Calendar</a>.</p>
+<p><strong>“My recurring event doesn’t appear on mobile.”</strong>
+Cause: a sync delay or calendar visibility toggle. Fix: open the mobile app’s side menu and confirm the calendar containing the event is toggled on (checked). If it’s on but the event is still missing, pull down to force a sync, or go to <strong>Settings > Accounts</strong> and trigger a manual sync.</p>
+<p><strong>“I edited one instance and all future events changed.”</strong>
+Cause: you selected “This and following events” instead of “This event” when saving. Fix: press <strong>Ctrl+Z</strong> (or <strong>Cmd+Z</strong>) immediately to undo. If it’s too late to undo, open the series and manually restore the original values, then re-apply your single-instance edit using “This event.”</p>
+<p><strong>“My recurring event duplicated.”</strong>
+Cause: a “This and following events” edit split the series into two. The original series still exists up to the split point, and a new series starts from the edit date. It looks like duplication near the boundary. Fix: identify which series is the unwanted fragment and delete it.</p>
+<p><strong>“I imported a recurring event and the times are wrong.”</strong>
+Cause: the source calendar app used a different time zone or a recurrence rule format that didn’t map cleanly to Google Calendar. Fix: delete the imported event, then recreate it manually in Google Calendar with the correct time zone and pattern.</p>
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>Recurring events are one of Google Calendar’s most useful features and one of its most quietly confusing. The creation steps are simple. The complexity lives in editing scope, time zone behavior, and DST transitions.</p>
+<p>For more on managing time zones across your calendar, see the full guides on <a href="/blog/how-to-change-time-zone-in-google-calendar">changing your time zone</a>, <a href="/blog/add-secondary-time-zone-google-calendar">adding a secondary time zone</a>, and <a href="/blog/google-calendar-time-zone-wrong-fix">fixing wrong-time display issues</a>.</p> </div>  <section class="related-posts" data-astro-cid-dpgbfi7r><h2 data-astro-cid-dpgbfi7r>Read Next</h2><div class="related-grid" data-astro-cid-dpgbfi7r><a href="/blog/schedule-meeting-across-time-zones.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>How to Schedule a Meeting Across Time Zones</h3><p data-astro-cid-dpgbfi7r>Learn how to schedule meetings across time zones using Google Calendar, converters, and integrated tools. Includes 2026 DST dates and a sync-vs-async framework.</p></div></a><a href="/blog/daylight-saving-time-guide.html" class="related-card" data-astro-cid-dpgbfi7r><div class="related-content" data-astro-cid-dpgbfi7r><h3 data-astro-cid-dpgbfi7r>Daylight Saving Time: What It Actually Changes (And What It Doesn&#39;t)</h3><p data-astro-cid-dpgbfi7r>DST shifts your clock by one hour. It does not change UTC, time zone relationships, or your calendar&#39;s stored data. Here&#39;s what actually moves — and what to watch during the dangerous weeks when regions switch on different dates.</p></div></a></div></section> <footer> <a href="/blog.html">&larr; Back to blog</a> </footer> </article>  <section class="support-cta" data-astro-cid-7dkdpa4i> <div class="container" data-astro-cid-7dkdpa4i> <div class="cta-card" data-astro-cid-7dkdpa4i> <div class="cta-content" data-astro-cid-7dkdpa4i> <h2 data-astro-cid-7dkdpa4i>Your calendar + time zones, at a glance.</h2> <p data-astro-cid-7dkdpa4i>See your schedule instantly, convert time zones, and get meeting alerts—without switching tabs.</p> <div class="cta-actions" data-astro-cid-7dkdpa4i> <a href="https://chromewebstore.google.com/detail/timehopper-effortless-tim/fdbmmaofgpcaglohaddoedbkcadjdjnl" class="cta-btn" data-astro-cid-7dkdpa4i> <img src="/images/icon48.png" alt="" class="btn-icon" data-astro-cid-7dkdpa4i>
+Add to Chrome - Free
+</a> </div> </div> </div> </div> </section>  <footer> <div class="container"> <p>&copy; 2026 TimeHopper. Built for remote work.</p> <div class="footer-links"> <a href="/blog.html">Blog</a> <a href="/tools/convert.html">Time Zone Converter</a> <a href="/privacy.html">Privacy Policy</a> <a href="/terms.html">Terms of Service</a> <a href="mailto:danwalshx@gmail.com">Contact Support</a> </div> </div> </footer> </body></html> 

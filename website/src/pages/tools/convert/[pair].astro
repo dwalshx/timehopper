@@ -80,6 +80,9 @@ const halfHourOffsets = [pair.from.stdOffset, pair.to.stdOffset, pair.from.dstOf
   description={pair.description}
   breadcrumbs={breadcrumbs}
 >
+  <link slot="styles" rel="alternate" type="application/json+oembed"
+    href={`https://timehopperapp.com/oembed/${pair.slug}.json`}
+    title={`${pair.from.abbr} to ${pair.to.abbr} Converter`} />
   <JsonLd type="FAQPage" data={faqJsonLd} />
 
   <main class="converter-page">
@@ -116,6 +119,23 @@ const halfHourOffsets = [pair.from.stdOffset, pair.to.stdOffset, pair.from.dstOf
         toName={pair.to.region}
         toIana={pair.to.iana}
       />
+
+      <div class="embed-cta">
+        <button class="embed-button" id="embed-toggle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Embed this converter
+        </button>
+
+        <div class="embed-panel" id="embed-panel" hidden>
+          <p class="embed-panel-label">Copy this code and paste it into your HTML:</p>
+          <div class="embed-code-wrap">
+            <pre class="embed-code" id="embed-code">{`<iframe src="https://timehopperapp.com/embed/${pair.slug}.html" width="100%" height="420" style="border:none;border-radius:12px;max-width:600px;" loading="lazy" title="${pair.from.abbr} to ${pair.to.abbr} Time Zone Converter — TimeHopper"></iframe>
+<script>window.addEventListener("message",function(e){if(e.data&&e.data.type==="timehopper-embed-resize"){document.querySelector('iframe[src*="${pair.slug}"]').style.height=e.data.height+"px"}})<\/script>`}</pre>
+            <button class="embed-copy" id="embed-copy">Copy</button>
+          </div>
+          <p class="embed-panel-note">The widget auto-resizes to fit. Works on any website, blog, or Notion page that supports HTML embeds.</p>
+        </div>
+      </div>
 
       <section class="conversion-tables">
         <div class="section-header">
@@ -252,6 +272,41 @@ const halfHourOffsets = [pair.from.stdOffset, pair.to.stdOffset, pair.from.dstOf
     </div>
   </main>
 </Layout>
+
+<script>
+  const toggle = document.getElementById('embed-toggle');
+  const panel = document.getElementById('embed-panel');
+  const copyBtn = document.getElementById('embed-copy');
+  const codeEl = document.getElementById('embed-code');
+
+  if (toggle && panel) {
+    toggle.addEventListener('click', () => {
+      const isHidden = panel.hidden;
+      panel.hidden = !isHidden;
+      toggle.classList.toggle('active', isHidden);
+    });
+  }
+
+  if (copyBtn && codeEl) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(codeEl.textContent || '');
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+      } catch {
+        // Fallback for older browsers
+        const range = document.createRange();
+        range.selectNodeContents(codeEl);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+        document.execCommand('copy');
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+      }
+    });
+  }
+</script>
 
 <style>
   .converter-page {
@@ -666,6 +721,108 @@ const halfHourOffsets = [pair.from.stdOffset, pair.to.stdOffset, pair.from.dstOf
 
   .blog-links a:hover {
     color: #fd547a !important;
+  }
+
+  /* ── Embed CTA ── */
+  .embed-cta {
+    margin-top: 12px;
+    text-align: right;
+  }
+
+  .embed-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+
+  .embed-button:hover {
+    border-color: #fd547a;
+    color: #fd547a;
+    background: #fff;
+  }
+
+  .embed-button.active {
+    border-color: #fd547a;
+    color: #fd547a;
+    background: #fff;
+  }
+
+  .embed-panel {
+    margin-top: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    animation: embed-slide 0.15s ease-out;
+  }
+
+  @keyframes embed-slide {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .embed-panel-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #475569;
+    margin: 0 0 10px;
+  }
+
+  .embed-code-wrap {
+    position: relative;
+  }
+
+  .embed-code {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 16px;
+    padding-right: 80px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 0;
+    font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+  }
+
+  .embed-copy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 14px;
+    background: rgba(253, 84, 122, 0.15);
+    border: 1px solid rgba(253, 84, 122, 0.25);
+    border-radius: 6px;
+    color: #fd547a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+
+  .embed-copy:hover {
+    background: rgba(253, 84, 122, 0.25);
+  }
+
+  .embed-panel-note {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin: 10px 0 0;
+    line-height: 1.5;
   }
 
   /* ── Responsive ── */

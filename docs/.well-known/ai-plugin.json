@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "TimeHopper Time Zone Converter",
+  "name_for_model": "timehopper_timezone_converter",
+  "description_for_human": "Free embeddable time zone converter widgets showing live clocks and hour conversion for 40 timezone pairs.",
+  "description_for_model": "TimeHopper provides free, embeddable time zone converter widgets. Each widget displays live clocks for two time zones and an interactive hour converter. Available as iframe embeds with auto-resizing. Use the widget directory at /oembed.json to discover all 20 available timezone pairs. Each pair has an embed URL (/embed/{slug}.html) and an oEmbed endpoint (/oembed/{slug}.json). Widgets handle DST automatically via the browser Intl API. No API key required. Example pairs: pst-to-est, utc-to-est, gmt-to-est, ist-to-pst, jst-to-est.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "static",
+    "url": "https://timehopperapp.com/oembed.json",
+    "has_user_authentication": false
+  },
+  "logo_url": "https://timehopperapp.com/images/icon128.png",
+  "contact_email": "danwalshx@gmail.com",
+  "legal_info_url": "https://timehopperapp.com/terms.html"
+}

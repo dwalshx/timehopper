@@ -38,7 +38,7 @@
 
 | # | Title | Source | Notes |
 |---|-------|--------|-------|
-| 1 | **The Maker's Schedule in 2026: Was Paul Graham Right?** | time-is-not-money backlog | Graham's 2009 essay is 17 years old. How distributed work, async tools, and AI have changed the maker/manager dynamic. **User selected as next article.** |
+| 1 | **The Maker's Schedule in 2026: Was Paul Graham Right?** | time-is-not-money backlog | Graham's 2009 essay is 17 years old. How distributed work, async tools, and AI have changed the maker/manager dynamic. **Published 2026-03-29.** |
 | 2 | The Billable Hour Is Broken — And Lawyers Know It | time-is-not-money backlog | Alt fee arrangements, value-based billing, post-billable-hour experiments. ABA Commission material available. |
 | 3 | Time Confetti: Why Fragmented Hours Feel Like No Time at All | time-is-not-money backlog | Full treatment of Schulte's concept. Recognizing fragmentation, defragmenting time, protecting whole blocks. |
 | 4 | How to Run a Shared-Time Audit for Your Team | time-is-not-money backlog | Practical companion to the coordination argument. Map overlapping windows, identify fragmentation patterns. |
@@ -141,6 +141,7 @@ Potential series structure going forward:
 | Meetings That Get Results | meetings-that-get-results | 2026-03-27 |
 | Time Is Not Money | time-is-not-money | 2026-03-27 |
 | A Soil Test for Your Calendar | soil-test-for-your-calendar | 2026-03-27 |
+| The Maker's Schedule in 2026: Was Paul Graham Right? | makers-schedule-2026 | 2026-03-29 |
 
 ### SEO Articles (Tier 2)
 | Article | Slug |
